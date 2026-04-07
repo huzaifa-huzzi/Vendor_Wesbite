@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppBarController.dart';
+import 'package:vendor_website/AppBars/TabAppBar.dart';
+import 'package:vendor_website/Resources/AppSizes.dart';
 
 class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WebAppBar({super.key});
@@ -10,15 +13,20 @@ class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Controller ko find karna
-    final AppBarController controller = Get.put(AppBarController());
 
-    double width = MediaQuery.of(context).size.width;
-    bool isMobile = width < 950; // Thora margin barha diya hai links ke liye
+    final AppBarController controller = Get.find<AppBarController>();
 
+    if (AppSizes.isWeb(context)) {
+      return _buildDesktopAppBar(context, controller);
+    } else {
+      return const TabAppBar();
+    }
+  }
+
+  Widget _buildDesktopAppBar(BuildContext context, AppBarController controller) {
     return Container(
       height: 80,
-      padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 60),
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.horizontalPadding(context)),
       decoration: BoxDecoration(
         color: const Color(0xFFF8F9FB),
         border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
@@ -26,77 +34,57 @@ class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // --- LOGO ---
-          Row(
+          _logoSection(),
+          Obx(() => Row(
             children: [
-              const Icon(Icons.directions_car_filled, color: Color(0xFFFF3850), size: 32),
-              const SizedBox(width: 10),
-              const Text(
-                'Car Rental',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              _navItem("Home", "/", controller, context),
+              _navItem("Cars", "/cars", controller, context),
+              _navItem("Services", "/services", controller, context),
+              _navItem("About Us", "/About", controller, context),
+              _navItem("FAQ's", "/FAQs", controller, context),
             ],
-          ),
-
-          // --- NAV ITEMS (Dynamic) ---
-          if (!isMobile)
-            Obx(() => Row(
-              children: [
-                _navItem("Home", controller),
-                _navItem("Cars", controller),
-                _navItem("Services", controller),
-                _navItem("About Us", controller),
-                _navItem("FAQ's", controller),
-              ],
-            )),
-
-          // --- ACTION BUTTON / MENU ---
-          isMobile
-              ? IconButton(icon: const Icon(Icons.menu), onPressed: () {})
-              : ElevatedButton.icon(
-            onPressed: () {
-              controller.setActive("Contact"); // Click par active state change
-            },
-            icon: const Icon(Icons.phone_in_talk_outlined, size: 18),
-            label: const Text("Contact us"),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFF3850),
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              elevation: 0,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
-            ),
-          ),
+          )),
+          _contactButton(context, controller),
         ],
       ),
     );
   }
 
-  // Nav Item Widget with Hover/Click logic
-  Widget _navItem(String title, AppBarController controller) {
+  Widget _navItem(String title, String path, AppBarController controller, BuildContext context) {
     bool isActive = controller.activeNav.value == title;
-
     return InkWell(
       onTap: () {
-        controller.setActive(title);
+        controller.setActive(title); // Red color update karega
+        context.go(path);            // Screen ka data update karega (Navigation)
       },
-      hoverColor: Colors.transparent,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
           title,
           style: TextStyle(
-            color: isActive ? const Color(0xFFFF3850) : Colors.black87,
-            fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-            fontSize: 16,
+              color: isActive ? const Color(0xFFFF3850) : Colors.black87,
+              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400
           ),
         ),
       ),
     );
   }
+  Widget _logoSection() {
+    return const Row(
+      children: [
+        Icon(Icons.directions_car_filled, color: Color(0xFFFF3850), size: 30),
+        SizedBox(width: 8),
+        Text('Car Rental', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700)),
+      ],
+    );
+  }
+
+  Widget _contactButton(BuildContext context, AppBarController controller) {
+    return ElevatedButton(
+      onPressed: () => controller.setActive("Contact"),
+      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFFF3850), foregroundColor: Colors.white),
+      child: const Text("Contact us"),
+    );
+  }
+
 }
