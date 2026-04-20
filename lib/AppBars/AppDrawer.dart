@@ -12,7 +12,6 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<AppBarController>();
 
-    // Masla Fix: Agar screen resize ho kar Web par jaye to Drawer band ho jaye
     if (AppSizes.isWeb(context)) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (AppKeys.scaffoldKey.currentState?.isDrawerOpen ?? false) {
@@ -31,17 +30,7 @@ class AppDrawer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // --- CLOSE ICON ---
-              Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  icon: const Icon(Icons.close, size: 30, color: Colors.black),
-                  onPressed: () => AppKeys.scaffoldKey.currentState?.closeDrawer(),
-                ),
-              ),
-              const SizedBox(height: 30),
-
-              // --- NAV ITEMS ---
+              const SizedBox(height: 10),
               _drawerNavItem("Home", controller, context, '/'),
               _drawerNavItem("Cars", controller, context, '/cars'),
               _drawerNavItem("Services", controller, context, '/services'),
@@ -54,6 +43,8 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
+   /// ----------Extra Widgets
+  // Drawer Nav Item
   Widget _drawerNavItem(String title, AppBarController controller, BuildContext context, String path) {
     return Obx(() {
       bool isActive = controller.activeNav.value == title;
@@ -61,9 +52,9 @@ class AppDrawer extends StatelessWidget {
         onTap: () {
           controller.setActive(title);
           if (AppKeys.scaffoldKey.currentState?.isDrawerOpen ?? false) {
-            Navigator.of(context).pop(); // Auto-close
+            Navigator.of(context).pop();
           }
-          context.go(path); // Navigation
+          context.go(path);
         },
         child: Container(
           width: double.infinity,

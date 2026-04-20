@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/AppBars/AppBarController.dart';
+import 'package:vendor_website/AppBars/Widgets/PrimaryBtnOfAppbars.dart';
+import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/Keys.dart';
 
 class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -21,13 +22,11 @@ class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
       height: 80,
       padding: EdgeInsets.symmetric(horizontal: AppSizes.horizontalPadding(context)),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8F9FB),
-        border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+        color: AppColors.backgroundOfScreenColor,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Isse Menu left aur Button right ho jayega
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // --- LEFT: HAMBURGER MENU ---
           IconButton(
             onPressed: () {
               AppKeys.scaffoldKey.currentState?.openDrawer();
@@ -35,35 +34,31 @@ class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(
               Icons.menu,
               size: 28,
-              color: Color(0xFF333333),
+              color: AppColors.textColor,
             ),
           ),
+          _signUpButton(context, controller)
 
-          // --- RIGHT: SIGN UP BUTTON ---
-          ElevatedButton.icon(
-            onPressed: () {
-              controller.setActive("Signup");
-            },
-            icon: const Icon(Icons.person_outline, size: 20),
-            label: const Text(
-              "Sign up",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFF3850),
-              foregroundColor: Colors.white,
-              elevation: 0,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10), // Sharp rounded corners
-              ),
-            ),
-          ),
         ],
       ),
+    );
+  }
+
+   /// --------- Extra widget
+  // Signup Button
+  Widget _signUpButton(BuildContext context, AppBarController controller) {
+    return PrimaryBtnOfAppbars(
+      height: 45,
+      text: "Sign up",
+      onTap: () {
+        controller.setActive("Signup");
+      },
+      borderRadius: BorderRadius.circular(10),
+      icon: SvgPicture.asset(
+        IconString.signUp,
+        colorFilter: const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
+      ),
+      isIconLeft: true,
     );
   }
 }

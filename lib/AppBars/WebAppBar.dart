@@ -3,7 +3,12 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppBarController.dart';
 import 'package:vendor_website/AppBars/TabAppBar.dart';
+import 'package:vendor_website/AppBars/Widgets/PrimaryBtnOfAppbars.dart';
+import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/IconString.dart';
+import 'package:vendor_website/Resources/TextTheme.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WebAppBar({super.key});
@@ -22,19 +27,20 @@ class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
       return const TabAppBar();
     }
   }
+   /// -------- Extra Widgets
 
+   // Desktop Appbar
   Widget _buildDesktopAppBar(BuildContext context, AppBarController controller) {
     return Container(
       height: 80,
       padding: EdgeInsets.symmetric(horizontal: AppSizes.horizontalPadding(context)),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8F9FB),
-        border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+        color: AppColors.backgroundOfScreenColor,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _logoSection(),
+          _logoSection(context),
           Obx(() => Row(
             children: [
               _navItem("Home", "/", controller, context),
@@ -50,40 +56,55 @@ class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
+   // Nav Items
   Widget _navItem(String title, String path, AppBarController controller, BuildContext context) {
     bool isActive = controller.activeNav.value == title;
     return InkWell(
       onTap: () {
-        controller.setActive(title); // Red color update karega
-        context.go(path);            // Screen ka data update karega (Navigation)
+        controller.setActive(title);
+        context.go(path);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
           title,
-          style: TextStyle(
-              color: isActive ? const Color(0xFFFF3850) : Colors.black87,
-              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400
-          ),
+          style: isActive ? TTextTheme.h2StylePrimary(context): TTextTheme.h2Style(context),
         ),
       ),
     );
   }
-  Widget _logoSection() {
-    return const Row(
+  // Logo Section
+
+  Widget _logoSection(BuildContext context) {
+    return Row(
       children: [
-        Icon(Icons.directions_car_filled, color: Color(0xFFFF3850), size: 30),
-        SizedBox(width: 8),
-        Text('Car Rental', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700)),
+        SvgPicture.asset(
+          IconString.logo,
+          height: 30,
+          width: 30,
+          colorFilter: const ColorFilter.mode(Color(0xFFFF3850), BlendMode.srcIn),
+        ),
+        const SizedBox(width: 8),
+         Text(
+          'Car Rental',
+          style:TTextTheme.h2Style(context),
+        ),
       ],
     );
   }
 
+   // Contact Button
   Widget _contactButton(BuildContext context, AppBarController controller) {
-    return ElevatedButton(
-      onPressed: () => controller.setActive("Contact"),
-      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFFF3850), foregroundColor: Colors.white),
-      child: const Text("Contact us"),
+    return PrimaryBtnOfAppbars(
+      height: 45,
+      text: "Contact us",
+      onTap: () => controller.setActive("Contact"),
+      borderRadius: BorderRadius.circular(10),
+      icon: SvgPicture.asset(
+        IconString.contact,
+        colorFilter: const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
+      ),
+      isIconLeft: true,
     );
   }
 
