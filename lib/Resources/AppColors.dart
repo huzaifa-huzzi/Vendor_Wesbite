@@ -22,5 +22,8 @@ class AppColors {
   static const Color backgroundOfUsableButtons = Color(0xFFF6F9FB);
   static const Color signaturePadColor = Color(0xFFF9FAFB);
   static const Color backgroundOfTableContainer = Color(0xFFF5F6FA);
+  static const Color toolBackground = Color(0xFFF5F6FA);
+  static const Color quadrantalTextColor = Color(0xFF868F9B);
+  static const Color fieldsBackground = Color(0x12000000);
 
 }

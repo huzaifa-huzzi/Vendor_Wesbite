@@ -6,13 +6,11 @@ import 'package:vendor_website/AppBars/Widgets/PrimaryBtnOfAppbars.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
-import 'package:vendor_website/Resources/Keys.dart';
 
-class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const TabAppBar({super.key});
+class TabAppBar extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
-  @override
-  Size get preferredSize => const Size.fromHeight(80);
+  const TabAppBar({super.key, required this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           IconButton(
             onPressed: () {
-              AppKeys.scaffoldKey.currentState?.openDrawer();
+              scaffoldKey.currentState?.openDrawer();
             },
             icon: const Icon(
               Icons.menu,
@@ -37,8 +35,8 @@ class TabAppBar extends StatelessWidget implements PreferredSizeWidget {
               color: AppColors.textColor,
             ),
           ),
-          _signUpButton(context, controller)
 
+          _signUpButton(context, controller)
         ],
       ),
     );

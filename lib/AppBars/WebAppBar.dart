@@ -10,22 +10,21 @@ import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const WebAppBar({super.key});
 
-  @override
-  Size get preferredSize => const Size.fromHeight(80);
+  class WebAppBar extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey;
+
+  const WebAppBar({super.key, required this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
+  final AppBarController controller = Get.find<AppBarController>();
 
-    final AppBarController controller = Get.find<AppBarController>();
-
-    if (AppSizes.isWeb(context)) {
-      return _buildDesktopAppBar(context, controller);
-    } else {
-      return const TabAppBar();
-    }
+  if (AppSizes.isWeb(context)) {
+  return _buildDesktopAppBar(context, controller);
+  } else {
+  return TabAppBar(scaffoldKey: scaffoldKey);
+  }
   }
    /// -------- Extra Widgets
 
@@ -82,7 +81,7 @@ class WebAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconString.logo,
           height: 30,
           width: 30,
-          colorFilter: const ColorFilter.mode(Color(0xFFFF3850), BlendMode.srcIn),
+          colorFilter: const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
         ),
         const SizedBox(width: 8),
          Text(
