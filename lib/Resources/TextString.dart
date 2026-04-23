@@ -1,5 +1,60 @@
 
 class TextString{
-
-
+    /// Home Screen
+  static const String  homeTitle= "Experience the road\nlike never before";
+  static const String  homeSubtitle= "Discover the freedom of driving with ease and convenience. Our platform puts you in control of your rental experience - from choosing the perfect car to managing bookings, pickups, and payments effortlessly.";
+  static const String  searchCarRental= "Search Rental Cars";
+  static const String  brand= "Brand";
+  static const String  bodyType= "Body Type";
+  static const String  fuelType= "Fuel Type";
+  static const String  transmission= "Transmission";
+  static const String  price= "Price";
+  static const String  rentsByBrand= "Rent by Brands";
+  static const String  rentsByBodyType= "Rent by BodyType";
+  static const String  viewAll= "View All";
+  static const String  rentACarTitle= "How to Rent a Car";
+  static const String  rentACarSubtitle= "Renting a luxury car has never been easier. Our streamlined process makes it simple for you to\nbook and confirm your vehicle of choice online";
+  static const String  rentACarTitle1= "Browse and select";
+  static const String  rentACarSubtitle1=  "Choose from our wide range of premium cars, select the pickup and return dates and locations that suit you best.";
+  static const String  rentACarTitle2= "Rent a car by office visit";
+  static const String  rentACarSubtitle2= "Come to our office, pick your vehicle, and we'll get you on the road fast. Hassle-free car rental made easy.";
+  static const String  rentACarTitle3= "Enjoy your ride";
+  static const String  rentACarSubtitle3= "Pick up your car at the designated location and enjoy your premium driving experience with our top-quality service.";
+  static const String  bestPriceTitle= "Best Price by Vehicle Category";
+  static const String  chooseUsTitle= "Why Choose us";
+  static const String  chooseUsSubtitle=  "Renting a luxury car has never been easier. Our streamlined process makes it simple for you to\nbook and confirm your vehicle of choice online";
+  static const String  chooseUsTitle1= "Quality and Variety";
+  static const String  chooseUsSubtitle1=  "Explore a wide range of well-maintained vehicles, from compact cars to spacious SUVs and luxury models, all selected to deliver comfort, reliability, and performance for every journey.";
+  static const String  chooseUsTitle2= "Affordable Rates";
+  static const String  chooseUsSubtitle2= "Enjoy competitive weekly rates designed to fit your budget, with transparent pricing and no hidden charges, so you always know exactly what you’re paying for";
+  static const String  chooseUsTitle3="Easy booking";
+  static const String  chooseUsSubtitle3= "Enjoy a smooth and hassle-free booking experience designed for your convenience. Browse our cars online, check weekly rates, and either reserve instantly or visit our office to complete your rental.";
+  static const String  chooseUsTitle4="Customer Satisfaction";
+  static const String  chooseUsSubtitle4= "Your satisfaction is at the heart of everything we do, from maintaining quality vehicles to providing friendly and dependable customer support";
+  static const String  customerTitle= "Our Trusted Customers";
+  static const String  customerSubtitle=  "Trusted by businesses and rental companies worldwide.";
+  static const String  name1= "Kyle Roberts DVM";
+  static const String  name2= "Sophie Turner";
+  static const String  name3= "Stephen Brekke";
+  static const String  customerText= "Customer";
+  static const String  cardText=  "I had an amazing experience renting a car here! The process was smooth, the staff was very helpful, and the car was in perfect condition.";
+  static const String  faqTitle= "FAQs";
+  static const String  faqSubtitle=   "Have questions? We've got answers! Find quick help on bookings, payments, policies, and more to make your car rental experience smooth and hassle-free.";
+  static const String  faqTitle1= "How do I rent a car?";
+  static const String  faqSubtitle1= "You can rent a car by creating an account, selecting your preferred vehicle, choosing the rental dates, and completing the booking with payment.";
+  static const String  faqTitle2= "What are your operating hours?";
+  static const String  faqSubtitle2 ="Our customer support is available 24/7. However, our physical offices are open from 9:00 AM to 6:00 PM, Monday to Saturday.";
+  static const String  faqTitle3= "Is online booking possible?";
+  static const String  faqSubtitle3="Yes, our platform is designed for seamless online booking. You can reserve your car in just a few clicks.";
+  static const String  faqTitle4= "Do you offer insurance?";
+  static const String  faqSubtitle4= "Yes, all our rental cars come with standard comprehensive insurance. Additional coverage options are also available during checkout.";
+  static const String  newsLetterTitle= "News Letter";
+  static const String  newsLetterSubtitle= "Subscribe for latest offer and updates";
+  static const String  footerTitle= "Car Rental";
+  static const String  footerSubtitle= "Reliable car rentals for every journey.";
+  static const String  footerTitle1= "QUICK LINKS";
+  static const String  footerTitle2= "CUSTOMER SUPPORT";
+  static const String  footerTitle3= "PAYMENT METHOD";
+  static const String  footerTitle4= "LEGAL";
+  static const String  copyRightText= "© 2026 Car Rental All rights reserved.";
 }

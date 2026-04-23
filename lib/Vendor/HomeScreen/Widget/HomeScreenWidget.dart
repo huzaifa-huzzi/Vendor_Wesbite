@@ -8,6 +8,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeController.dart';
 import 'package:vendor_website/Vendor/HomeScreen/ReusbaleWidget/PrimaryBtnOfHome.dart';
@@ -121,13 +122,13 @@ class HomeScreenWidget extends StatelessWidget {
       isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       children: [
         Text(
-          "Experience the road\nlike never before",
+          TextString.homeTitle,
           textAlign: isDesktop ? TextAlign.start : TextAlign.center,
           style: TTextTheme.h1Style(context),
         ),
         const SizedBox(height: 20),
         Text(
-          "Discover the freedom of driving with ease and convenience. Our platform puts you in control of your rental experience - from choosing the perfect car to managing bookings, pickups, and payments effortlessly.",
+          TextString.homeSubtitle,
           textAlign: isDesktop ? TextAlign.start : TextAlign.center,
           style: TTextTheme.bodyRegular16white(context),
         ),
@@ -173,29 +174,29 @@ class HomeScreenWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text("Search Rental Cars", style: TTextTheme.h3Style(context)),
+          Text(TextString.searchCarRental, style: TTextTheme.h3Style(context)),
           const SizedBox(height: 12),
 
           _buildSearchCarDropdown(
-              context, "Brand", controller.selectedBrand, id: 'brand'),
+              context, TextString.brand , controller.selectedBrand, id: 'brand'),
           const SizedBox(height: 8),
 
           _buildSearchCarDropdown(
-              context, "Body Type", controller.selectedBodyType,
+              context,TextString.bodyType , controller.selectedBodyType,
               id: 'body_type'),
           const SizedBox(height: 8),
 
           _buildSearchCarDropdown(
-              context, "Fuel Type", controller.selectedFuelType,
+              context,TextString.fuelType , controller.selectedFuelType,
               id: 'fuel_type'),
           const SizedBox(height: 8),
 
           _buildSearchCarDropdown(
-              context, "Transmission", controller.selectedTransmission,
+              context,TextString.transmission , controller.selectedTransmission,
               id: 'transmission'),
           const SizedBox(height: 8),
 
-          _buildInputField("Price", context),
+          _buildInputField(TextString.price, context),
 
           const SizedBox(height: 12),
 
@@ -384,7 +385,7 @@ class HomeScreenWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: AppSizes.horizontalPadding(context), vertical: 40),
       child: Column(
         children: [
-          _buildCategoryHeader(context, "Rent by Brands", onViewAll: () {}),
+          _buildCategoryHeader(context, TextString.rentsByBrand, onViewAll: () {}),
           const SizedBox(height: 20),
           _buildCategoryGrid(context, [
             {'name': 'Toyota', 'icon': IconString.toyota},
@@ -397,7 +398,7 @@ class HomeScreenWidget extends StatelessWidget {
 
           const SizedBox(height: 50),
 
-          _buildCategoryHeader(context, "Rent by body type", showViewAll: false),
+          _buildCategoryHeader(context, TextString.rentsByBodyType, showViewAll: false),
           const SizedBox(height: 20),
           _buildCategoryGrid(context, [
             {'name': 'SUV', 'icon': IconString.suv},
@@ -432,7 +433,7 @@ class HomeScreenWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                      Text(
-                      "View all",
+                      TextString.viewAll,
                       style: TTextTheme.bodyRegular16Primary(context),
                     ),
                     const SizedBox(width: 5),
@@ -524,12 +525,12 @@ class HomeScreenWidget extends StatelessWidget {
           child: Column(
             children: [
                Text(
-                "How to Rent a Car",
+                TextString.rentACarTitle,
                 style: TTextTheme.h4Style(context)
               ),
               const SizedBox(height: 15),
                Text(
-                "Renting a luxury car has never been easier. Our streamlined process makes it simple for you to\nbook and confirm your vehicle of choice online",
+                TextString.rentACarSubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),
@@ -568,22 +569,22 @@ class HomeScreenWidget extends StatelessWidget {
       _buildStepCard(
         context,
         svgPath: IconString.rentSearch,
-        title: "Browse and select",
-        description: "Choose from our wide range of premium cars, select the pickup and return dates and locations that suit you best.",
+        title: TextString.rentACarTitle1,
+        description:TextString.rentACarSubtitle1,
       ),
       const SizedBox(height: 20),
       _buildStepCard(
         context,
         svgPath: IconString.rentCalendar,
-        title: "Rent a car by office visit",
-        description: "Come to our office, pick your vehicle, and we'll get you on the road fast. Hassle-free car rental made easy.",
+        title: TextString.rentACarTitle2,
+        description: TextString.rentACarSubtitle2,
       ),
       const SizedBox(height: 20),
       _buildStepCard(
         context,
         svgPath: IconString.rideIcon,
-        title: "Enjoy your ride",
-        description: "Pick up your car at the designated location and enjoy your premium driving experience with our top-quality service.",
+        title:TextString.rentACarTitle3 ,
+        description: TextString.rentACarSubtitle3,
       ),
     ];
   }
@@ -652,7 +653,7 @@ class HomeScreenWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildCategoryHeader(context, "Best Price by Vehicle Category", onViewAll: () {}),
+          _buildCategoryHeader(context, TextString.bestPriceTitle, onViewAll: () {}),
           const SizedBox(height: 30),
           LayoutBuilder(builder: (context, constraints) {
             int crossAxisCount = constraints.maxWidth > 1100 ? 3 : (constraints.maxWidth > 700 ? 2 : 1);
@@ -801,12 +802,12 @@ class HomeScreenWidget extends StatelessWidget {
       child: Column(
         children: [
            Text(
-            "Why Choose us",
+            TextString.chooseUsTitle,
             style: TTextTheme.h4Style(context),
           ),
           const SizedBox(height: 15),
            Text(
-            "Renting a luxury car has never been easier. Our streamlined process makes it simple for you to\nbook and confirm your vehicle of choice online",
+           TextString.chooseUsSubtitle,
             textAlign: TextAlign.center,
             style: TTextTheme.medium16black(context),
           ),
@@ -839,26 +840,26 @@ class HomeScreenWidget extends StatelessWidget {
       _buildFeatureCard(
         context,
         svgPath: IconString.quality,
-        title: "Quality and Variety",
-        desc: "Explore a wide range of well-maintained vehicles, from compact cars to spacious SUVs and luxury models, all selected to deliver comfort, reliability, and performance for every journey.",
+        title: TextString.chooseUsTitle1,
+        desc: TextString.chooseUsSubtitle1,
       ),
       _buildFeatureCard(
         context,
         svgPath: IconString.rates,
-        title: "Affordable Rates",
-        desc: "Enjoy competitive weekly rates designed to fit your budget, with transparent pricing and no hidden charges, so you always know exactly what you’re paying for",
+        title: TextString.chooseUsTitle2,
+        desc: TextString.chooseUsSubtitle2,
       ),
       _buildFeatureCard(
         context,
         svgPath: IconString.booking,
-        title: "Easy booking",
-        desc: "Enjoy a smooth and hassle-free booking experience designed for your convenience. Browse our cars online, check weekly rates, and either reserve instantly or visit our office to complete your rental.",
+        title:TextString.chooseUsTitle3 ,
+        desc:TextString.chooseUsSubtitle3 ,
       ),
       _buildFeatureCard(
         context,
         svgPath: IconString.customer,
-        title: "Customer Satisfaction",
-        desc: "Your satisfaction is at the heart of everything we do, from maintaining quality vehicles to providing friendly and dependable customer support",
+        title: TextString.chooseUsTitle4,
+        desc: TextString.chooseUsSubtitle4,
       ),
     ];
   }
@@ -926,9 +927,9 @@ class HomeScreenWidget extends StatelessWidget {
     final bool isDesktop = AppSizes.isWeb(context);
 
     final List<Widget> testimonialItems = [
-      _buildTestimonialCard(context,"Kyle Roberts DVM", "Customer", ImageString.pic1),
-      _buildTestimonialCard(context,"Sophie Turner", "Customer", ImageString.pic2),
-      _buildTestimonialCard(context,"Stephen Brekke", "Customer", ImageString.pic3),
+      _buildTestimonialCard(context,TextString.name1, TextString.customerText, ImageString.pic1),
+      _buildTestimonialCard(context,TextString.name2, TextString.customerText, ImageString.pic2),
+      _buildTestimonialCard(context,TextString.name3, TextString.customerText, ImageString.pic3),
     ];
 
     return Container(
@@ -937,7 +938,7 @@ class HomeScreenWidget extends StatelessWidget {
       child: Column(
         children: [
            Text(
-            "Our Trusted Customers",
+            TextString.customerTitle,
             style: TTextTheme.h4Style(context),
           ),
           const SizedBox(height: 10),
@@ -945,7 +946,7 @@ class HomeScreenWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              "Trusted by businesses and rental companies worldwide.",
+             TextString.customerSubtitle,
               textAlign: TextAlign.center,
               style: TTextTheme.medium16black(context),
             ),
@@ -1009,29 +1010,24 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min, // Content ke mutabiq size lega
+          mainAxisSize: MainAxisSize.min,
           children: [
-            // Rating Stars
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: List.generate(5, (index) => const Icon(Icons.star, color: AppColors.primaryColor, size: 18)),
             ),
 
             const SizedBox(height: 10),
-
-            // Text Content - Flexible use kiya taake overflow na ho
             Flexible(
               child: SingleChildScrollView(
                 child: Text(
-                  "I had an amazing experience renting a car here! The process was smooth, the staff was very helpful, and the car was in perfect condition.",
+                 TextString.cardText,
                   style: TTextTheme.bodyRegular16black(context),
                 ),
               ),
             ),
 
             const SizedBox(height: 15),
-
-            // Name aur Role ko ek Column mein pack kar diya
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -1103,11 +1099,11 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          Text(
-          "FAQs",
+          TextString.faqTitle,
           style: TTextTheme.h1StyleBlack(context)),
         const SizedBox(height: 20),
          Text(
-          "Have questions? We've got answers! Find quick help on bookings, payments, policies, and more to make your car rental experience smooth and hassle-free.",
+         TextString.faqSubtitle,
           style: TTextTheme.medium16black(context),
         ),
       ],
@@ -1124,24 +1120,24 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
         children: [
           _buildFAQItem(
             context,
-            "How do I rent a car?",
-            "You can rent a car by creating an account, selecting your preferred vehicle, choosing the rental dates, and completing the booking with payment.",
+            TextString.faqTitle1,
+            TextString.faqSubtitle1,
             isFirst: true,
           ),
           _buildFAQItem(
             context,
-            "What are your operating hours?",
-            "Our customer support is available 24/7. However, our physical offices are open from 9:00 AM to 6:00 PM, Monday to Saturday.",
+            TextString.faqTitle2,
+           TextString.faqSubtitle2,
           ),
           _buildFAQItem(
             context,
-            "Is online booking possible?",
-            "Yes, our platform is designed for seamless online booking. You can reserve your car in just a few clicks.",
+            TextString.faqTitle3,
+            TextString.faqSubtitle3,
           ),
           _buildFAQItem(
             context,
-            "Do you offer insurance?",
-            "Yes, all our rental cars come with standard comprehensive insurance. Additional coverage options are also available during checkout.",
+            TextString.faqTitle4,
+            TextString.faqSubtitle4,
             isLast: true,
           ),
         ],
@@ -1262,12 +1258,12 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "News Letter",
+          TextString.newsLetterTitle,
           style: TTextTheme.hNews(context)
         ),
         SizedBox(height: 10),
         Text(
-          "Subscribe for latest offer and updates",
+          TextString.newsLetterSubtitle,
           style: TTextTheme.medium16black(context),
         ),
       ],
@@ -1310,22 +1306,22 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
                           fit: BoxFit.contain,
                         ),
                         const SizedBox(width: 10),
-                         Text("Car Rental",
+                         Text(TextString.footerTitle,
                             style: TTextTheme.h2Stylewhite(context)),
                       ],
                     ),
                     const SizedBox(height: 25),
                      Text(
-                      "Reliable car rentals for every journey.",
+                      TextString.footerSubtitle,
                       style: TTextTheme.bodyRegular16white(context),
                     ),
                   ],
                 ),
               ),
-              _buildFooterColumn(context,"QUICK LINKS", ["Home", "Cars", "Service", "About Us", "Faqs"]),
-              _buildFooterColumn(context,"CUSTOMER SUPPORT", ["Help Center", "Cancellation & Return policy"]),
-              _buildFooterColumn(context,"PAYMENT METHOD", ["Accepted Payments"]),
-              _buildFooterColumn(context,"LEGAL", ["Terms & Conditions", "Privacy Polices", "Licenses", "Contact"]),
+              _buildFooterColumn(context,TextString.footerTitle1, ["Home", "Cars", "Service", "About Us", "Faqs"]),
+              _buildFooterColumn(context,TextString.footerTitle2, ["Help Center", "Cancellation & Return policy"]),
+              _buildFooterColumn(context,TextString.footerTitle3, ["Accepted Payments"]),
+              _buildFooterColumn(context,TextString.footerTitle4, ["Terms & Conditions", "Privacy Polices", "Licenses", "Contact"]),
             ],
           ),
 
@@ -1392,7 +1388,7 @@ Widget _socialIcon(String svgPath) {
 }
   Widget _buildCopyrightText(BuildContext context) {
     return  Text(
-      "© 2026 Car Rental All rights reserved.",
+      TextString.copyRightText,
       style: TTextTheme.bodyRegular16white(context)
     );
   }
