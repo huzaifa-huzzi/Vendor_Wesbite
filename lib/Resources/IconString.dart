@@ -40,4 +40,7 @@ class IconString{
   static const String  linkedin = 'assets/icons/linkedin.svg';
   static const String  dribble = 'assets/icons/Dribble.svg';
   static const String  facebook = 'assets/icons/facebook.svg';
+
+     /// Car
+  static const String  filterIcon = 'assets/icons/FilterIcon.svg';
 }

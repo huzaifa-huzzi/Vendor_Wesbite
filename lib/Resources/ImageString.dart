@@ -15,4 +15,7 @@ class ImageString{
   static const String pic2 = 'assets/Images/HomeScreen/2.png';
   static const String pic3 = 'assets/Images/HomeScreen/3.png';
 
+   /// Cars
+  static const String bannerPics = 'assets/Images/CarScreen/BannerCars.png';
+
 }

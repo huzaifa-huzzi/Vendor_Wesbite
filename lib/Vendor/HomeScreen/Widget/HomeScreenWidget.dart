@@ -47,9 +47,11 @@ class HomeScreenWidget extends StatelessWidget {
 
   // Hero Section
   Widget _buildResponsiveHeroSection(BuildContext context) {
-    final bool isDesktop = AppSizes.isWeb(context);
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isDesktop = screenWidth > 1010;
 
     return Container(
+      constraints: BoxConstraints(minHeight: isDesktop ? 500 : 0),
       margin: EdgeInsets.all(AppSizes.horizontalPadding(context)),
       decoration: BoxDecoration(
         color: AppColors.primaryColor,
@@ -65,47 +67,38 @@ class HomeScreenWidget extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+
             Padding(
-              padding: EdgeInsets.only(
-                left: isDesktop ? 60 : 20,
-                right: isDesktop ? 60 : 20,
-                top: 60,
-                bottom: 0,
+              padding: EdgeInsets.symmetric(
+                horizontal: isDesktop ? 40 : 20,
+                vertical: 40,
               ),
               child: isDesktop
                   ? Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
-                      flex: 3,
-                      child: _heroTextSection(context)
+                    flex: 3,
+                    child: _heroTextSection(context),
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: _carImageSection(context),
                   ),
 
-                  const SizedBox(width: 20),
-                  Expanded(
-                      flex: 4,
-                      child: SizedBox(
-                        height: 450,
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: _carImageSection(context),
-                        ),
-                      )
-                  ),
-
-                  const SizedBox(width: 20),
-                  Expanded(
-                      flex: 3,
-                      child: _searchBoxSection(context)
+                  SizedBox(
+                    width: 360,
+                    child: _searchBoxSection(context),
                   ),
                 ],
               )
                   : Column(
                 children: [
                   _heroTextSection(context),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   _carImageSection(context),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 70),
                   _searchBoxSection(context),
                 ],
               ),
@@ -117,47 +110,74 @@ class HomeScreenWidget extends StatelessWidget {
   }
   Widget _heroTextSection(BuildContext context) {
     final bool isDesktop = AppSizes.isWeb(context);
+
     return Column(
       crossAxisAlignment:
       isDesktop ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          TextString.homeTitle,
+          "Experience the road like never before",
           textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-          style: TTextTheme.h1Style(context),
+          maxLines: 4,
+          softWrap: true,
+          style: TTextTheme.h1Style(context).copyWith(
+            height: 1.1,
+            fontSize: isDesktop ? 52 : 32,
+          ),
         ),
-        const SizedBox(height: 20),
+
+        const SizedBox(height: 15),
+
         Text(
           TextString.homeSubtitle,
           textAlign: isDesktop ? TextAlign.start : TextAlign.center,
-          style: TTextTheme.bodyRegular16white(context),
+          style: TTextTheme.bodyRegular16white(context).copyWith(
+            height: 1.6,
+          ),
         ),
-        const SizedBox(height: 30),
+
+        const SizedBox(height: 35),
+
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             foregroundColor: AppColors.primaryColor,
             elevation: 0,
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            padding:
+            const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
           child: const Text(
             "View all cars",
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 16,
+            ),
           ),
         ),
       ],
     );
   }
   Widget _carImageSection(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: Image.asset(
-        ImageString.carImage,
-        fit: BoxFit.contain,
+    final bool isDesktop = AppSizes.isWeb(context);
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Transform.translate(
+      offset: isDesktop ? const Offset(0, 150) : const Offset(0, 40),
+      child: Align(
         alignment: Alignment.bottomCenter,
-        width: AppSizes.isWeb(context) ? 600 : MediaQuery.of(context).size.width * 0.6,
+        child: Container(
+          padding:  EdgeInsets.symmetric(horizontal: isDesktop ? 40 : 20),
+          child: Image.asset(
+            ImageString.carImage,
+            fit: BoxFit.contain,
+            width: isDesktop ? screenWidth * 0.5 : screenWidth * 0.5,
+          ),
+        ),
       ),
     );
   }
@@ -1176,83 +1196,77 @@ Widget _buildTestimonialCard(BuildContext context, String name, String role, Str
   }
 
   // NewsLetter
-  Widget _buildNewsletterSection(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 600;
+Widget _buildNewsletterSection(BuildContext context) {
+  final double screenWidth = MediaQuery.of(context).size.width;
+  final bool useDesktopLayout = screenWidth > 950;
 
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSizes.horizontalPadding(context),
-        vertical: 60,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.whiteColor,
-      ),
-      child: isDesktop
-          ? Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildNewsletterText(context),
-          _buildNewsletterInput(context),
-        ],
-      )
-          : Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildNewsletterText(context),
-          const SizedBox(height: 30),
-          _buildNewsletterInput(context),
-        ],
-      ),
-    );
-  }
-  Widget _buildNewsletterInput(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 600;
-
-    return Wrap(
-      spacing: 15,
-      runSpacing: 15,
-      crossAxisAlignment: WrapCrossAlignment.center,
+  return Container(
+    width: double.infinity,
+    padding: EdgeInsets.symmetric(
+      horizontal: AppSizes.horizontalPadding(context),
+      vertical: 60,
+    ),
+    color: AppColors.whiteColor,
+    child: useDesktopLayout
+        ? Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(
-          width: isDesktop ? 350 : 300,
-          height: 50,
-          child: TextField(
-            cursorColor: AppColors.blackColor,
-            style: TTextTheme.textFieldWrittenText(context),
-            decoration: InputDecoration(
-              hintText: "Enter your email",
-              hintStyle: TTextTheme.bodyRegular16secondary(context),
-              filled: true,
-              fillColor: AppColors.whiteColor,
+        _buildNewsletterText(context),
 
-              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7)),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7))),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7), width: 1),
-              ),
+        Flexible(child: _buildNewsletterInput(context)),
+      ],
+    )
+        : Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildNewsletterText(context),
+        const SizedBox(height: 30),
+        _buildNewsletterInput(context),
+      ],
+    ),
+  );
+}
+Widget _buildNewsletterInput(BuildContext context) {
+  final double screenWidth = MediaQuery.of(context).size.width;
+
+  return Wrap(
+    spacing: 15,
+    runSpacing: 15,
+    crossAxisAlignment: WrapCrossAlignment.center,
+    children: [
+      SizedBox(
+        width: screenWidth < 400 ? screenWidth * 0.8 : 350,
+        height: 50,
+        child: TextField(
+          cursorColor: AppColors.blackColor,
+          style: TTextTheme.textFieldWrittenText(context),
+          decoration: InputDecoration(
+            hintText: "Enter your email",
+            hintStyle: TTextTheme.bodyRegular16secondary(context),
+            filled: true,
+            fillColor: AppColors.whiteColor,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7)),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: AppColors.primaryColor, width: 1.5),
             ),
           ),
         ),
-
-        // Subscribe Button
-        PrimaryBtnOfHome(
-          text: "Subscribe",
-          onTap: () {},
-          height: 50,
-          width: 120,
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ],
-    );
-  }
+      ),
+      PrimaryBtnOfHome(
+        text: "Subscribe",
+        onTap: () {},
+        height: 50,
+        width: 120,
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ],
+  );
+}
   Widget _buildNewsletterText(BuildContext context) {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
