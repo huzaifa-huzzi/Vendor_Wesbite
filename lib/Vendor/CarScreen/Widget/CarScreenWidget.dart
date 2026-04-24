@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppDrawer.dart';
 import 'package:vendor_website/AppBars/WebAppBar.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
@@ -187,7 +188,9 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
           );
         },
       );
+
     });
+
   }
   Widget _buildVehicleCard(
       BuildContext context, {
@@ -215,8 +218,8 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
-            padding: const EdgeInsets.all(20),
+            height: 210,
+            padding: const EdgeInsets.all(6),
             child: Center(
               child: Image.asset(image, fit: BoxFit.contain),
             ),
@@ -256,9 +259,8 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Row(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       _buildMiniSpec(context, IconString.auto, gear),
                       const SizedBox(width: 12),
@@ -267,13 +269,14 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
                       _buildMiniSpec(context, IconString.litres, liters),
                     ],
                   ),
-                ),
 
                 const SizedBox(height: 25),
 
                 PrimaryBtnOfCar(
                   text: "View Details",
-                  onTap: () {},
+                  onTap: () {
+                    context.push('/CarDetail');
+                  },
                   height: 48,
                   width: double.infinity,
                   borderRadius: BorderRadius.circular(12),
@@ -405,7 +408,7 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 15),
             decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.grey.withOpacity(0.2))),
+              border: Border(bottom: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.2))),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -427,22 +430,38 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
               PopupMenuItem<String>(
                 enabled: false,
                 value: "SEARCH_FIELD",
-                child: Container(
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: AppColors.primaryColor),
-                  ),
-                  child: TextField(
-                    cursorColor: AppColors.blackColor,
-                    onChanged: (val) => controller.searchCarText.value = val,
-                    style: TTextTheme.textFieldWrittenText(context),
-                    decoration: InputDecoration(
-                      hintText: "Search $label",
-                      hintStyle: TTextTheme.insidetextfieldWrittenText(context),
-                      prefixIcon: const Icon(Icons.search, size: 18),
-                      border: InputBorder.none,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: AppColors.primaryColor),
+                    ),
+                    child: TextField(
+                      cursorColor: AppColors.blackColor,
+                      onChanged: (val) => controller.searchCarText.value = val,
+                      style: TTextTheme.bodyRegular16(context),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: AppColors.backgroundOfScreenColor,
+                        hintText: "Search $label",
+                        hintStyle: TTextTheme.bodyRegular16(context),
+                        prefixIcon: const Icon(Icons.search, color: AppColors.primaryColor, size: 18),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide.none,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide.none,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(color: AppColors.primaryColor, width: 1),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -524,7 +543,7 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
                 padding: const EdgeInsets.only(right: 20),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.8,
-                  child: _buildVehicleCard(
+                  child: _buildVehicleCard2(
                     context,
                     name: car['name']!,
                     year: car['year']!,
@@ -542,7 +561,7 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
             children: popularCars.map((car) => Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: _buildVehicleCard(
+                child: _buildVehicleCard2(
                   context,
                   name: car['name']!,
                   year: car['year']!,
@@ -557,6 +576,135 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
           ),
         ],
       ),
+    );
+  }
+  Widget _buildVehicleCard2(
+      BuildContext context, {
+        required String name,
+        required String year,
+        required String price,
+        required String image,
+        required String gear,
+        required String fuel,
+        required String liters,
+      }) {
+    final bool isDesktop = !AppSizes.isMobile(context);
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.whiteColor,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+              color: AppColors.fieldsBackground.withOpacity(0.02),
+              blurRadius: 15,
+              offset: const Offset(0, 8)
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 180,
+            padding: const EdgeInsets.all(6),
+            child: Center(
+              child: Image.asset(image, fit: BoxFit.contain),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(name, style: TTextTheme.h5Style(context), maxLines: 1, overflow: TextOverflow.ellipsis),
+                          Text(year, style: TTextTheme.bodyRegular14(context)),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text("\$$price", style: TTextTheme.h5StylePrimary(context)),
+                        Text("per week", style: TTextTheme.bodyRegular12(context)),
+                      ],
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+                isDesktop
+                    ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(child: _buildMiniSpec2(context, IconString.auto, gear)),
+                    Expanded(child: _buildMiniSpec2(context, IconString.electric, fuel)),
+                    Expanded(child: _buildMiniSpec2(context, IconString.litres, liters)),
+                  ],
+                )
+                    : SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  child: Row(
+                    children: [
+                      _buildMiniSpec2(context, IconString.auto, gear),
+                      const SizedBox(width: 25),
+                      _buildMiniSpec2(context, IconString.electric, fuel),
+                      const SizedBox(width: 25),
+                      _buildMiniSpec2(context, IconString.litres, liters),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 25),
+
+                PrimaryBtnOfCar(
+                  text: "View Details",
+                  onTap: () {
+                    context.push('/CarDetail');
+                  },
+                  height: 48,
+                  width: double.infinity,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMiniSpec2(BuildContext context, String svgPath, String text) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          svgPath,
+          width: 14,
+          height: 14,
+          colorFilter: const ColorFilter.mode(AppColors.blackColor, BlendMode.srcIn),
+        ),
+        const SizedBox(width: 6),
+        Flexible(
+          child: Text(
+            text,
+            style: TTextTheme.bodyRegular14(context).copyWith(color: AppColors.blackColor),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
     );
   }
 
@@ -704,7 +852,8 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
 
   // NewsLetter
   Widget _buildNewsletterSection(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 600;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool useDesktopLayout = screenWidth > 950;
 
     return Container(
       width: double.infinity,
@@ -712,15 +861,14 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
         horizontal: AppSizes.horizontalPadding(context),
         vertical: 60,
       ),
-      decoration: BoxDecoration(
-        color: AppColors.whiteColor,
-      ),
-      child: isDesktop
+      color: AppColors.whiteColor,
+      child: useDesktopLayout
           ? Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildNewsletterText(context),
-          _buildNewsletterInput(context),
+
+          Flexible(child: _buildNewsletterInput(context)),
         ],
       )
           : Column(
@@ -734,7 +882,7 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
     );
   }
   Widget _buildNewsletterInput(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 600;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return Wrap(
       spacing: 15,
@@ -742,7 +890,7 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         SizedBox(
-          width: isDesktop ? 350 : 300,
+          width: screenWidth < 400 ? screenWidth * 0.8 : 350,
           height: 50,
           child: TextField(
             cursorColor: AppColors.blackColor,
@@ -752,24 +900,18 @@ class _CarScreenWidgetState extends State<CarScreenWidget> {
               hintStyle: TTextTheme.bodyRegular16secondary(context),
               filled: true,
               fillColor: AppColors.whiteColor,
-
               contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-              border: OutlineInputBorder(
+              enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7)),
               ),
-              enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7))),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: AppColors.quadrantalTextColor.withOpacity(0.7), width: 1),
+                borderSide: const BorderSide(color: AppColors.primaryColor, width: 1.5),
               ),
             ),
           ),
         ),
-
-        // Subscribe Button
         PrimaryBtnOfHome(
           text: "Subscribe",
           onTap: () {},

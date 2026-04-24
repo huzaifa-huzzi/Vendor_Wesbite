@@ -17,5 +17,9 @@ class ImageString{
 
    /// Cars
   static const String bannerPics = 'assets/Images/CarScreen/BannerCars.png';
-
+  static const String DetailsPicture = 'assets/Images/CarScreen/DetailsPicture.png';
+  static const String carLeft1 = 'assets/Images/CarScreen/CarLeft.png';
+  static const String carRight1 = 'assets/Images/CarScreen/CarRight1.png';
+  static const String carRight2 = 'assets/Images/CarScreen/CarRight2.png';
+  static const String carTyre = 'assets/Images/CarScreen/CarTyre.png';
 }

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppDrawer.dart';
 import 'package:vendor_website/AppBars/WebAppBar.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
@@ -405,7 +406,9 @@ class HomeScreenWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: AppSizes.horizontalPadding(context), vertical: 40),
       child: Column(
         children: [
-          _buildCategoryHeader(context, TextString.rentsByBrand, onViewAll: () {}),
+          _buildCategoryHeader(context, TextString.rentsByBrand, onViewAll: () {
+            context.push('/cars');
+          }),
           const SizedBox(height: 20),
           _buildCategoryGrid(context, [
             {'name': 'Toyota', 'icon': IconString.toyota},
@@ -413,7 +416,7 @@ class HomeScreenWidget extends StatelessWidget {
             {'name': 'KIA', 'icon': IconString.kia},
             {'name': 'Tesla', 'icon': IconString.tesla},
             {'name': 'Hyundai', 'icon': IconString.Hyundai},
-            {'name': 'Suzuki', 'icon': IconString.suzukiPNG},
+            {'name': 'Suzuki', 'icon': IconString.newSuzuki},
           ]),
 
           const SizedBox(height: 50),
@@ -673,7 +676,7 @@ class HomeScreenWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildCategoryHeader(context, TextString.bestPriceTitle, onViewAll: () {}),
+          _buildCategoryHeader(context, TextString.bestPriceTitle, onViewAll: () {context.push('/cars');}),
           const SizedBox(height: 30),
           LayoutBuilder(builder: (context, constraints) {
             int crossAxisCount = constraints.maxWidth > 1100 ? 3 : (constraints.maxWidth > 700 ? 2 : 1);
@@ -778,7 +781,9 @@ class HomeScreenWidget extends StatelessWidget {
 
                 PrimaryBtnOfHome(
                   text: "View Details",
-                  onTap: () {},
+                  onTap: () {
+                    context.push('/CarDetail');
+                  },
                   height: 48,
                   width: double.infinity,
                   borderRadius: BorderRadius.circular(12),

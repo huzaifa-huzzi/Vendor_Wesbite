@@ -1,6 +1,7 @@
 
 
 import 'package:get/get.dart';
+import 'package:vendor_website/Resources/ImageString.dart';
 
 class CarController extends GetxController {
   var currentPrice = 200.0.obs;
@@ -68,5 +69,33 @@ class CarController extends GetxController {
     }
     if (searchCarText.value.isEmpty) return currentList;
     return currentList.where((item) => item.toLowerCase().contains(searchCarText.value.toLowerCase().trim())).toList();
+  }
+
+  final List<String> carImages = [
+    ImageString.grid1,
+    ImageString.grid2,
+    ImageString.grid3,
+    ImageString.grid4,
+    ImageString.grid5,
+  ];
+
+  var selectedIndex = 0.obs;
+
+  void updateSelectedIndex(int index) => selectedIndex.value = index;
+
+  void nextImage() {
+    if (selectedIndex.value < carImages.length - 1) {
+      selectedIndex.value++;
+    } else {
+      selectedIndex.value = 0;
+    }
+  }
+
+  void prevImage() {
+    if (selectedIndex.value > 0) {
+      selectedIndex.value--;
+    } else {
+      selectedIndex.value = carImages.length - 1;
+    }
   }
 }

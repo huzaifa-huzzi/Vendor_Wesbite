@@ -28,6 +28,10 @@ class TTextTheme {
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
 
+  static TextStyle h6Style(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 44, 46, 48),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
+  }
+
   static TextStyle h1StyleBlack(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.blackColor);
   }
@@ -113,6 +117,9 @@ class TTextTheme {
   static TextStyle medium16black(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 13, 15, 16),fontWeight: FontWeight.w500,color: AppColors.blackColor);
   }
+  static TextStyle medium16white(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 13, 15, 16),fontWeight: FontWeight.w500,color: AppColors.whiteColor);
+  }
 
   static TextStyle bodyRegular12black(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 12, 12, 12),fontWeight: FontWeight.w400,color: AppColors.blackColor);
@@ -165,6 +172,12 @@ class TTextTheme {
   static TextStyle bodyRegular14(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 14, 14, 14),fontWeight: FontWeight.w400,color: AppColors.secondTextColor);
   }
+
+
+  static TextStyle bodyRegular14Quadrantal(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 14, 14, 14),fontWeight: FontWeight.w400,color: AppColors.quadrantalTextColor);
+  }
+
 
   static TextStyle bodyRegular14TabsSelected(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 14, 14, 14),fontWeight: FontWeight.w400,color: Colors.white);

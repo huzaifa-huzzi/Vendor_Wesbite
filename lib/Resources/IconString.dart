@@ -40,7 +40,19 @@ class IconString{
   static const String  linkedin = 'assets/icons/linkedin.svg';
   static const String  dribble = 'assets/icons/Dribble.svg';
   static const String  facebook = 'assets/icons/facebook.svg';
+  static const String  newSuzuki = 'assets/icons/NewSuzuki.svg';
 
      /// Car
   static const String  filterIcon = 'assets/icons/FilterIcon.svg';
+  static const String  bodyType = 'assets/icons/bodyType.svg';
+  static const String  capacity = 'assets/icons/Capacity.svg';
+  static const String  carColor = 'assets/icons/CarColor.svg';
+  static const String  CarFuel = 'assets/icons/CarFuel.svg';
+  static const String  carTransmision = 'assets/icons/CarTransmission.svg';
+  static const String  carValue = 'assets/icons/carValue.svg';
+  static const String  condition = 'assets/icons/Condition.svg';
+  static const String  engineSize = 'assets/icons/EngineSize.svg';
+  static const String  makeIcon = 'assets/icons/Make.svg';
+  static const String  milageIcon = 'assets/icons/Milage.svg';
+  static const String  registration = 'assets/icons/registration.svg';
 }

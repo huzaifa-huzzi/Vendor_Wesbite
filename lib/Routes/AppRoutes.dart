@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
 
@@ -20,6 +21,9 @@ class AppNavigation {
           GoRoute(
             path: '/cars',
             builder: (context, state) => CarScreen()),
+          GoRoute(
+              path: '/CarDetail',
+              builder: (context, state) => CarDetailScreen()),
           GoRoute(
             path: '/services',
             builder: (context, state) => const Center(child: Text("Services")),
