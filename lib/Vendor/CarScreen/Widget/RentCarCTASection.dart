@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/PrimaryBtnOfCar.dart';
 
@@ -110,7 +111,7 @@ class RentCarCTASection extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "You are looking to\nrent a car?",
+            TextString.rentSection,
             textAlign: isMobile ? TextAlign.center : TextAlign.left,
             style: TTextTheme.h6StylePrimary(context),
           ),
@@ -152,7 +153,7 @@ class RentCarCTASection extends StatelessWidget {
         color: Colors.white,
       ),
       child: Text(
-        "Discover the Joy of the\nOpen Road.",
+        TextString.rentSectionSubtitle,
         textAlign: isMobile ? TextAlign.center : TextAlign.left,
         style: TTextTheme.bannerBlack(context),
       ),

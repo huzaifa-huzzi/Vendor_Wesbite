@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 
@@ -33,12 +34,12 @@ class CustomCarBanner extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Cars",
+                    TextString.CustomCarTitle,
                     style: TTextTheme.h1Style(context),
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    "Home / Cars",
+                    TextString.CustomCarSubtitle,
                     style: TTextTheme.bodyRegular16white(context),
                   ),
                 ],

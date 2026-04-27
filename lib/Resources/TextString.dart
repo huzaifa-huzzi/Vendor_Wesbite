@@ -57,4 +57,23 @@ class TextString{
   static const String  footerTitle3= "PAYMENT METHOD";
   static const String  footerTitle4= "LEGAL";
   static const String  copyRightText= "© 2026 Car Rental All rights reserved.";
+
+      /// Car Screen
+  static const String  CarFilterTitle= "Filter";
+  static const String  CarTitle= "Select Your Desire Vehicle";
+  static const String  CarSubtitle= "Choose a vehicle category that fits your needs, from compact cars to\nspacious SUVs and luxury options.";
+  static const String  priceRangeWeekly= "Price Range (Weekly)";
+  static const String  carTitle1= "Make";
+  static const String  carTitle2= "Model";
+  static const String  carTitle3= "Engine Size";
+  static const String  carTitle4= "Seats";
+  static const String  carTitle5= "Year";
+  static const String  carTitle6= "Body Type";
+  static const String  carTitle7= "Fuel Type";
+  static const String  carTitle8= "Transmission";
+  static const String  CustomCarTitle= "Cars";
+  static const String  CustomCarSubtitle= "Home / Cars";
+  static const String  PopularSection= "Some Popular Vehicle";
+  static const String  rentSection= "You are looking to\nrent a car?";
+  static const String  rentSectionSubtitle= "Discover the Joy of the\nOpen Road.";
 }

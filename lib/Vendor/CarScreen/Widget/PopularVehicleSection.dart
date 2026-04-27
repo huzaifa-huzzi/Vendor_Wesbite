@@ -5,6 +5,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/PrimaryBtnOfCar.dart';
 
@@ -30,7 +31,7 @@ class PopularVehiclesSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Some Popular Vehicle",
+            TextString.PopularSection,
             style: TTextTheme.h1StyleBlack(context),
           ),
           const SizedBox(height: 40),

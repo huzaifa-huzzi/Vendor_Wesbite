@@ -6,6 +6,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart' show TTextTheme;
 import 'package:vendor_website/Vendor/CarScreen/CarController.dart';
 import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/PAginationBarOfCar.dart';
@@ -239,12 +240,12 @@ class CarListingWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Filter", style: TTextTheme.h2Styleblack(context)),
+              Text(TextString.CarFilterTitle, style: TTextTheme.h2Styleblack(context)),
               const Icon(Icons.tune, color: AppColors.primaryColor, size: 20),
             ],
           ),
           const Divider(height: 30),
-          Text("Price Range (Weekly)", style: TTextTheme.bodySemiBold16black(context)),
+          Text(TextString.priceRangeWeekly, style: TTextTheme.bodySemiBold16black(context)),
           const SizedBox(height: 10),
           Obx(() => Column(
             children: [
@@ -282,14 +283,14 @@ class CarListingWidget extends StatelessWidget {
           )),
 
           const SizedBox(height: 10),
-          _buildSidebarSearchDropdown(context, "Make", controller.selectMake, id: "Make"),
-          _buildSidebarSearchDropdown(context, "Model", controller.selectedModel, id: "Model"),
-          _buildSidebarSearchDropdown(context, "Engine Size", controller.selectedEngine, id: "engine"),
-          _buildSidebarSearchDropdown(context, "Seats", controller.selectedSeats, id: "seats"),
-          _buildSidebarSearchDropdown(context, "Year", controller.selectedYear, id: "year"),
-          _buildSidebarSearchDropdown(context, "Body Type", controller.selectedBody, id: "body"),
-          _buildSidebarSearchDropdown(context, "Fuel Type", controller.selectedFuel, id: "fuel"),
-          _buildSidebarSearchDropdown(context, "Transmission", controller.selectedTrans, id: "trans"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle1 , controller.selectMake, id: "Make"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle2 , controller.selectedModel, id: "Model"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle3 , controller.selectedEngine, id: "engine"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle4 , controller.selectedSeats, id: "seats"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle5 , controller.selectedYear, id: "year"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle6 , controller.selectedBody, id: "body"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle7 , controller.selectedFuel, id: "fuel"),
+          _buildSidebarSearchDropdown(context,TextString.carTitle8 , controller.selectedTrans, id: "trans"),
         ],
       ),
     );
@@ -415,13 +416,13 @@ class CarListingWidget extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "Select Your Desire Vehicle",
+          TextString.CarTitle,
           textAlign: TextAlign.center,
           style: TTextTheme.h1StyleBlack(context),
         ),
         const SizedBox(height: 10),
         Text(
-          "Choose a vehicle category that fits your needs, from compact cars to\nspacious SUVs and luxury options.",
+          TextString.CarSubtitle,
           textAlign: TextAlign.center,
           style: TTextTheme.bodyRegular16black(context),
         ),
