@@ -55,4 +55,16 @@ class IconString{
   static const String  makeIcon = 'assets/icons/Make.svg';
   static const String  milageIcon = 'assets/icons/Milage.svg';
   static const String  registration = 'assets/icons/registration.svg';
+
+   /// Services
+  static const String  servicesAc = 'assets/icons/ServicesAc.svg';
+  static const String  serviceBattery = 'assets/icons/ServicesBattery.svg';
+  static const String  servicesBrake= 'assets/icons/ServicesBrake.svg';
+  static const String  serviceEngine = 'assets/icons/ServicesEngine.svg';
+  static const String  servicesMaintenance = 'assets/icons/ServicesMaintenance.svg';
+  static const String  servicesWheel = 'assets/icons/ServicesWheel.svg';
+  static const String  serviceAvailable = 'assets/icons/AvailablePremium.svg';
+  static const String  servicesTechnology = 'assets/icons/ServicePremium.svg';
+  static const String  servicePremium = 'assets/icons/ServicesWheel.svg';
+  static const String  serviceProfessional = 'assets/icons/ServicesProfessional.svg';
 }

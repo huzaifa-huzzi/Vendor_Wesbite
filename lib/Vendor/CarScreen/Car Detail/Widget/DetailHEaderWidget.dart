@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class DetailHeaderWidget extends StatelessWidget {
@@ -31,7 +32,7 @@ class DetailHeaderWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Car Details",
+                  TextString.carDetails,
                   style: TTextTheme.h6Style(context),
                 ),
                 const SizedBox(height: 10),

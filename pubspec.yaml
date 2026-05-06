@@ -30,6 +30,9 @@ dependencies:
   file_picker: ^10.3.7
   carousel_slider: ^5.1.2
 
+  # Services Screen
+  video_player: ^2.11.1
+
   # State Management
   get: ^4.7.3
 
@@ -49,6 +52,8 @@ flutter:
     - assets/Images/
     - assets/Images/HomeScreen/
     - assets/Images/CarScreen/
+    - assets/Images/Services/
+    - assets/Videos/
 
 
 

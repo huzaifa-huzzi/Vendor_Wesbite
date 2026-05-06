@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
+import 'package:vendor_website/Vendor/Services/Services.dart';
 
 
 class AppNavigation {
@@ -26,8 +27,7 @@ class AppNavigation {
               builder: (context, state) => CarDetailScreen()),
           GoRoute(
             path: '/services',
-            builder: (context, state) => const Center(child: Text("Services")),
-          ),
+            builder: (context, state) => ServicesScreen()),
           GoRoute(
             path: '/About',
             builder: (context, state) => const Center(child: Text("About Us")),

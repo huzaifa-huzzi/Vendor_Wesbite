@@ -30,7 +30,7 @@ class BestOffersSectionWidget extends StatelessWidget {
         children: [
           _buildCategoryHeader(
             context,
-            "Best Price By vehicle Category",
+            TextString.bestOfferTitle,
             onViewAll: () => context.push('/cars'),
           ),
           const SizedBox(height: 30),

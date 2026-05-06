@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart' show TTextTheme;
 
 class CarSpecificationsWidget extends StatelessWidget {
@@ -28,13 +29,13 @@ class CarSpecificationsWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 60),
       child: Column(
         children: [
-          Text("Car Specifications", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.carSpecificationTitle, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              "Explore all the features this vehicle offers, designed to enhance comfort, safety, and overall driving experience.",
+              TextString.carSpecificationSubtitle,
               textAlign: TextAlign.center,
               style: TTextTheme.medium16black(context),
             ),
@@ -87,7 +88,7 @@ class CarSpecificationsWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppColors.signaturePadColor),
       ),

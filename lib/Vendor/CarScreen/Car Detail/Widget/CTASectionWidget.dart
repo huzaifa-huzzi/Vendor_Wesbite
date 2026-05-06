@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 
 import '../../../../Resources/AppColors.dart';
 import '../../../../Resources/ImageString.dart';
@@ -22,7 +23,7 @@ class CTASectionWidget extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      color: Colors.white,
+      color: AppColors.whiteColor,
       padding: EdgeInsets.zero,
       child: Flex(
         direction: isMobile ? Axis.vertical : Axis.horizontal,
@@ -121,7 +122,7 @@ class CTASectionWidget extends StatelessWidget {
                             elevation: 0,
                           ),
                           child: Text(
-                            "Visit Our Office",
+                            TextString.visitOffice,
                             style: TTextTheme.btnTwo(context).copyWith(
                                 color: AppColors.whiteColor,
                                 fontStyle: FontStyle.normal),

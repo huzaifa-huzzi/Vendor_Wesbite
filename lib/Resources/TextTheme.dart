@@ -28,6 +28,10 @@ class TTextTheme {
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
 
+  static TextStyle h1StylePrimaryColor(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
+  }
+
   static TextStyle h6Style(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 44, 46, 48),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
@@ -196,7 +200,7 @@ class TTextTheme {
   }
 
   static TextStyle bodyRegular16(BuildContext context){
-    return _textStyle(fontSize:AppTextSizes.size(context, 16, 16, 16),fontWeight: FontWeight.w400,color: AppColors.tertiaryTextColor);
+    return _textStyle(fontSize:AppTextSizes.size(context, 16, 16, 16),fontWeight: FontWeight.w400,color: AppColors.blackColor);
   }
 
   static TextStyle bodyRegular16white(BuildContext context){

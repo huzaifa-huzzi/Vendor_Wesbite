@@ -76,4 +76,43 @@ class TextString{
   static const String  PopularSection= "Some Popular Vehicle";
   static const String  rentSection= "You are looking to\nrent a car?";
   static const String  rentSectionSubtitle= "Discover the Joy of the\nOpen Road.";
+  static const String  bestOfferTitle= "Best Price By vehicle Category";
+  static const String  hondaCivic= "Honda Civic 2022 EX / Touring";
+  static const String  carRentPerWeek= "\$254/ per Week";
+  static const String  description= "description";
+  static const String  descriptionSubtitle=  "Experience the perfect blend of comfort, performance, and style with this vehicle. Designed to make every journey enjoyable, it offers smooth handling, responsive acceleration, and advanced safety features to keep you confident on the road...";
+  static const String  carSpecificationTitle= "Car Specifications";
+  static const String  carSpecificationSubtitle=  "Explore all the features this vehicle offers, designed to enhance comfort, safety, and overall driving experience.";
+  static const String  visitOffice= "Visit Our Office";
+  static const String  carDetails= "Car Details";
+
+      /// Services
+  static const String  ServicesCarTitle= "Services";
+  static const String  ServicesCarSubtitle= "Home / Services";
+  static const String  ServicesComprehensivetitle= "Comprehensive Car Services";
+  static const String  ServicesComprehensiveSubtitle= "From routine maintenance to expert repairs, we keep every vehicle in top condition for your journey.";
+  static const String  responsiveCarGridTitle=  "Complete Car Care Solutions";
+  static const String  responsiveCarGridSubtitle=  "Our services are designed to maintain performance, enhance safety, and extend the life of your vehicle with expert attention and quality workmanship.";
+  static const String  responsiveCarGridTitle1=  "General Maintenances";
+  static const String  responsiveCarGridSubtitle1=   "Keep your vehicle in top condition with routine maintenance services that ensure safety, performance, and long-term reliability.";
+  static const String  responsiveCarGridTitle2=  "Engine Services";
+  static const String  responsiveCarGridSubtitle2 =    "Engine services include diagnostics, repairs, and maintenance to keep your vehicle running efficiently. Regular care improves performance, fuel efficiency.";
+  static const String  responsiveCarGridTitle3=  "Brake Services";
+  static const String  responsiveCarGridSubtitle3 =  "Ensure your safety on the road with regular brake inspections, repairs, and maintenance for optimal stopping power and reliability.";
+  static const String  responsiveCarGridTitle4=  "Tyre & Wheel Services";
+  static const String  responsiveCarGridSubtitle4 =   "Keep your ride smooth and safe with tyre checks, wheel alignment, balancing, and replacements for optimal performance and handling.";
+  static const String  responsiveCarGridTitle5=  "Ac & Heating Services";
+  static const String  responsiveCarGridSubtitle5 =   "Stay comfortable year-round with expert AC and heating maintenance, repairs, and inspections for a perfectly climate-controlled ride.";
+  static const String  responsiveCarGridTitle6=  "Battery Services";
+  static const String  responsiveCarGridSubtitle6 =  "Keep your vehicle powered with battery testing, replacements, and maintenance for reliable starts every time.";
+  static const String  chooseServiceTitle=  "Why Choose Our Services";
+  static const String  chooseServiceSubtitle =  "Expert care, top-quality tools, and a dedication to keeping your vehicle safe and performing at its best.";
+  static const String  chooseServiceTitle1 = "Best Technology";
+  static const String  chooseServiceSubtitle1 =  "Experience cutting-edge automotive technology designed for safety, performance, and a smarter driving experience.";
+  static const String  chooseServiceTitle2 = "Premium Service";
+  static const String  chooseServiceSubtitle2 =  "Experience our premium service, where every detail is handled to deliver unmatched comfort.";
+  static const String  chooseServiceTitle3 = "Always Available";
+  static const String  chooseServiceSubtitle3 =  "Our team and services are always available, ensuring your vehicle stays in top condition.";
+  static const String  chooseServiceTitle4 = "Professional Team";
+  static const String  chooseServiceSubtitle4 =  "Our professional team delivers expert care and reliable service to keep your vehicle performing.";
 }

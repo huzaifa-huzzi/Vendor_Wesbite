@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppBarController.dart';
+import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/Keys.dart';
 
@@ -62,7 +63,7 @@ class AppDrawer extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: isActive ? const Color(0xFFFF3850) : Colors.black,
+              color: isActive ? AppColors.primaryColor : AppColors.blackColor,
               fontSize: 20,
               fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
             ),

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarController.dart';
 import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/PrimaryBtnOfCar.dart';
@@ -127,16 +128,16 @@ class CarDetailContentWidget extends GetView<CarController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Honda Civic 2022 EX / Touring", style: TTextTheme.h1StyleBlack(context)),
+              Text(TextString.hondaCivic, style: TTextTheme.h1StyleBlack(context)),
               const SizedBox(height: 12),
               _buildBadge(context, "Rent"),
               const SizedBox(height: 8),
-              Text("\$254/ per Week", style: TTextTheme.h6StylePrimary(context)),
+              Text(TextString.carRentPerWeek, style: TTextTheme.h6StylePrimary(context)),
               const SizedBox(height: 20),
-              _buildBadge(context, "Description"),
+              _buildBadge(context, TextString.description),
               const SizedBox(height: 12),
               Text(
-                "Experience the perfect blend of comfort, performance, and style with this vehicle. Designed to make every journey enjoyable, it offers smooth handling, responsive acceleration, and advanced safety features to keep you confident on the road...",
+               TextString.descriptionSubtitle,
                 textAlign: TextAlign.justify,
                 style: TTextTheme.bodyRegular16(context).copyWith(height: 1.5),
               ),
@@ -186,7 +187,7 @@ class CarDetailContentWidget extends GetView<CarController> {
                       height: containerHeight,
                       padding: EdgeInsets.all(isSmall ? 10 : 20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.whiteColor,
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: ClipRRect(

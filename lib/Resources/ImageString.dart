@@ -22,4 +22,10 @@ class ImageString{
   static const String carRight1 = 'assets/Images/CarScreen/CarRight1.png';
   static const String carRight2 = 'assets/Images/CarScreen/CarRight2.png';
   static const String carTyre = 'assets/Images/CarScreen/CarTyre.png';
+
+    /// Services
+  static const String servicesImage = 'assets/Images/Services/ServicesPic.png';
+  static const String serviceTyre = 'assets/Images/Services/ServiceTyre.png';
+  static const String comprehensiveService = 'assets/Images/Services/ComprehensiveSerive.png';
+  static const String serviceVideo1 = 'assets/Videos/ServiceCar.png';
 }
