@@ -67,4 +67,10 @@ class IconString{
   static const String  servicesTechnology = 'assets/icons/ServicePremium.svg';
   static const String  servicePremium = 'assets/icons/ServicesWheel.svg';
   static const String  serviceProfessional = 'assets/icons/ServicesProfessional.svg';
+
+   /// About Us
+  static const String  bookingAboutIcon = 'assets/icons/Booking.png';
+  static const String  driveIcon = 'assets/icons/Drive.png';
+  static const String  returnCar = 'assets/icons/ReturnCar.png';
+  static const String  selectCar = 'assets/icons/SelectCar.png';
 }

@@ -115,4 +115,37 @@ class TextString{
   static const String  chooseServiceSubtitle3 =  "Our team and services are always available, ensuring your vehicle stays in top condition.";
   static const String  chooseServiceTitle4 = "Professional Team";
   static const String  chooseServiceSubtitle4 =  "Our professional team delivers expert care and reliable service to keep your vehicle performing.";
+
+     /// About Us
+  static const String  AboutCarTitle= "About Us";
+  static const String  AboutCarSubtitle= "Home / About Us";
+  static const String  extraOrdinaryTitle= "Where every drive feels extraordinary";
+  static const String  extraOrdinaryTitle1= "Variety Brands";
+  static const String  extraOrdinarySubtitle1= "We offer a diverse selection of top car brands, ensuring quality, comfort, and reliability for every journey.";
+  static const String  extraOrdinaryTitle2= "Awesome Support";
+  static const String  extraOrdinarySubtitle2= "Experience top-tier support designed around your comfort and convenience.";
+  static const String  extraOrdinaryTitle3= "Maximum Freedom";
+  static const String  extraOrdinarySubtitle3= "Enjoy the freedom to travel on your own terms, wherever and whenever you want.";
+  static const String  extraOrdinaryTitle4= "Flexibility On The Go";
+  static const String  extraOrdinarySubtitle4= "Change plans with ease and travel without limits, wherever the road takes you.";
+  static const String  statItem1= "Happy customers";
+  static const String  StatItem2= "Count of cars";
+  static const String  StatItem3= "Years of experience";
+  static const String  Teamtitle=  "Our Team";
+  static const String  TeamSubtitle= "Our experienced and friendly team is here to help you find the perfect car.";
+
+
+     /// Faqs
+  static const String  faqstitle= "Faqs";
+  static const String  faqsSubtitle= "Home / Faqs";
+  static const String  aboutOurService= "About Our Service";
+  static const String  bookingProcess= "Booking Process";
+  static const String  carRequirment= "Cars & Requirements";
+  static const String  pricingAndPayment=  "Pricing and Payments";
+  static const String  driverSafety= "Drivers and Safety";
+  static const String  rentalPolicy= "Rental Policies";
+  static const String  carService= "Car Service";
+  static const String  supportandContact= "Support and Contact";
+  static const String  stillQuestion= "Still have questions?";
+  static const String  stillQuestionSubtitle=  "Find answer most of the question given below";
 }

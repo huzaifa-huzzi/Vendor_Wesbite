@@ -32,6 +32,10 @@ class TTextTheme {
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
 
+  static TextStyle hCounter(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 60, 70, 80),fontWeight: FontWeight.w600,color: AppColors.primaryColor);
+  }
+
   static TextStyle h6Style(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 44, 46, 48),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
@@ -156,6 +160,11 @@ class TTextTheme {
   static TextStyle logoStyle(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 22, 24, 24),fontWeight: FontWeight.w500,color: AppColors.textColor);
   }
+
+  static TextStyle cardsName(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 22, 24, 24),fontWeight: FontWeight.w600,color: AppColors.textColor);
+  }
+
   static TextStyle bodyRegular10(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 16, 17.5, 17.5),fontWeight: FontWeight.w400,color: AppColors.tertiaryTextColor);
   }
@@ -201,6 +210,10 @@ class TTextTheme {
 
   static TextStyle bodyRegular16(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 16, 16, 16),fontWeight: FontWeight.w400,color: AppColors.blackColor);
+  }
+
+  static TextStyle bodyRegular16Table(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 16, 16, 16),fontWeight: FontWeight.w400,color: AppColors.quadrantalTextColor);
   }
 
   static TextStyle bodyRegular16white(BuildContext context){
@@ -258,6 +271,10 @@ class TTextTheme {
 
   static TextStyle medium14tableHeading(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 14, 14, 14),fontWeight: FontWeight.w500,color: AppColors.tableHeading);
+  }
+
+  static TextStyle medium16Primary(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 14, 15, 16),fontWeight: FontWeight.w500,color: AppColors.primaryColor);
   }
 
   static TextStyle medium14White(BuildContext context){

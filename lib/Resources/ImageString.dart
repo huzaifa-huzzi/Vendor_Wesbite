@@ -28,4 +28,13 @@ class ImageString{
   static const String serviceTyre = 'assets/Images/Services/ServiceTyre.png';
   static const String comprehensiveService = 'assets/Images/Services/ComprehensiveSerive.png';
   static const String serviceVideo1 = 'assets/Videos/ServiceCar.png';
+   /// About
+  static const String amelia = 'assets/Images/About/Amelia.png';
+  static const String chloe = 'assets/Images/About/chloe.png';
+  static const String emily = 'assets/Images/About/Emily.png';
+  static const String ethan = 'assets/Images/About/Ethan.png';
+  static const String jack = 'assets/Images/About/Jack.png';
+  static const String liam = 'assets/Images/About/Liam.png';
+  static const String lucas = 'assets/Images/About/Lucas.png';
+  static const String sophie = 'assets/Images/About/Sophie.png';
 }
