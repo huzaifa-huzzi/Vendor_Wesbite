@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
 import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';

@@ -67,7 +67,7 @@ class TeamSection extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: screenWidth > 1200 ? 200 : 220,
               child: ClipRRect(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/AboutUs/AboutUsController.dart';
 
@@ -58,10 +59,10 @@ class HowItWorksWeb extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    _stepRow(context,1, "Select Car", "Browse our fleet and choose the car that suits your needs.", IconString.selectCar, controller, isMobile, stepHeight),
-                    _stepRow(context,2, "Drive", "Step into your selected car and experience the ultimate comfort.", IconString.driveIcon, controller, isMobile, stepHeight),
-                    _stepRow(context,3, "Booking", "Plan your rental by selecting your dates and preferred car.", IconString.bookingAboutIcon, controller, isMobile, stepHeight),
-                    _stepRow(context,4, "Return", "Simply return the car at our office for a seamless experience.", IconString.returnCar, controller, isMobile, stepHeight),
+                    _stepRow(context,1,TextString.aboutHeaderTitle1,TextString.aboutHeaderSubtitle1 , IconString.selectCar, controller, isMobile, stepHeight),
+                    _stepRow(context,2,TextString.aboutHeaderTitle2 ,TextString.aboutHeaderSubtitle22 , IconString.driveIcon, controller, isMobile, stepHeight),
+                    _stepRow(context,3,TextString.aboutHeaderTitle3 , TextString.aboutHeaderSubtitle3, IconString.bookingAboutIcon, controller, isMobile, stepHeight),
+                    _stepRow(context,4,TextString.aboutHeaderTitle4 , TextString.aboutHeaderSubtitle4, IconString.returnCar, controller, isMobile, stepHeight),
                   ],
                 ),
               ],
@@ -88,7 +89,7 @@ class HowItWorksWeb extends StatelessWidget {
     final bool textOnRight = isMobile || step.isOdd;
     final double centerSpacerWidth = isMobile ? 60 : 100;
 
-    return Container(
+    return SizedBox(
       key: controller.stepKeys[step - 1],
       height: stepHeight,
       child: Obx(() {
@@ -225,12 +226,6 @@ class HowItWorksWeb extends StatelessWidget {
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 400),
                   padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: isActive
-                        ? AppColors.primaryColor
-                        : AppColors.backgroundOfScreenColor,
-                    shape: BoxShape.circle,
-                  ),
                   child: Image.asset(
                     icon,
                     color: isActive
@@ -265,17 +260,17 @@ class HowItWorksWeb extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "How it work",
+            TextString.aboutHeaderTitle,
             style: TTextTheme.h1StyleBlack(context)
           ),
           const SizedBox(height: 6),
           Text(
-            "Browse our cars, select the one that fits your needs.",
-            style: TTextTheme.medium16white(context),
+            TextString.aboutHeaderSubtitle,
+            style: TTextTheme.medium16black(context),
           ),
           const SizedBox(height: 14),
           Text(
-            "Our streamlined rental process makes it easy to choose, book, and drive.",
+              TextString.aboutHeaderSubtitle2,
             style: TTextTheme.h2PrimaryStyle(context)
           ),
         ],
@@ -289,11 +284,11 @@ class HowItWorksWeb extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                  Text(
-                  "How it work",
+                   TextString.aboutHeaderTitle,
                   style: TTextTheme.h1StyleBlack(context),
                 ),
                 Text(
-                  "Browse our cars, select the one that fits your needs.",
+                  TextString.aboutHeaderSubtitle,
                   style: TTextTheme.medium16white(context),
                 ),
               ],
@@ -303,7 +298,7 @@ class HowItWorksWeb extends StatelessWidget {
            SizedBox(
             width: 300,
             child: Text(
-              "Our streamlined rental process makes it easy to choose, book, and drive.",
+                TextString.aboutHeaderSubtitle2,
               style: TTextTheme.h2PrimaryStyle(context)
             ),
           ),

@@ -205,7 +205,7 @@ class HeroSection extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        selected.value.isEmpty ? "$label" : selected.value,
+                        selected.value.isEmpty ? label : selected.value,
                         style: TTextTheme.bodyRegular16black(context),
                       ),
                     ),

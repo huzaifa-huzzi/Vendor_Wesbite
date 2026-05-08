@@ -118,6 +118,17 @@ class TextString{
 
      /// About Us
   static const String  AboutCarTitle= "About Us";
+  static const String  aboutHeaderTitle= "How it work";
+  static const String  aboutHeaderSubtitle= "Browse our cars, select the one that fits your needs.";
+  static const String  aboutHeaderSubtitle2= "Our streamlined rental process makes it easy to choose, book, and drive.";
+  static const String  aboutHeaderTitle1=  "Select Car";
+  static const String  aboutHeaderSubtitle1= "Browse our fleet and choose the car that suits your needs.";
+  static const String  aboutHeaderTitle2=  "Drive";
+  static const String  aboutHeaderSubtitle22= "Step into your selected car and experience the ultimate comfort.";
+  static const String  aboutHeaderTitle3=  "Booking";
+  static const String  aboutHeaderSubtitle3= "Plan your rental by selecting your dates and preferred car.";
+  static const String  aboutHeaderTitle4 =  "Return";
+  static const String  aboutHeaderSubtitle4 = "Simply return the car at our office for a seamless experience.";
   static const String  AboutCarSubtitle= "Home / About Us";
   static const String  extraOrdinaryTitle= "Where every drive feels extraordinary";
   static const String  extraOrdinaryTitle1= "Variety Brands";

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/AppBars/AppDrawer.dart';
 import 'package:vendor_website/AppBars/WebAppBar.dart';
-import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/MainFooterWidget.dart';
-import 'package:vendor_website/Vendor/CarScreen/ResubaleWidget/NewsLetterSection.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/MainFooterWidgetServices.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/NewsLetterServiceSection.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
