@@ -37,4 +37,7 @@ class ImageString{
   static const String liam = 'assets/Images/About/Liam.png';
   static const String lucas = 'assets/Images/About/Lucas.png';
   static const String sophie = 'assets/Images/About/Sophie.png';
+
+   /// Contact
+  static const String contactPic1 = 'assets/Images/Contact/ContactPic1.png';
 }

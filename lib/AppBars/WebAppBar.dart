@@ -97,7 +97,7 @@ import 'package:flutter_svg/flutter_svg.dart';
     return PrimaryBtnOfAppbars(
       height: 45,
       text: "Contact us",
-      onTap: () => controller.setActive("Contact"),
+      onTap: () => context.go('/contactUs'),
       borderRadius: BorderRadius.circular(10),
       icon: SvgPicture.asset(
         IconString.contact,

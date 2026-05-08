@@ -32,6 +32,11 @@ class TTextTheme {
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
 
+
+  static TextStyle hContactService(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 32, 34, 36),fontWeight: FontWeight.w600,color: AppColors.textColor);
+  }
+
   static TextStyle hCounter(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 60, 70, 80),fontWeight: FontWeight.w600,color: AppColors.primaryColor);
   }
@@ -155,6 +160,10 @@ class TTextTheme {
 
   static TextStyle h2MediumStyle(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 20, 20, 20),fontWeight: FontWeight.w500,color: AppColors.textColor);
+  }
+
+  static TextStyle hContactServicesSubtitle(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 20, 20, 20),fontWeight: FontWeight.w400,color: AppColors.secondTextColor);
   }
 
   static TextStyle logoStyle(BuildContext context){

@@ -159,4 +159,8 @@ class TextString{
   static const String  supportandContact= "Support and Contact";
   static const String  stillQuestion= "Still have questions?";
   static const String  stillQuestionSubtitle=  "Find answer most of the question given below";
+
+    /// Contact Page
+  static const String  contactTitle= "Contact Us";
+  static const String  contactSubtitle= "Home / Contact Us";
 }

@@ -2,6 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
 import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
+import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
+import 'package:vendor_website/Vendor/ContactUs/Widget/ContactUsScreenWidget.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
 import 'package:vendor_website/Vendor/Services/Services.dart';
@@ -35,6 +37,10 @@ class AppNavigation {
           GoRoute(
             path: '/FAQs',
             builder: (context, state) => FaqsScreen()),
+
+          GoRoute(
+              path: '/contactUs',
+              builder: (context, state) => ContactUsScreen()),
         ],
       ),
     ],

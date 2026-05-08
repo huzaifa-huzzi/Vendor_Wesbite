@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/AppBars/AppBarController.dart';
 import 'package:vendor_website/AppBars/Widgets/PrimaryBtnOfAppbars.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
@@ -49,7 +50,7 @@ class TabAppBar extends StatelessWidget {
       height: 45,
       text: "Sign up",
       onTap: () {
-        controller.setActive("Signup");
+        context.go('/contactUs');
       },
       borderRadius: BorderRadius.circular(10),
       icon: SvgPicture.asset(

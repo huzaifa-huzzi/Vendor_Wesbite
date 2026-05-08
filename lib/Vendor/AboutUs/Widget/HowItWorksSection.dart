@@ -266,7 +266,7 @@ class HowItWorksWeb extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             TextString.aboutHeaderSubtitle,
-            style: TTextTheme.medium16black(context),
+            style: TTextTheme.medium16black(context).copyWith(color: AppColors.blackColor),
           ),
           const SizedBox(height: 14),
           Text(
