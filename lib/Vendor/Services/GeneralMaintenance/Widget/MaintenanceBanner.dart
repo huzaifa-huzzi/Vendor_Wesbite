@@ -19,9 +19,6 @@ class MaintenanceBanner extends StatelessWidget {
       final service = controller.selectedService.value;
 
       final String title = service != null ? "General Maintenance" : TextString.ServicesCarTitle;
-      final String breadcrumb = service != null
-          ? "Home / Services / Services Types / Service Detail"
-          : "Home / Services / Services Types";
       final String bgImage = service != null
           ? ImageString.keyBenefitPic
           : ImageString.generalBackground;
@@ -65,10 +62,37 @@ class MaintenanceBanner extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                       const SizedBox(height: 5),
-                      Text(
-                        breadcrumb,
-                        style: TTextTheme.bodyRegular16white(context),
-                        textAlign: TextAlign.left,
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () {
+                                if (service != null) {
+                                  controller.resetService();
+                                }
+                              },
+                              child: Text(
+                                "Services Types",
+                                style: TTextTheme.bodyRegular16white(context).copyWith(
+                                  decoration: service != null ? TextDecoration.underline : TextDecoration.none,
+                                  fontWeight: service == null ? FontWeight.bold : FontWeight.normal,
+                                ),
+                              ),
+                            ),
+                          ),
+                          if (service != null) ...[
+                            Text(" / ", style: TTextTheme.bodyRegular16white(context)),
+                            Text(
+                              "Service Detail",
+                              style: TTextTheme.bodyRegular16white(context).copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ],
                       ),
                     ],
                   ),

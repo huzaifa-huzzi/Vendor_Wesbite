@@ -51,7 +51,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
       {
         "number": "03",
         "title": "Fluid Check & Top-Up",
-        "desc": "Regular fluid checks and top-ups ensure that all vital fluids in your vehicle, including engine oil, coolant, brake fluid, and transmission fluid, are maintained at their optimal levels. This essential service not only keeps your car running smoothly and efficiently but also protects critical engine and transmission components from wear and damage.",
+        "desc": "Regular fluid checks and top-ups ensure that all vital fluids in your vehicle, including engine oil, coolant, brake fluid, and transmission fluid, are maintained at their optimal levels.",
         "imagePath": ImageString.fluidCheck,
         "time": "30-45 Min",
         "priceRange": "\$40-\$90",
@@ -79,7 +79,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
       {
         "number": "05",
         "title": "Vehicle Inspection",
-        "desc": "A vehicle inspection involves a thorough check of all key components, including brakes, tyres, engine, and fluid levels, to ensure everything is functioning properly and safely. This comprehensive assessment helps identify any signs of wear, damage, or potential issues before they become serious problems.",
+        "desc": "A vehicle inspection involves a thorough check of all key components, including brakes, tyres, engine, and fluid levels, to ensure everything is functioning properly and safely.",
         "imagePath": ImageString.vehicleInspection,
         "time": "30-45 Min",
         "priceRange": "\$40-\$90",
@@ -93,7 +93,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
       {
         "number": "06",
         "title": "Spark Plug Replacement",
-        "desc": "Spark plug replacement ensures proper ignition within your engine, allowing it to start smoothly and run efficiently under all conditions. Over time, worn or dirty spark plugs can lead to misfires, reduced performance, and increased fuel consumption.",
+        "desc": "Spark plug replacement ensures proper ignition within your engine, allowing it to start smoothly and run efficiently under all conditions.",
         "imagePath": ImageString.sparkPlug,
         "time": "30-45 Min",
         "priceRange": "\$40-\$90",
@@ -185,8 +185,8 @@ class GeneralMaintenancesGrid extends StatelessWidget {
 
     return Container(
       width: cardWidth,
-      constraints: const BoxConstraints(minWidth: 280),
-      padding: EdgeInsets.all(isTiny ? 16 : 24),
+      constraints: const BoxConstraints(minWidth: 380),
+      padding: EdgeInsets.all(isTiny ? 16 : 30),
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(16),
@@ -216,11 +216,11 @@ class GeneralMaintenancesGrid extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           SizedBox(
-            height: isMobile ? 120 : 100,
+            height: isMobile ? 120 : 150,
             child: Text(
               desc,
               style: TTextTheme.bodyRegular16(context),
-              maxLines: 7,
+              maxLines: 10,
               overflow: TextOverflow.ellipsis,
             ),
           ),
