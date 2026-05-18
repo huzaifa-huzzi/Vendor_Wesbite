@@ -163,4 +163,28 @@ class TextString{
     /// Contact Page
   static const String  contactTitle= "Contact Us";
   static const String  contactSubtitle= "Home / Contact Us";
+  static const String  contactTitle2= "Contact Information";
+  static const String  contactSubtitle2= "Our friendly team would love to hear from you.";
+  static const String  contactTitlettile1= "Phone";
+  static const String  contactTitleValue1= "+1 430 042 030";
+  static const String  contactTitleSubtitle1= "Call us during working hours for quick assistance";
+  static const String  contactTitlettile2= "Email";
+  static const String  contactTitleValue2= "softsnip@gmail.com";
+  static const String  contactTitleSubtitle2= "Send us your queries anytime, and we'll respond as soon as possible";
+  static const String  contactTitlettile3= "Working Hours";
+  static const String  contactTitleValue3= "Monday – Friday: 9:00 AM – 7:00 PM";
+  static const String  contactTitleSubtitle3= "We are available at your service";
+  static const String  contactFormTitle= "Get in touch";
+  static const String  contactFormSubtitle= "Our friendly team would love to hear from you.";
+  static const String  firstName= "First Name";
+  static const String  lastName= "Last Name";
+  static const String  email= "Email";
+  static const String  message= "Message";
+  static const String  phoneNumber= "Phone Number";
+  static const String  location1Title= "Spare parts store";
+  static const String  location1Subtitle= "Mon-Sat 9am to 5pm.";
+  static const String  location2Title="Rental Showroom";
+  static const String  location2Subtitle= "Mon-Fri 9am to 5pm.";
+  static const String  location3Title="Head office";
+  static const String  location3Subtitle= "Mon-Fri 9am to 5pm.";
 }

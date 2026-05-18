@@ -33,6 +33,9 @@ dependencies:
   # Services Screen
   video_player: ^2.11.1
 
+  # Contact Screen
+  google_maps_flutter: ^2.17.0
+
   # State Management
   get: ^4.7.3
 

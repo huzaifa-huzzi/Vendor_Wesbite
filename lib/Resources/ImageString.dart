@@ -28,6 +28,13 @@ class ImageString{
   static const String serviceTyre = 'assets/Images/Services/ServiceTyre.png';
   static const String comprehensiveService = 'assets/Images/Services/ComprehensiveSerive.png';
   static const String serviceVideo1 = 'assets/Videos/ServiceCar.png';
+  static const String generalBackground = 'assets/Images/Services/generalBackground.png';
+  static const String engineTune = 'assets/Images/Services/EngineTune.png';
+  static const String filterReplacment = 'assets/Images/Services/FilterReplacment.png';
+  static const String fluidCheck = 'assets/Images/Services/FluidCheck.png';
+  static const String oilChange = 'assets/Images/Services/OilChange.png';
+  static const String sparkPlug = 'assets/Images/Services/SparkPlug.png';
+  static const String vehicleInspection = 'assets/Images/Services/VehicleInspection.png';
    /// About
   static const String amelia = 'assets/Images/About/Amelia.png';
   static const String chloe = 'assets/Images/About/chloe.png';
@@ -40,4 +47,7 @@ class ImageString{
 
    /// Contact
   static const String contactPic1 = 'assets/Images/Contact/ContactPic1.png';
+  static const String contactInfoside = 'assets/Images/Contact/ContactInfoSide.png';
+  static const String UnderMaintenanceImage = 'assets/Images/Services/404Error2.png';
+  static const String keyBenefitPic = 'assets/Images/Services/KeyBenefitPic.png';
 }

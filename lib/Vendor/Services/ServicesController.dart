@@ -41,6 +41,21 @@ class ServicesController extends GetxController {
   var currentTestimonialIndex = 0.obs;
   final CarouselSliderController carouselController = CarouselSliderController();
 
+
+   /// View Details Screen
+  // Selected service hold karne ke liye observable variable
+  var selectedService = Rxn<Map<String, dynamic>>();
+
+  // Service select karne ka function
+  void selectService(Map<String, dynamic> service) {
+    selectedService.value = service;
+  }
+
+  // Back jane ka function
+  void resetService() {
+    selectedService.value = null;
+  }
+
   @override
   void onClose() {
     videoController.dispose();

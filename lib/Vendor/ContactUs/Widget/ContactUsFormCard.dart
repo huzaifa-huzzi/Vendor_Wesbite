@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsController.dart' show ContactUsController;
 import 'package:vendor_website/Vendor/ContactUs/Reusable%20Widget/PrimaryBtnOfContact.dart';
@@ -11,7 +12,7 @@ class ContactUsFormCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<ContactUsController>();
+    final controller = Get.put(ContactUsController());
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -67,29 +68,29 @@ class ContactUsFormCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Get in touch", style: TTextTheme.hContactService(context)),
+        Text(TextString.contactFormTitle, style: TTextTheme.hContactService(context)),
         const SizedBox(height: 12),
         Text(
-            "Our friendly team would love to hear from you.",
+            TextString.contactFormSubtitle,
             style: TTextTheme.hContactServicesSubtitle(context)
         ),
         const SizedBox(height: 40),
         Row(
           children: [
-            Expanded(child: _buildField(context, "First name", "First name", controller.firstName)),
+            Expanded(child: _buildField(context, TextString.firstName, TextString.firstName, controller.firstName)),
             const SizedBox(width: 20),
-            Expanded(child: _buildField(context, "Last name", "Last name", controller.lastName)),
+            Expanded(child: _buildField(context, TextString.lastName,TextString.lastName, controller.lastName)),
           ],
         ),
         const SizedBox(height: 24),
 
-        _buildField(context, "Email", "you@company.com", controller.email),
+        _buildField(context, TextString.email, "you@company.com", controller.email),
         const SizedBox(height: 24),
 
-        _buildField(context, "Phone number", "+1 (555) 000-0000", controller.phone, prefix: "US ▼"),
+        _buildField(context, TextString.phoneNumber, "+1 (555) 000-0000", controller.phone, prefix: "US ▼"),
         const SizedBox(height: 24),
 
-        _buildField(context, "Message", "Leave us a message...", controller.message, maxLines: 5),
+        _buildField(context, TextString.message, "Leave us a message...", controller.message, maxLines: 5),
         const SizedBox(height: 30),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,

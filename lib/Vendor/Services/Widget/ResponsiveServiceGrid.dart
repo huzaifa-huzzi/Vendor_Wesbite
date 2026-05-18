@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextString.dart';
@@ -13,7 +14,6 @@ class ResponsiveServicesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
     final bool isTiny = screenWidth <= 300;
 
     return Container(
@@ -26,7 +26,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
       child: Column(
         children: [
           Text(
-        TextString.responsiveCarGridTitle,
+            TextString.responsiveCarGridTitle,
             textAlign: TextAlign.center,
             style: TTextTheme.h1StyleBlack(context),
           ),
@@ -48,45 +48,63 @@ class ResponsiveServicesGrid extends StatelessWidget {
             children: [
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle1,
-                TextString.responsiveCarGridSubtitle2,
-                IconString.servicesMaintenance,
-                isTiny,
+                title: TextString.responsiveCarGridTitle1,
+                desc: TextString.responsiveCarGridSubtitle2,
+                icon: IconString.servicesMaintenance,
+                isTiny: isTiny,
+                onTap: () {
+                  context.go('/generalMaintenance');
+                },
               ),
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle2,
-                TextString.responsiveCarGridSubtitle2,
-                IconString.serviceEngine,
-                isTiny,
+                title: TextString.responsiveCarGridTitle2,
+                desc: TextString.responsiveCarGridSubtitle2,
+                icon: IconString.serviceEngine,
+                isTiny: isTiny,
+                onTap: () {
+                  print("Engine Service clicked");
+                },
               ),
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle3,
-                TextString.responsiveCarGridSubtitle3,
-                IconString.servicesBrake,
-                isTiny,
+                title: TextString.responsiveCarGridTitle3,
+                desc: TextString.responsiveCarGridSubtitle3,
+                icon: IconString.servicesBrake,
+                isTiny: isTiny,
+                onTap: () {
+                  print("Brake Service clicked");
+                },
               ),
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle4,
-                TextString.responsiveCarGridSubtitle4,
-                IconString.servicesWheel,
-                isTiny,
+                title: TextString.responsiveCarGridTitle4,
+                desc: TextString.responsiveCarGridSubtitle4,
+                icon: IconString.servicesWheel,
+                isTiny: isTiny,
+                onTap: () {
+                  print("Wheel Service clicked");
+                },
               ),
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle5,
-                TextString.responsiveCarGridSubtitle5,
-                IconString.servicesAc,
-                isTiny,
+                title: TextString.responsiveCarGridTitle5,
+                desc: TextString.responsiveCarGridSubtitle5,
+                icon: IconString.servicesAc,
+                isTiny: isTiny,
+                onTap: () {
+                  print("AC Service clicked");
+                },
               ),
               _buildCard(
                 context,
-                TextString.responsiveCarGridTitle6,
-                TextString.responsiveCarGridSubtitle6,
-                IconString.serviceBattery,
-                isTiny,
+                title: TextString.responsiveCarGridTitle6,
+                desc: TextString.responsiveCarGridSubtitle6,
+                icon: IconString.serviceBattery,
+                isTiny: isTiny,
+                onTap: () {
+                  print("Battery Service clicked");
+                },
               ),
             ],
           ),
@@ -95,10 +113,15 @@ class ResponsiveServicesGrid extends StatelessWidget {
     );
   }
 
-  /// -------- Extra Widget ------ ///
-
-  //  CARD WIDGET
-  Widget _buildCard(BuildContext context, String title, String desc, String icon, bool isTiny) {
+  /// -------- CARD WIDGET ------ ///
+  Widget _buildCard(
+      BuildContext context, {
+        required String title,
+        required String desc,
+        required String icon,
+        required bool isTiny,
+        required VoidCallback onTap,
+      }) {
     final screenWidth = MediaQuery.of(context).size.width;
 
     double cardWidth;
@@ -118,7 +141,6 @@ class ResponsiveServicesGrid extends StatelessWidget {
         color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.tertiaryTextColor.withOpacity(0.3)),
-
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +151,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
               color: AppColors.backgroundOfScreenColor,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: SvgPicture.asset(icon,width: 20,height: 20,),
+            child: SvgPicture.asset(icon, width: 20, height: 20),
           ),
           const SizedBox(height: 20),
           Text(
@@ -139,21 +161,29 @@ class ResponsiveServicesGrid extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             desc,
-            style: TTextTheme.bodyRegular16(context)
+            style: TTextTheme.bodyRegular16(context),
           ),
           const SizedBox(height: 20),
           InkWell(
-            onTap: () {},
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "View Services",
-                  style: TTextTheme.bodySemiBold16(context)
-                ),
-                const SizedBox(width: 8),
-                Icon(Icons.arrow_forward, size: isTiny ? 14 : 16, color: AppColors.primaryColor),
-              ],
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(4),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "View Services",
+                    style: TTextTheme.bodySemiBold16(context),
+                  ),
+                  const SizedBox(width: 8),
+                  Icon(
+                    Icons.arrow_forward,
+                    size: isTiny ? 14 : 16,
+                    color: AppColors.primaryColor,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
