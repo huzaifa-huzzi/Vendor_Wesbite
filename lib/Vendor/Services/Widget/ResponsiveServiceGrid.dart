@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -63,7 +61,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
                 icon: IconString.serviceEngine,
                 isTiny: isTiny,
                 onTap: () {
-                  print("Engine Service clicked");
+                  context.go('/engineServices');
                 },
               ),
               _buildCard(
@@ -73,7 +71,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
                 icon: IconString.servicesBrake,
                 isTiny: isTiny,
                 onTap: () {
-                  print("Brake Service clicked");
+                  context.go('/brakeService');
                 },
               ),
               _buildCard(

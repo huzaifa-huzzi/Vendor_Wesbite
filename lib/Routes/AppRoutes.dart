@@ -7,6 +7,8 @@ import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/Widget/ContactUsScreenWidget.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
+import 'package:vendor_website/Vendor/Services/BrakeService/BrakeService.dart';
+import 'package:vendor_website/Vendor/Services/Engineservices/EngineServices.dart';
 import 'package:vendor_website/Vendor/Services/GeneralMaintenance/GeneralMaintenance.dart';
 import 'package:vendor_website/Vendor/Services/Services.dart';
 
@@ -45,6 +47,14 @@ class AppNavigation {
           GoRoute(
             path: '/generalMaintenance',
             builder: (context, state) => GeneralMaintenance(),
+          ),
+          GoRoute(
+            path: '/engineServices',
+            builder: (context, state) => EngineServices(),
+          ),
+          GoRoute(
+            path: '/brakeService',
+            builder: (context, state) => BrakeService(),
           ),
           GoRoute(
             path: '/About',

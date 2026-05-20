@@ -3,7 +3,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
-
 class ServicesController extends GetxController {
   late VideoPlayerController videoController;
   var isInitialized = false.obs;
@@ -42,18 +41,40 @@ class ServicesController extends GetxController {
   final CarouselSliderController carouselController = CarouselSliderController();
 
 
-   /// View Details Screen
-  // Selected service hold karne ke liye observable variable
+  /// ---------- Services States ---------- ///
+
+  // 1. General Maintenance State
   var selectedService = Rxn<Map<String, dynamic>>();
 
-  // Service select karne ka function
   void selectService(Map<String, dynamic> service) {
     selectedService.value = service;
   }
 
-  // Back jane ka function
   void resetService() {
     selectedService.value = null;
+  }
+
+  // 2. Engine Services State
+  var selectedEngineService = Rxn<Map<String, dynamic>>();
+
+  void selectEngineService(Map<String, dynamic> service) {
+    selectedEngineService.value = service;
+  }
+
+  void resetEngineService() {
+    selectedEngineService.value = null;
+  }
+
+  // 3. Brake Services
+  // 3. Brake Services State (NEWLY ADDED)
+  var selectedBrakeService = Rxn<Map<String, dynamic>>();
+
+  void selectBrakeService(Map<String, dynamic> service) {
+    selectedBrakeService.value = service;
+  }
+
+  void resetBrakeService() {
+    selectedBrakeService.value = null;
   }
 
   @override
