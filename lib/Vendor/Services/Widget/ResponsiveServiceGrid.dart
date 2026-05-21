@@ -101,7 +101,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
                 icon: IconString.serviceBattery,
                 isTiny: isTiny,
                 onTap: () {
-                  print("Battery Service clicked");
+                  context.go('/batteryServices');
                 },
               ),
             ],

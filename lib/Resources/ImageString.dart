@@ -81,6 +81,25 @@ class ImageString{
   static const String cabinFilter = 'assets/Images/Services/Cabin Filter.png';
   static const String compressorRepair = 'assets/Images/Services/CompressorRepair.png';
   static const String condensorRepair = 'assets/Images/Services/CondensorRepair.png';
+  static const String acGas1 = 'assets/Images/Services/AcGas1.png';
+  static const String acInspection1 = 'assets/Images/Services/AcInspection1.png';
+  static const String cabinFilter1 = 'assets/Images/Services/CabinFilter1.png';
+  static const String compressorRepair1 = 'assets/Images/Services/CompressorRepair1.png';
+  static const String condensorRepair1 = 'assets/Images/Services/CondensorRepair1.png';
+  static const String heaterRepair1 = 'assets/Images/Services/HeaterRepair1.png';
+  static const String batteryBackground = 'assets/Images/Services/BatteryBackground.png';
+  static const String alternatorRepair = 'assets/Images/Services/AlternatorRepair.png';
+  static const String batteryCharging = 'assets/Images/Services/BatteryCharging.png';
+  static const String batteryReplacement = 'assets/Images/Services/BatteryReplacment.png';
+  static const String fuseReplacment = 'assets/Images/Services/FuseReplacment.png';
+  static const String starterMotor = 'assets/Images/Services/StarterMotor.png';
+  static const String wiringInspection = 'assets/Images/Services/HeaterRepair1.png';
+  static const String starterMotor1 = 'assets/Images/Services/starterMotor1.png';
+  static const String wiringInspection1 = 'assets/Images/Services/WiringInspection1.png';
+  static const String fuseReplacment1 = 'assets/Images/Services/FuseReplacment1.png';
+  static const String batteryReplacment1 = 'assets/Images/Services/BatteryReplacment1.png';
+  static const String batteryCharging1 = 'assets/Images/Services/BatteryCharging1.png';
+  static const String alternatorRepair1 = 'assets/Images/Services/AlternatorRepair1.png';
    /// About
   static const String amelia = 'assets/Images/About/Amelia.png';
   static const String chloe = 'assets/Images/About/chloe.png';

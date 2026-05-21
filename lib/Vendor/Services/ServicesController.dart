@@ -97,6 +97,17 @@ class ServicesController extends GetxController {
     selectedAcService.value = null;
   }
 
+  // 6. Battery Services State Management
+  var selectedBatteryService = Rxn<Map<String, dynamic>>();
+
+  void selectBatteryService(Map<String, dynamic> service) {
+    selectedBatteryService.value = service;
+  }
+
+  void resetBatteryService() {
+    selectedBatteryService.value = null;
+  }
+
   @override
   void onClose() {
     videoController.dispose();

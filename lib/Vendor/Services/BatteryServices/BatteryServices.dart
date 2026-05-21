@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/AppBars/AppDrawer.dart';
 import 'package:vendor_website/AppBars/WebAppBar.dart';
-import 'package:vendor_website/Vendor/Services/AcServices/Widget/AcBanner.dart';
-import 'package:vendor_website/Vendor/Services/AcServices/Widget/AcKeyBenefitSection.dart';
-import 'package:vendor_website/Vendor/Services/AcServices/Widget/AcServicesGrids.dart';
-import 'package:vendor_website/Vendor/Services/AcServices/Widget/ResponsiveVideoAcServices.dart';
-import 'package:vendor_website/Vendor/Services/AcServices/Widget/WhyChooseAcServices.dart';
+import 'package:vendor_website/Vendor/Services/BatteryServices/Widget/BatteryBanner.dart';
+import 'package:vendor_website/Vendor/Services/BatteryServices/Widget/BatteryKeyBenefitSection.dart';
+import 'package:vendor_website/Vendor/Services/BatteryServices/Widget/BatteryServicesGrid.dart';
+import 'package:vendor_website/Vendor/Services/BatteryServices/Widget/ResponsiveVideoBatterySection.dart';
+import 'package:vendor_website/Vendor/Services/BatteryServices/Widget/WhyChooseBatteryService.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/MainFooterWidgetServices.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/NewsLetterServiceSection.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
 
 
-class AcServices extends StatelessWidget {
-  const AcServices({super.key});
+
+
+
+class BatteryServices extends StatelessWidget {
+  const BatteryServices({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +29,19 @@ class AcServices extends StatelessWidget {
         child: Column(
           children: [
             WebAppBar(scaffoldKey: scaffoldKey),
-            AcBanner(),
+            BatteryBanner(),
             SizedBox(height: 50,),
-            AcServicesGrid(),
+            BatteryServicesGrid(),
             SizedBox(height: 50,),
-            AcKeyBenefitsSection(),
+            BatteryKeyBenefitsSection(),
             SizedBox(height: 30,),
-            WhyChooseAcServices(),
+            WhyChooseBatteryService(),
             SizedBox(height: 50,),
-            ResponsiveVideoAcServices(),
+            ResponisveVideoBatterySection(),
             SizedBox(height: 50,),
             NewsletterServiceSectionWidget(),
             MainFooterWidetServices(),
+
           ],
         ),
       ),
