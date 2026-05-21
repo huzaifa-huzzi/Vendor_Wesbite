@@ -61,6 +61,26 @@ class ImageString{
   static const String brakePad1 = 'assets/Images/Services/BrakePad1.png';
   static const String diagnosticOne = 'assets/Images/Services/Diagnostic1.png';
   static const String discRotor1 = 'assets/Images/Services/DiscRotor1.png';
+  static const String tyreBackground = 'assets/Images/Services/tyreBackground.png';
+  static const String punctureRepair = 'assets/Images/Services/PunctureRepair.png';
+  static const String rimRepair = 'assets/Images/Services/RimRepair.png';
+  static const String tyreAlignment = 'assets/Images/Services/TyreAlignment.png';
+  static const String tyreBalancing = 'assets/Images/Services/TyreBalancing.png';
+  static const String tyreReplacement = 'assets/Images/Services/TyreReplacment.png';
+  static const String tyreRotation = 'assets/Images/Services/TyreRotation.png';
+  static const String puncture1 = 'assets/Images/Services/Puncture1.png';
+  static const String rimRepair1 = 'assets/Images/Services/RimRepair1.png';
+  static const String tyreAlignment1 = 'assets/Images/Services/tyreAlignment1.png';
+  static const String tyreBalancing1 = 'assets/Images/Services/tyreBalancing1.png';
+  static const String tyreReplacemant1 = 'assets/Images/Services/tyreReplacment1.png';
+  static const String tyreRotation1 = 'assets/Images/Services/tyreRotation1.png';
+  static const String acBackground = 'assets/Images/Services/Ac background.png';
+  static const String heaterRepair = 'assets/Images/Services/Heater Repair.png';
+  static const String acGas = 'assets/Images/Services/AcGas.png';
+  static const String acInspection = 'assets/Images/Services/AcInspection.png';
+  static const String cabinFilter = 'assets/Images/Services/Cabin Filter.png';
+  static const String compressorRepair = 'assets/Images/Services/CompressorRepair.png';
+  static const String condensorRepair = 'assets/Images/Services/CondensorRepair.png';
    /// About
   static const String amelia = 'assets/Images/About/Amelia.png';
   static const String chloe = 'assets/Images/About/chloe.png';

@@ -66,7 +66,6 @@ class ServicesController extends GetxController {
   }
 
   // 3. Brake Services
-  // 3. Brake Services State (NEWLY ADDED)
   var selectedBrakeService = Rxn<Map<String, dynamic>>();
 
   void selectBrakeService(Map<String, dynamic> service) {
@@ -75,6 +74,27 @@ class ServicesController extends GetxController {
 
   void resetBrakeService() {
     selectedBrakeService.value = null;
+  }
+  // 4. Tyre Services State
+  var selectedTyreService = Rxn<Map<String, dynamic>>();
+
+  void selectTyreService(Map<String, dynamic> service) {
+    selectedTyreService.value = service;
+  }
+
+  void resetTyreService() {
+    selectedTyreService.value = null;
+  }
+
+  // 5. AC Services State Management
+  var selectedAcService = Rxn<Map<String, dynamic>>();
+
+  void selectAcService(Map<String, dynamic> service) {
+    selectedAcService.value = service;
+  }
+
+  void resetAcService() {
+    selectedAcService.value = null;
   }
 
   @override

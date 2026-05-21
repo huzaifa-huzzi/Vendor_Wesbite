@@ -81,7 +81,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
                 icon: IconString.servicesWheel,
                 isTiny: isTiny,
                 onTap: () {
-                  print("Wheel Service clicked");
+                  context.go('/tyreService');
                 },
               ),
               _buildCard(
@@ -91,7 +91,7 @@ class ResponsiveServicesGrid extends StatelessWidget {
                 icon: IconString.servicesAc,
                 isTiny: isTiny,
                 onTap: () {
-                  print("AC Service clicked");
+                  context.go('/acServices');
                 },
               ),
               _buildCard(
