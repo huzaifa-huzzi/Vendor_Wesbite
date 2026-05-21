@@ -4,7 +4,6 @@ import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
 import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
-import 'package:vendor_website/Vendor/ContactUs/Widget/ContactUsScreenWidget.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
 import 'package:vendor_website/Vendor/Services/AcServices/AcServices.dart';
@@ -14,8 +13,6 @@ import 'package:vendor_website/Vendor/Services/Engineservices/EngineServices.dar
 import 'package:vendor_website/Vendor/Services/GeneralMaintenance/GeneralMaintenance.dart';
 import 'package:vendor_website/Vendor/Services/Services.dart';
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Vendor/Services/TyreService/TyreService.dart';
 
 class AppNavigation {
