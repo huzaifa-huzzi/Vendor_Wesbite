@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/PrimaryBtnOServices.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
@@ -122,7 +123,7 @@ class BatteryServicesGrid extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Battery and Electrical Services",
+              TextString.batteryTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -130,7 +131,7 @@ class BatteryServicesGrid extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Ensure dependable starting power, eliminate parasitic electrical drains, and maximize charging efficiency with our precision computerized testing, premium battery replacements, and advanced alternator diagnostics.",
+             TextString.batterySubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),
@@ -286,7 +287,7 @@ class BatteryServicesGrid extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        "Service Detail",
+                       TextString.tyreServiceDetail,
                         style: TTextTheme.medium16white(context),
                       ),
                     ),
@@ -316,7 +317,7 @@ class BatteryServicesGrid extends StatelessWidget {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  "What's Included",
+                  TextString.whatsIncluded,
                   style: TTextTheme.h1StyleBlack(context).copyWith(fontSize: isMobile ? 32 : 40, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -325,7 +326,7 @@ class BatteryServicesGrid extends StatelessWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Text(
-                    "Keep your vehicle running smoothly and reliably with our complete car service. From routine maintenance to full system checks, we ensure every part of your car stays in top condition.",
+                    TextString.whatsIncludedSubtitle,
                     textAlign: TextAlign.center,
                     style: TTextTheme.bodyRegular16(context),
                   ),

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
 import 'package:vendor_website/Resources/IconString.dart';
+import 'package:vendor_website/Resources/TextString.dart' show TextString;
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/PrimaryBtnOServices.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
@@ -121,7 +122,7 @@ class BrakeServicesGrid extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Brake Services",
+              TextString.brakeSerivesTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -129,7 +130,7 @@ class BrakeServicesGrid extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Maintain optimal stopping power and road safety with our specialized brake system diagnostics, premium replacements, and hydraulic flushes.",
+               TextString.brakeSerivesSubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),
@@ -285,7 +286,7 @@ class BrakeServicesGrid extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        "Service Detail",
+                       TextString.tyreServiceDetail,
                         style: TTextTheme.medium16white(context),
                       ),
                     ),
@@ -315,7 +316,7 @@ class BrakeServicesGrid extends StatelessWidget {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  "What's Included",
+                  TextString.whatsIncluded,
                   style: TTextTheme.h1StyleBlack(context).copyWith(fontSize: isMobile ? 32 : 40, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -324,7 +325,7 @@ class BrakeServicesGrid extends StatelessWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Text(
-                    "Keep your vehicle running smoothly and reliably with our complete car service. From routine maintenance to full system checks, we ensure every part of your car stays in top condition.",
+                    TextString.whatsIncludedSubtitle,
                     textAlign: TextAlign.center,
                     style: TTextTheme.bodyRegular16(context),
                   ),

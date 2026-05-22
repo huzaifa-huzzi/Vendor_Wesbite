@@ -4,6 +4,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/PrimaryBtnOServices.dart';
 import 'package:get/get.dart';
@@ -123,7 +124,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "General Maintenances",
+             TextString.maintenanceTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -131,7 +132,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Keep your vehicle in top condition with routine maintenance services that ensure safety, performance, and long-term reliability.",
+         TextString.maintenanceSubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),
@@ -288,7 +289,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        "Service Detail",
+                        TextString.tyreServiceDetail,
                         style: TTextTheme.medium16white(context),
                       ),
                     ),
@@ -319,7 +320,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  "What's Include",
+                  TextString.whatsIncluded,
                   style: TTextTheme.h1StyleBlack(context).copyWith(fontSize: isMobile ? 32 : 40, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -328,7 +329,7 @@ class GeneralMaintenancesGrid extends StatelessWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Text(
-                    "Keep your vehicle running smoothly and reliably with our complete car service. From routine maintenance to full system checks, we ensure every part of your car stays in top condition.",
+                  TextString.whatsIncludedSubtitle,
                     textAlign: TextAlign.center,
                     style: TTextTheme.bodyRegular16(context),
                   ),

@@ -17,7 +17,7 @@ class BrakeBanner extends StatelessWidget {
 
     return Obx(() {
       final brakeService = controller.selectedBrakeService.value;
-      final String title = brakeService != null ? "Brake Services" : TextString.ServicesCarTitle;
+      final String title = brakeService != null ? TextString.brakeSerivesTitle : TextString.ServicesCarTitle;
       final String bgImage = brakeService != null
           ? ImageString.brakeServiceBackground
           : ImageString.generalBackground;
@@ -64,7 +64,7 @@ class BrakeBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          Text(TextString.servicestitle, style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
@@ -76,7 +76,7 @@ class BrakeBanner extends StatelessWidget {
                                 }
                               },
                               child: Text(
-                                "Services Types",
+                                TextString.servicesTypes,
                                 style: TTextTheme.bodyRegular16white(context).copyWith(
                                   decoration: brakeService != null ? TextDecoration.underline : TextDecoration.none,
                                   fontWeight: brakeService == null ? FontWeight.bold : FontWeight.normal,
@@ -87,7 +87,7 @@ class BrakeBanner extends StatelessWidget {
                           if (brakeService != null) ...[
                             Text(" / ", style: TTextTheme.bodyRegular16white(context)),
                             Text(
-                              "Service Detail",
+                              TextString.tyreServiceDetail,
                               style: TTextTheme.bodyRegular16white(context).copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

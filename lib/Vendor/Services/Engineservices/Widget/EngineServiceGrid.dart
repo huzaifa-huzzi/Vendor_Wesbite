@@ -5,6 +5,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/Reusable%20Widget/PrimaryBtnOServices.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
@@ -122,7 +123,7 @@ class EngineServicesGrid extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Engine Services",
+              TextString.engineServiceTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -130,7 +131,7 @@ class EngineServicesGrid extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Engine services include diagnostics, repairs, and maintenance to keep your vehicle running efficiently. Regular care improves performance and fuel efficiency.",
+             TextString.engineServiceTitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),
@@ -287,7 +288,7 @@ class EngineServicesGrid extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        "Service Detail",
+                        TextString.tyreServiceDetail,
                         style: TTextTheme.medium16white(context),
                       ),
                     ),
@@ -317,7 +318,7 @@ class EngineServicesGrid extends StatelessWidget {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  "What's Include",
+                  TextString.whatsIncluded,
                   style: TTextTheme.h1StyleBlack(context).copyWith(fontSize: isMobile ? 32 : 40, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -326,7 +327,7 @@ class EngineServicesGrid extends StatelessWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Text(
-                    "Keep your vehicle running smoothly and reliably with our complete car service. From routine maintenance to full system checks, we ensure every part of your car stays in top condition.",
+                   TextString.whatsIncludedSubtitle,
                     textAlign: TextAlign.center,
                     style: TTextTheme.bodyRegular16(context),
                   ),

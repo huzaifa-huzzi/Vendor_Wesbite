@@ -115,6 +115,28 @@ class TextString{
   static const String  chooseServiceSubtitle3 =  "Our team and services are always available, ensuring your vehicle stays in top condition.";
   static const String  chooseServiceTitle4 = "Professional Team";
   static const String  chooseServiceSubtitle4 =  "Our professional team delivers expert care and reliable service to keep your vehicle performing.";
+  static const String  tyreBannerTitle = "Tyre and Wheel Services";
+  static const String  tyreKeyBenefitTitle = "Key benefits";
+  static const String  tyreKeyBenefitSubtitle =  "Highlighting the essential advantages of our services to ensure better performance, safety, and reliability for your vehicle.";
+  static const String  tyreServiceTitle = "Tyre and wheel  Services";
+  static const String  tyreServiceSubtitle =    "Optimize road grip, improve fuel efficiency, and maximize tread lifespan with our precision computerized alignments, balancing, and premium replacements.";
+  static const String  tyreServiceDetail = "Service Detail";
+  static const String  whatsIncluded =  "What's Included";
+  static const String  whatsIncludedSubtitle =     "Keep your vehicle running smoothly and reliably with our complete car service. From routine maintenance to full system checks, we ensure every part of your car stays in top condition.";
+  static const String  maintenanceTitle =  "General Maintenances";
+  static const String  maintenanceSubtitle =         "Keep your vehicle in top condition with routine maintenance services that ensure safety, performance, and long-term reliability.";
+  static const String  servicesTypes =   "Services Types";
+  static const String  servicestitle =   "Home / Services / ";
+  static const String  engineServiceTitle = "Engine Services";
+  static const String  engineServiceSubtitle =    "Engine services include diagnostics, repairs, and maintenance to keep your vehicle running efficiently. Regular care improves performance and fuel efficiency.";
+  static const String  brakeSerivesTitle = "Brake Services";
+  static const String  brakeSerivesSubtitle =  "Maintain optimal stopping power and road safety with our specialized brake system diagnostics, premium replacements, and hydraulic flushes.";
+  static const String  batteryServiceTitle = "Battery Services";
+  static const String  batteryTitle = "Battery and Electrical Services";
+  static const String  batterySubtitle =   "Ensure dependable starting power, eliminate parasitic electrical drains, and maximize charging efficiency with our precision computerized testing, premium battery replacements, and advanced alternator diagnostics.";
+  static const String  acTitle = "Ac and Heating Services";
+  static const String  acSubtitle =    "Restore crisp cooling efficiency, eliminate unpleasant odors, and ensure accurate climate management across every journey with our professional diagnostics, leak detection, and precision system recharges.";
+
 
      /// About Us
   static const String  AboutCarTitle= "About Us";

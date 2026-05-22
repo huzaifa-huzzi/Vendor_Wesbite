@@ -21,7 +21,7 @@ class AcBanner extends StatelessWidget {
     return Obx(() {
       final acService = controller.selectedAcService.value;
       final String title = acService != null
-          ? "Ac and Heating Services"
+          ? TextString.acTitle
           : TextString.ServicesCarTitle;
       final String bgImage = acService != null
           ? ImageString.acBackground
@@ -69,7 +69,7 @@ class AcBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ",
+                          Text(TextString.servicestitle,
                               style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
@@ -82,7 +82,7 @@ class AcBanner extends StatelessWidget {
                                 }
                               },
                               child: Text(
-                                "Services Types",
+                                TextString.servicesTypes,
                                 style: TTextTheme
                                     .bodyRegular16white(context)
                                     .copyWith(
@@ -98,7 +98,7 @@ class AcBanner extends StatelessWidget {
                             Text(" / ",
                                 style: TTextTheme.bodyRegular16white(context)),
                             Text(
-                              "Service Detail",
+                              TextString.tyreServiceDetail,
                               style: TTextTheme
                                   .bodyRegular16white(context)
                                   .copyWith(

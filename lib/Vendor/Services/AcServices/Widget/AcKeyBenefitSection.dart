@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
 import '../../../../Resources/ImageString.dart' show ImageString;
@@ -90,7 +91,7 @@ class AcKeyBenefitsSection extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Key benefits",
+              TextString.tyreKeyBenefitTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -98,7 +99,7 @@ class AcKeyBenefitsSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Highlighting the essential advantages of our air conditioning services to ensure precise stopping cooling efficiency, passenger safety comfort, and maximum control over your vehicle climate system.",
+                TextString.tyreKeyBenefitSubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),

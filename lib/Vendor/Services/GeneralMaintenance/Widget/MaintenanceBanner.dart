@@ -18,7 +18,7 @@ class MaintenanceBanner extends StatelessWidget {
     return Obx(() {
       final service = controller.selectedService.value;
 
-      final String title = service != null ? "General Maintenance" : TextString.ServicesCarTitle;
+      final String title = service != null ? TextString.maintenanceTitle : TextString.ServicesCarTitle;
       final String bgImage = service != null
           ? ImageString.keyBenefitPic
           : ImageString.generalBackground;
@@ -65,7 +65,7 @@ class MaintenanceBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          Text(TextString.servicestitle, style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
@@ -75,7 +75,7 @@ class MaintenanceBanner extends StatelessWidget {
                                 }
                               },
                               child: Text(
-                                "Services Types",
+                               TextString.servicesTypes,
                                 style: TTextTheme.bodyRegular16white(context).copyWith(
                                   decoration: service != null ? TextDecoration.underline : TextDecoration.none,
                                   fontWeight: service == null ? FontWeight.bold : FontWeight.normal,
@@ -86,7 +86,7 @@ class MaintenanceBanner extends StatelessWidget {
                           if (service != null) ...[
                             Text(" / ", style: TTextTheme.bodyRegular16white(context)),
                             Text(
-                              "Service Detail",
+                              TextString.servicesTypes,
                               style: TTextTheme.bodyRegular16white(context).copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

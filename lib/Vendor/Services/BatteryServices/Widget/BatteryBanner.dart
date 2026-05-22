@@ -18,7 +18,7 @@ class BatteryBanner extends StatelessWidget {
     return Obx(() {
       final batteryService = controller.selectedBatteryService.value;
 
-      final String title = batteryService != null ? "Battery Services" : TextString.ServicesCarTitle;
+      final String title = batteryService != null ? TextString.batteryServiceTitle : TextString.ServicesCarTitle;
 
       final String bgImage = batteryService != null
           ? ImageString.batteryBackground
@@ -66,7 +66,7 @@ class BatteryBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          Text(TextString.servicestitle, style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
@@ -78,7 +78,7 @@ class BatteryBanner extends StatelessWidget {
                                 }
                               },
                               child: Text(
-                                "Services Types",
+                                TextString.servicesTypes,
                                 style: TTextTheme.bodyRegular16white(context).copyWith(
                                   decoration: batteryService != null ? TextDecoration.underline : TextDecoration.none,
                                   fontWeight: batteryService == null ? FontWeight.bold : FontWeight.normal,
@@ -89,7 +89,7 @@ class BatteryBanner extends StatelessWidget {
                           if (batteryService != null) ...[
                             Text(" / ", style: TTextTheme.bodyRegular16white(context)),
                             Text(
-                              "Service Detail",
+                              TextString.tyreServiceDetail,
                               style: TTextTheme.bodyRegular16white(context).copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

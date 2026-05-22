@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/ImageString.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/Services/ServicesController.dart';
 
@@ -91,7 +92,7 @@ class BatteryKeyBenefitsSection extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Key benefits",
+              TextString.tyreKeyBenefitTitle,
               textAlign: TextAlign.center,
               style: TTextTheme.h1StyleBlack(context),
             ),
@@ -99,7 +100,7 @@ class BatteryKeyBenefitsSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 700),
               child: Text(
-                "Highlighting the essential advantages of our services to ensure better performance, safety, and reliability for your vehicle.",
+               TextString.tyreKeyBenefitSubtitle,
                 textAlign: TextAlign.center,
                 style: TTextTheme.medium16black(context),
               ),

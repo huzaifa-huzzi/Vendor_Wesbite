@@ -18,7 +18,7 @@ class TyreBanner extends StatelessWidget {
     return Obx(() {
       final tyreService = controller.selectedTyreService.value;
 
-      final String title = tyreService != null ? "Tyre and Wheel Services" : TextString.ServicesCarTitle;
+      final String title = tyreService != null ? TextString.tyreBannerTitle : TextString.ServicesCarTitle;
 
       final String bgImage = tyreService != null
           ? ImageString.tyreBackground
@@ -66,7 +66,7 @@ class TyreBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          Text(TextString.servicestitle, style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
@@ -78,7 +78,7 @@ class TyreBanner extends StatelessWidget {
                                 }
                               },
                               child: Text(
-                                "Services Types",
+                                TextString.servicesTypes,
                                 style: TTextTheme.bodyRegular16white(context).copyWith(
                                   decoration: tyreService != null ? TextDecoration.underline : TextDecoration.none,
                                   fontWeight: tyreService == null ? FontWeight.bold : FontWeight.normal,
@@ -89,7 +89,7 @@ class TyreBanner extends StatelessWidget {
                           if (tyreService != null) ...[
                             Text(" / ", style: TTextTheme.bodyRegular16white(context)),
                             Text(
-                              "Service Detail",
+                              TextString.tyreServiceDetail,
                               style: TTextTheme.bodyRegular16white(context).copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
