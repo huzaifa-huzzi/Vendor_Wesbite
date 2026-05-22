@@ -35,6 +35,8 @@ dependencies:
 
   # Contact Screen
   google_maps_flutter: ^2.17.0
+  flutter_map: ^6.0.0
+  latlong2: ^0.9.1
 
   # State Management
   get: ^4.7.3

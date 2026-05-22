@@ -6,6 +6,7 @@ import 'package:vendor_website/Vendor/ContactUs/Reusable%20Widget/NewsletterCont
 import 'package:vendor_website/Vendor/ContactUs/Widget/ContactInformationCardWidget.dart';
 import 'package:vendor_website/Vendor/ContactUs/Widget/ContactUsCustomBanner.dart';
 import 'package:vendor_website/Vendor/ContactUs/Widget/ContactUsFormCard.dart';
+import 'package:vendor_website/Vendor/ContactUs/Widget/ourLocationCard.dart';
 
 
 class ContactUsScreenWidget extends StatelessWidget {
@@ -27,8 +28,8 @@ class ContactUsScreenWidget extends StatelessWidget {
             SizedBox(height: 80,),
             ContactInformationCard(),
             SizedBox(height: 80,),
-           // OurLocationCard(),
-            SizedBox(height: 80,),
+            OurLocationCard(),
+            SizedBox(height: 120,),
             NewsletterContactWidget(),
             MainFooterContactWidget(),
 

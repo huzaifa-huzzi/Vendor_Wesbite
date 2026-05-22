@@ -209,4 +209,6 @@ class TextString{
   static const String  location2Subtitle= "Mon-Fri 9am to 5pm.";
   static const String  location3Title="Head office";
   static const String  location3Subtitle= "Mon-Fri 9am to 5pm.";
+  static const String  locationTitle = "Our Location";
+  static const String  locationSubtitle =  "Visit our office for bookings and assistance. Our team is ready to help you with all your car rental needs.";
 }
