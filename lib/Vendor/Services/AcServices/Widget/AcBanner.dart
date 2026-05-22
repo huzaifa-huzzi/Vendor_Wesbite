@@ -11,13 +11,18 @@ class AcBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery
+        .of(context)
+        .size
+        .width;
     final double bannerHeight = screenWidth < 600 ? 190 : 230;
     final controller = Get.find<ServicesController>();
 
     return Obx(() {
       final acService = controller.selectedAcService.value;
-      final String title = acService != null ? "Ac and Heating Services" : TextString.ServicesCarTitle;
+      final String title = acService != null
+          ? "Ac and Heating Services"
+          : TextString.ServicesCarTitle;
       final String bgImage = acService != null
           ? ImageString.acBackground
           : ImageString.generalBackground;
@@ -64,7 +69,8 @@ class AcBanner extends StatelessWidget {
                       Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text("Home / Services / ", style: TTextTheme.bodyRegular16white(context)),
+                          Text("Home / Services / ",
+                              style: TTextTheme.bodyRegular16white(context)),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
@@ -77,18 +83,25 @@ class AcBanner extends StatelessWidget {
                               },
                               child: Text(
                                 "Services Types",
-                                style: TTextTheme.bodyRegular16white(context).copyWith(
-                                  decoration: acService != null ? TextDecoration.underline : TextDecoration.none,
-                                  fontWeight: acService == null ? FontWeight.bold : FontWeight.normal,
+                                style: TTextTheme
+                                    .bodyRegular16white(context)
+                                    .copyWith(
+                                  decoration: acService != null ? TextDecoration
+                                      .underline : TextDecoration.none,
+                                  fontWeight: acService == null ? FontWeight
+                                      .bold : FontWeight.normal,
                                 ),
                               ),
                             ),
                           ),
                           if (acService != null) ...[
-                            Text(" / ", style: TTextTheme.bodyRegular16white(context)),
+                            Text(" / ",
+                                style: TTextTheme.bodyRegular16white(context)),
                             Text(
                               "Service Detail",
-                              style: TTextTheme.bodyRegular16white(context).copyWith(
+                              style: TTextTheme
+                                  .bodyRegular16white(context)
+                                  .copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
