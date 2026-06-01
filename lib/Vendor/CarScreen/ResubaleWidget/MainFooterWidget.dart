@@ -68,7 +68,7 @@ class MainFooterWidget extends StatelessWidget {
               ]),
               _buildFooterColumn(context, TextString.footerTitle2, [
                 _FooterLink(title: "Help Center", onTap: () => context.go('/help')),
-                _FooterLink(title: "Cancellation & Return policy", onTap: () => context.go('/policy')),
+                _FooterLink(title: "Cancellation & Return policy", onTap: () => context.go('/returnPolicy')),
               ]),
               _buildFooterColumn(context, TextString.footerTitle3, [
                 _FooterLink(title: "Accepted Payments", onTap: () => context.go('/payments')),

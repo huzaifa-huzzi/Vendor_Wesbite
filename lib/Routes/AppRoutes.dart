@@ -5,6 +5,7 @@ import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
+import 'package:vendor_website/Vendor/FooterSection/ReturnPolicy/ReturnPolicy.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
 import 'package:vendor_website/Vendor/Services/AcServices/AcServices.dart';
 import 'package:vendor_website/Vendor/Services/BatteryServices/BatteryServices.dart';
@@ -79,6 +80,11 @@ class AppNavigation {
           GoRoute(
             path: '/contactUs',
             builder: (context, state) => ContactUsScreen(),
+          ),
+           /// Footer PAges
+          GoRoute(
+            path: '/returnPolicy',
+            builder: (context, state) => ReturnPolicy(),
           ),
         ],
       ),

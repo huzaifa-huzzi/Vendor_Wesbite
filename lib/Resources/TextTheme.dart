@@ -32,6 +32,10 @@ class TTextTheme {
     return _textStyle(fontSize:AppTextSizes.size(context, 35, 38, 40),fontWeight: FontWeight.w600,color: AppColors.whiteColor);
   }
 
+  static TextStyle titleinputTextField(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 11, 13, 14),fontWeight: FontWeight.w500,color: AppColors.textColor,
+    );
+  }
   static TextStyle numbering(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 28, 30, 32),fontWeight: FontWeight.w600,color: AppColors.primaryColor);
   }
@@ -334,6 +338,10 @@ class TTextTheme {
 
   static TextStyle tableMedium14(BuildContext context){
     return _textStyle(fontSize:AppTextSizes.size(context, 14, 14, 14),fontWeight: FontWeight.w500,color: AppColors.tableHeading);
+  }
+
+  static TextStyle tableRegular18(BuildContext context){
+    return _textStyle(fontSize:AppTextSizes.size(context, 16, 18, 18),fontWeight: FontWeight.w400,color: AppColors.textColor);
   }
 
 

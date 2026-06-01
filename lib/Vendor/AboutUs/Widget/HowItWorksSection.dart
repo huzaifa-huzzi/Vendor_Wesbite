@@ -289,7 +289,7 @@ class HowItWorksWeb extends StatelessWidget {
                 ),
                 Text(
                   TextString.aboutHeaderSubtitle,
-                  style: TTextTheme.medium16white(context),
+                  style: TTextTheme.medium16white(context).copyWith(color: AppColors.blackColor),
                 ),
               ],
             ),

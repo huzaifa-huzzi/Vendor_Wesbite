@@ -53,7 +53,7 @@ class ContactInformationCard extends StatelessWidget {
     );
   }
 
-   /// --------- Extra Widget --------- ///
+  /// --------- Extra Widget --------- ///
 
   // Image Side
   Widget _buildImageSide({required bool isMobile}) {
@@ -74,7 +74,7 @@ class ContactInformationCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-      TextString.contactTitle2,
+          TextString.contactTitle2,
           style: TTextTheme.h1StyleBlack(context),
         ),
         const SizedBox(height: 12),
@@ -92,11 +92,11 @@ class ContactInformationCard extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         _buildInfoRow(
-          context,
-          icon: IconString.emailContact,
-          title: TextString.contactTitlettile2,
-          value:TextString.contactTitleValue2 ,
-          subtitle: TextString.contactTitleSubtitle2
+            context,
+            icon: IconString.emailContact,
+            title: TextString.contactTitlettile2,
+            value:TextString.contactTitleValue2 ,
+            subtitle: TextString.contactTitleSubtitle2
         ),
         const SizedBox(height: 24),
         _buildInfoRow(

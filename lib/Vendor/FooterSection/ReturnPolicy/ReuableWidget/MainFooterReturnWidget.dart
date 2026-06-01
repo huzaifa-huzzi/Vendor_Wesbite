@@ -10,12 +10,12 @@ import 'package:vendor_website/Routes/AppRoutes.dart';
 import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
-import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
+import 'package:vendor_website/Vendor/Faqs/Faqs.dart' show FaqsScreen;
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
-import 'package:vendor_website/Vendor/Services/Services.dart';
+import 'package:vendor_website/Vendor/Services/Services.dart' show ServicesScreen;
 
-class MainFooterFaqWidget extends StatelessWidget {
-  const MainFooterFaqWidget({super.key});
+class MainFooterReturnWidget extends StatelessWidget {
+  const MainFooterReturnWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
