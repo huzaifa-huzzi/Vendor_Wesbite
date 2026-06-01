@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
+import 'package:vendor_website/Routes/AppRoutes.dart';
+import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart' show AboutUsScreen;
+import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
+import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
+import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
+import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
+import 'package:vendor_website/Vendor/Services/Services.dart';
 
 class MainFooterAboutWidget extends StatelessWidget {
   const MainFooterAboutWidget({super.key});
@@ -56,17 +65,25 @@ class MainFooterAboutWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              _buildFooterColumn(context, TextString.footerTitle1,
-                  ["Home", "Cars", "Service", "About Us", "Faqs"]),
-              _buildFooterColumn(context, TextString.footerTitle2,
-                  ["Help Center", "Cancellation & Return policy"]),
-              _buildFooterColumn(context, TextString.footerTitle3,
-                  ["Accepted Payments"]),
+              _buildFooterColumn(context, TextString.footerTitle1, [
+                _FooterLink(title: "Home", onTap: () => AppNavigation.router.go('/')),
+                _FooterLink(title: "Cars", onTap: () => context.go('/cars')),
+                _FooterLink(title: "Service", onTap: () => context.go('/services')),
+                _FooterLink(title: "About Us", onTap: () => context.go('/About')),
+                _FooterLink(title: "Faqs", onTap: () => context.go('/FAQs')),
+              ]),
+              _buildFooterColumn(context, TextString.footerTitle2, [
+                _FooterLink(title: "Help Center", onTap: () => context.go('/help')),
+                _FooterLink(title: "Cancellation & Return policy", onTap: () => context.go('/policy')),
+              ]),
+              _buildFooterColumn(context, TextString.footerTitle3, [
+                _FooterLink(title: "Accepted Payments", onTap: () => context.go('/payments')),
+              ]),
               _buildFooterColumn(context, TextString.footerTitle4, [
-                "Terms & Conditions",
-                "Privacy Polices",
-                "Licenses",
-                "Contact"
+                _FooterLink(title: "Terms & Conditions", onTap: () => context.go('/terms')),
+                _FooterLink(title: "Privacy Polices", onTap: () => context.go('/privacy')),
+                _FooterLink(title: "Licenses", onTap: () => context.go('/licenses')),
+                _FooterLink(title: "Contact", onTap: () => context.go('/contactUs')),
               ]),
             ],
           ),
@@ -79,7 +96,7 @@ class MainFooterAboutWidget extends StatelessWidget {
             children: [
               _buildCopyrightText(context),
               if (isMobile) const SizedBox(height: 20),
-              _buildSocialIcons(),
+              _buildSocialIcons(context),
             ],
           ),
         ],
@@ -88,7 +105,7 @@ class MainFooterAboutWidget extends StatelessWidget {
   }
 
   /// ---- Extra Widget
-  Widget _buildFooterColumn(BuildContext context, String title, List<String> links) {
+  Widget _buildFooterColumn(BuildContext context, String title, List<_FooterLink> links) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -99,41 +116,52 @@ class MainFooterAboutWidget extends StatelessWidget {
         const SizedBox(height: 25),
         ...links.map((link) => Padding(
           padding: const EdgeInsets.only(bottom: 12),
-          child: Text(
-            link,
-            style: TTextTheme.bodySemiBold14White(context),
+          child: InkWell(
+            onTap: link.onTap,
+            mouseCursor: SystemMouseCursors.click,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            child: Text(
+              link.title,
+              style: TTextTheme.bodySemiBold14White(context),
+            ),
           ),
         )),
       ],
     );
   }
 
-  Widget _buildSocialIcons() {
+  Widget _buildSocialIcons(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        _socialIcon(IconString.twitter),
+        _socialIcon(IconString.twitter, () => context.go('/twitter')),
         const SizedBox(width: 20),
-        _socialIcon(IconString.linkedin),
+        _socialIcon(IconString.linkedin, () => context.go('/linkedin')),
         const SizedBox(width: 20),
-        _socialIcon(IconString.facebook),
+        _socialIcon(IconString.facebook, () => context.go('/facebook')),
         const SizedBox(width: 20),
-        _socialIcon(IconString.github),
+        _socialIcon(IconString.github, () => context.go('/github')),
         const SizedBox(width: 20),
-        _socialIcon(IconString.second),
+        _socialIcon(IconString.second, () => context.go('/second')),
         const SizedBox(width: 20),
-        _socialIcon(IconString.dribble),
+        _socialIcon(IconString.dribble, () => context.go('/dribble')),
       ],
     );
   }
 
-  Widget _socialIcon(String svgPath) {
-    return SvgPicture.asset(
-      svgPath,
-      colorFilter: const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
-      width: 20,
-      height: 20,
-      placeholderBuilder: (context) => const SizedBox(width: 20, height: 20),
+  Widget _socialIcon(String svgPath, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      mouseCursor: SystemMouseCursors.click,
+      child: SvgPicture.asset(
+        svgPath,
+        colorFilter: const ColorFilter.mode(AppColors.whiteColor, BlendMode.srcIn),
+        width: 20,
+        height: 20,
+        placeholderBuilder: (context) => const SizedBox(width: 20, height: 20),
+      ),
     );
   }
 
@@ -143,4 +171,11 @@ class MainFooterAboutWidget extends StatelessWidget {
         style: TTextTheme.bodyRegular16white(context)
     );
   }
+}
+
+class _FooterLink {
+  final String title;
+  final VoidCallback onTap;
+
+  _FooterLink({required this.title, required this.onTap});
 }
