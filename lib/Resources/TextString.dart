@@ -216,4 +216,10 @@ class TextString{
   // return Policy
   static const String  returnTitle= "Cancellation and Return Policy";
 
+   // Accepted payment
+  static const String  AcceptedPaymenttitle= "Accepted Payment";
+
+   // Term and Condition
+  static const String  termAndCondtionTitle= "Term and Condition";
+
 }

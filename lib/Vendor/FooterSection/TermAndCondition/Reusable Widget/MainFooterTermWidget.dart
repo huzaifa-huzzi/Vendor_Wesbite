@@ -7,15 +7,15 @@ import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Routes/AppRoutes.dart';
-import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart' show AboutUsScreen;
+import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
-import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
+import 'package:vendor_website/Vendor/Faqs/Faqs.dart' show FaqsScreen;
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
-import 'package:vendor_website/Vendor/Services/Services.dart';
+import 'package:vendor_website/Vendor/Services/Services.dart' show ServicesScreen;
 
-class MainFooterAboutWidget extends StatelessWidget {
-  const MainFooterAboutWidget({super.key});
+class MainFooterTermWidget extends StatelessWidget {
+  const MainFooterTermWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

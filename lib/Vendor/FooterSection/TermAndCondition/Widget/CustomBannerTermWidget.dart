@@ -7,8 +7,8 @@ import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Routes/AppRoutes.dart';
 
 
-class CustomReturnPolicyWidget extends StatelessWidget {
-  const CustomReturnPolicyWidget({super.key});
+class CustomBannerTermWidget extends StatelessWidget {
+  const CustomBannerTermWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class CustomReturnPolicyWidget extends StatelessWidget {
                 children: [
                   // Main Title
                   Text(
-                    TextString.returnTitle,
+                    TextString.termAndCondtionTitle,
                     style: TTextTheme.h1Style(context),
                   ),
                   const SizedBox(height: 8),
@@ -49,8 +49,8 @@ class CustomReturnPolicyWidget extends StatelessWidget {
                         onTap: () => AppNavigation.router.go('/'),
                         mouseCursor: SystemMouseCursors.click,
                         child: Text(
-                          "Home",
-                          style: TTextTheme.bodyRegular16white(context)
+                            "Home",
+                            style: TTextTheme.bodyRegular16white(context)
                         ),
                       ),
                       Text(
@@ -61,8 +61,8 @@ class CustomReturnPolicyWidget extends StatelessWidget {
                         ),
                       ),
                       Text(
-                          TextString.returnTitle,
-                        style: TTextTheme.bodyRegular16white(context)
+                          TextString.termAndCondtionTitle,
+                          style: TTextTheme.bodyRegular16white(context)
                       ),
                     ],
                   ),

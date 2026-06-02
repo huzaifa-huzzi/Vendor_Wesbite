@@ -77,10 +77,10 @@ class MainFooterFaqWidget extends StatelessWidget {
                 _FooterLink(title: "Cancellation & Return policy", onTap: () => context.go('/returnPolicy')),
               ]),
               _buildFooterColumn(context, TextString.footerTitle3, [
-                _FooterLink(title: "Accepted Payments", onTap: () => context.go('/payments')),
+                _FooterLink(title: "Accepted Payments", onTap: () => context.go('/acceptedPayment')),
               ]),
               _buildFooterColumn(context, TextString.footerTitle4, [
-                _FooterLink(title: "Terms & Conditions", onTap: () => context.go('/terms')),
+                _FooterLink(title: "Terms & Conditions", onTap: () => context.go('/term&condition')),
                 _FooterLink(title: "Privacy Polices", onTap: () => context.go('/privacy')),
                 _FooterLink(title: "Licenses", onTap: () => context.go('/licenses')),
                 _FooterLink(title: "Contact", onTap: () => context.go('/contactUs')),

@@ -5,7 +5,9 @@ import 'package:vendor_website/Vendor/CarScreen/Car%20Detail/CarDetail.dart';
 import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
+import 'package:vendor_website/Vendor/FooterSection/AcceptedPayment/AcceptedPayment.dart';
 import 'package:vendor_website/Vendor/FooterSection/ReturnPolicy/ReturnPolicy.dart';
+import 'package:vendor_website/Vendor/FooterSection/TermAndCondition/TermandCondition.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
 import 'package:vendor_website/Vendor/Services/AcServices/AcServices.dart';
 import 'package:vendor_website/Vendor/Services/BatteryServices/BatteryServices.dart';
@@ -85,6 +87,14 @@ class AppNavigation {
           GoRoute(
             path: '/returnPolicy',
             builder: (context, state) => ReturnPolicy(),
+          ),
+          GoRoute(
+            path: '/acceptedPayment',
+            builder: (context, state) => AcceptedPayment(),
+          ),
+          GoRoute(
+            path: '/term&condition',
+            builder: (context, state) => TermAndCondition(),
           ),
         ],
       ),
