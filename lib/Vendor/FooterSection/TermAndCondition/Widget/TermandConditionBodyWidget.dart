@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class TermsAndConditionsBodyWidget extends StatelessWidget {
@@ -16,32 +17,31 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Header Section
+
           Text(
-            "All Term and Condition",
+            TextString.termAndCondtionSubtitle1,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            "Please read these terms carefully before using our website and services.",
+            TextString.termAndCondtionSubtitle1 ,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
 
-          // 1. Website Usage Disclaimer
           _buildPolicyCard(
             context,
-            title: "1. Website Usage Disclaimer",
+            title:TextString.termAndCondtionSubtitle3 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "This website is intended for information and display purposes only."),
-                _buildBulletPoint(context, "Users cannot book or reserve vehicles directly through the website."),
-                _buildBulletPoint(context, "All bookings must be made through official communication channels such as phone, WhatsApp, or in person."),
-                _buildBulletPoint(context, "Vehicle availability, pricing, and details shown on the website are subject to confirmation."),
-                _buildBulletPoint(context, "Listings on the website do not constitute a confirmed offer or contract."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle4),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle5 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle6 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle7),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle8),
               ],
             ),
           ),
@@ -49,210 +49,182 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
           // 2. Eligibility
           _buildPolicyCard(
             context,
-            title: "2. Eligibility",
+            title:TextString.termAndCondtionSubtitle9 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Renters must meet the minimum age requirement (e.g., 21 years or above)."),
-                _buildBulletPoint(context, "A valid driving license and identification (CNIC/Passport) are required."),
-                _buildBulletPoint(context, "The company reserves the right to refuse service if requirements are not met."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle10 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle11),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle12 ),
               ],
             ),
           ),
-
-          // 3. Booking & Confirmation
           _buildPolicyCard(
             context,
-            title: "3. Booking & Confirmation",
+            title:TextString.termAndCondtionSubtitle13 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Bookings are only confirmed after direct communication and approval by the company."),
-                _buildBulletPoint(context, "Availability of vehicles is not guaranteed until confirmation is provided."),
-                _buildBulletPoint(context, "The company reserves the right to accept or reject any booking request."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle14 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle15 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle16 ),
               ],
             ),
           ),
-
-          // 4. Payments
           _buildPolicyCard(
             context,
-            title: "4. Payments",
+            title:TextString.termAndCondtionSubtitle17,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Payment details will be shared after booking confirmation."),
-                _buildBulletPoint(context, "Payments must be completed within the specified time to secure the booking."),
-                _buildBulletPoint(context, "Failure to complete payment may result in cancellation of the request."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle18),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle19),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle20),
               ],
             ),
           ),
-
-          // 5. Security Deposit
           _buildPolicyCard(
             context,
-            title: "5. Security Deposit",
+            title:TextString.termAndCondtionSubtitle21 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "A refundable security deposit may be required before vehicle handover."),
-                _buildBulletPoint(context, "The deposit will be returned after inspection of the vehicle."),
-                _buildBulletPoint(context, "Deductions may apply for damages, late returns, or violations."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle22),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle23 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle24),
               ],
             ),
           ),
-
-          // 6. Vehicle Usage
           _buildPolicyCard(
             context,
-            title: "6. Vehicle Usage",
+            title:TextString.termAndCondtionSubtitle25,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Vehicles must only be driven by the authorized person."),
-                _buildBulletPoint(context, "Sub-renting or unauthorized use is strictly prohibited."),
-                _buildBulletPoint(context, "Vehicles must not be used for illegal activities, racing, or unsafe driving."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle26),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle27 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle28 ),
               ],
             ),
           ),
-
-          // 7. Rental Duration & Return
           _buildPolicyCard(
             context,
-            title: "7. Rental Duration & Return",
+            title:TextString.termAndCondtionSubtitle29,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Vehicles must be returned on the agreed date and time."),
-                _buildBulletPoint(context, "Late returns may result in additional charges."),
-                _buildBulletPoint(context, "Extensions must be requested in advance and are subject to availability."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle30 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle31 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle32),
               ],
             ),
           ),
-
-          // 8. Fuel Policy
           _buildPolicyCard(
             context,
-            title: "8. Fuel Policy",
+            title:TextString.termAndCondtionSubtitle33 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Vehicles must be returned with the same fuel level as provided."),
-                _buildBulletPoint(context, "Additional charges may apply if the fuel level is lower upon return."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle34),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle35 ),
               ],
             ),
           ),
-
-          // 9. Insurance & Liability
           _buildPolicyCard(
             context,
-            title: "9. Insurance & Liability",
+            title:TextString.termAndCondtionSubtitle36 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Basic insurance may be included where applicable."),
-                _buildBulletPoint(context, "The renter is responsible for damages not covered by insurance."),
-                _buildBulletPoint(context, "The company is not responsible for personal belongings left in the vehicle."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle37 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle38 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle39 ),
               ],
             ),
           ),
-
-          // 10. Traffic Fines & Violations
           _buildPolicyCard(
             context,
-            title: "10. Traffic Fines & Violations",
+            title: TextString.termAndCondtionSubtitle40,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "The renter is responsible for all traffic fines and violations during the rental period."),
-                _buildBulletPoint(context, "Any fines reported after the rental may still be charged to the renter."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle41),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle42 ),
               ],
             ),
           ),
-
-          // 11. Vehicle Condition
           _buildPolicyCard(
             context,
-            title: "11. Vehicle Condition",
+            title: TextString.termAndCondtionSubtitle43,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "The vehicle must be returned in the same condition as received."),
-                _buildBulletPoint(context, "Charges may apply for damages, excessive dirt, or missing items."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle44 ),
+                _buildBulletPoint(context, TextString.termAndCondtionSubtitle45),
               ],
             ),
           ),
-
-          // 12. Cancellation Policy
           _buildPolicyCard(
             context,
-            title: "12. Cancellation Policy",
+            title:TextString.termAndCondtionSubtitle47 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Cancellation terms will be communicated during the booking process."),
-                _buildBulletPoint(context, "No refunds may be issued for no-shows or unused rental time unless stated otherwise."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle48 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle49 ),
               ],
             ),
           ),
-
-          // 13. Limitation of Liability
           _buildPolicyCard(
             context,
-            title: "13. Limitation of Liability",
+            title:TextString.termAndCondtionSubtitle50 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "The company shall not be liable for any indirect or consequential damages."),
-                _buildBulletPoint(context, "Use of the vehicle is at the renter's own risk, within legal limits."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle51),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle52 ),
               ],
             ),
           ),
-
-          // 14. Privacy
           _buildPolicyCard(
             context,
-            title: "14. Privacy",
+            title:TextString.termAndCondtionSubtitle53 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Customer information will be handled securely and used only for service purposes."),
-                _buildBulletPoint(context, "Information will not be shared with third parties without consent, except where required by law."),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle54 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle55),
               ],
             ),
           ),
-
-          // 15. Company Rights
           _buildPolicyCard(
             context,
-            title: "15. Company Rights",
+            title:TextString.termAndCondtionSubtitle56 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("We reserve the right to:", style: _bodyStyle(context)),
+                Text(TextString.termAndCondtionSubtitle57, style: _bodyStyle(context)),
                 const SizedBox(height: 8),
-                _buildBulletPoint(context, "Refuse or cancel any booking request"),
-                _buildBulletPoint(context, "Update pricing, policies, or terms at any time"),
-                _buildBulletPoint(context, "Take action in case of misuse or violation of terms"),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle58 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle59 ),
+                _buildBulletPoint(context,TextString.termAndCondtionSubtitle60 ),
               ],
             ),
           ),
-
-          // 16. Contact Information
           _buildPolicyCard(
             context,
-            title: "16. Contact Information",
+            title:TextString.termAndCondtionSubtitle61 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("For any questions or booking inquiries:", style: _bodyStyle(context)),
+                Text(TextString.termAndCondtionSubtitle62, style: _bodyStyle(context)),
                 const SizedBox(height: 10),
                 Row(
                   children: [
                     const Icon(Icons.phone, color: AppColors.primaryColor, size: 18),
                     const SizedBox(width: 8),
-                    _buildRedTitleText(context, "Phone: "),
-                    Text(" +16423452134", style: _bodyStyle(context)),
+                    _buildRedTitleText(context,TextString.phone),
+                    Text( TextString.returnSubtitle73, style: _bodyStyle(context)),
                   ],
                 ),
                 const SizedBox(height: 6),
@@ -260,8 +232,8 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
                   children: [
                     const Icon(Icons.email, color: AppColors.primaryColor, size: 18),
                     const SizedBox(width: 8),
-                    _buildRedTitleText(context, "Email: "),
-                    Text(" (softsnip@gmail.com)", style: _bodyStyle(context)),
+                    _buildRedTitleText(context, TextString.email),
+                    Text(TextString.CompanyEmail, style: _bodyStyle(context)),
                   ],
                 ),
               ],
@@ -298,7 +270,7 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
     );
   }
 
-  // Red Circular Bullet Point Item
+  //  Circular Bullet Point Item
   Widget _buildBulletPoint(BuildContext context, String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -325,7 +297,7 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
     );
   }
 
-  // Red Inline Highlight Labels
+  // Red Inline
   Widget _buildRedTitleText(BuildContext context, String text) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
@@ -336,7 +308,6 @@ class TermsAndConditionsBodyWidget extends StatelessWidget {
     );
   }
 
-  // Consistent Typography Body Font
   TextStyle _bodyStyle(BuildContext context) {
     return TTextTheme.tableRegular18(context);
   }

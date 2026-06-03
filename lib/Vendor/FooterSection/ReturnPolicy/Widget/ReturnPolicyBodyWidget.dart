@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class ReturnPolicyBodyWidget extends StatelessWidget {
@@ -17,49 +18,46 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Rental Rules & Guidelines",
+            TextString.returnSubtitle1,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            "Clear guidelines on booking, vehicle usage, returns, and additional charges to ensure a smooth rental experience.",
+              TextString.returnSubtitle2,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
 
-          // 1. Booking Cancellation
           _buildPolicyCard(
             context,
-            title: "1. Booking Cancellation",
+            title:  TextString.returnSubtitle3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("You may cancel your booking at any time before the scheduled pickup.", style: _bodyStyle(context)),
+                Text(TextString.wesbiteUsage, style: _bodyStyle(context)),
                 const SizedBox(height: 12),
-                _buildRedTitleText(context, "1. Free Cancellation:"),
-                _buildBulletPoint(context, "Cancellations made 24 hours before pickup are eligible for a full refund."),
+                _buildRedTitleText(context, TextString.returnSubtitle4 ),
+                _buildBulletPoint(context,  TextString.returnSubtitle5),
                 const SizedBox(height: 8),
-                _buildRedTitleText(context, "2. Late Cancellation:"),
-                _buildBulletPoint(context, "Cancellations made within 24 hours of pickup may incur a cancellation fee."),
+                _buildRedTitleText(context,  TextString.returnSubtitle6),
+                _buildBulletPoint(context,  TextString.returnSubtitle7),
                 const SizedBox(height: 8),
-                _buildRedTitleText(context, "3. No-Show Policy:"),
-                _buildBulletPoint(context, "If you fail to pick up the vehicle without prior notice, the booking will be treated as a no-show and no refund will be issued."),
+                _buildRedTitleText(context, TextString.returnSubtitle8),
+                _buildBulletPoint(context,  TextString.returnSubtitle9),
               ],
             ),
           ),
-
-          // 2. Refund Policy
           _buildPolicyCard(
             context,
-            title: "2. Refund Policy",
+            title: TextString.returnSubtitle10,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Refunds are processed within 5 to 7 business days."),
-                _buildBulletPoint(context, "The amount will be returned using the original payment method."),
-                _buildBulletPoint(context, "Any applicable service charges or taxes may be deducted."),
+                _buildBulletPoint(context,TextString.returnSubtitle11 ),
+                _buildBulletPoint(context,TextString.returnSubtitle12 ),
+                _buildBulletPoint(context, TextString.returnSubtitle13),
               ],
             ),
           ),
@@ -67,62 +65,57 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
           // 3. Vehicle Pickup
           _buildPolicyCard(
             context,
-            title: "3. Vehicle Pickup",
+            title: TextString.returnSubtitle14 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Customers must arrive on time with valid documents."),
-                _buildBulletPoint(context, "Failure to meet requirements may result in cancellation without refund."),
+                _buildBulletPoint(context, TextString.returnSubtitle15 ),
+                _buildBulletPoint(context, TextString.returnSubtitle16 ),
               ],
             ),
           ),
-
-          // 4. Vehicle Return Policy
           _buildPolicyCard(
             context,
-            title: "4. Vehicle Return Policy",
+            title: TextString.returnSubtitle17,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Vehicles must be returned on the agreed date and time."),
-                _buildBulletPoint(context, "A grace period of 1 hour may be allowed (optional—your choice)."),
+                _buildBulletPoint(context, TextString.returnSubtitle18 ),
+                _buildBulletPoint(context, TextString.returnSubtitle19 ),
                 const SizedBox(height: 10),
-                _buildRedTitleText(context, "Late Returns:"),
-                Text("Additional charges will apply for late returns, calculated on an hourly or daily basis.", style: _bodyStyle(context)),
+                _buildRedTitleText(context, TextString.returnSubtitle20 ),
+                Text( TextString.returnSubtitle21, style: _bodyStyle(context)),
               ],
             ),
           ),
 
-          // 5. Early Returns
           _buildPolicyCard(
             context,
-            title: "5. Early Returns",
-            child: _buildBulletPoint(context, "If you return the vehicle earlier than scheduled, no refund will be provided for unused rental time."),
+            title:TextString.returnSubtitle22 ,
+            child: _buildBulletPoint(context,TextString.returnSubtitle23 ),
           ),
 
           // 6. Fuel Policy
           _buildPolicyCard(
             context,
-            title: "6. Fuel Policy",
+            title:TextString.returnSubtitle24 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildRedTitleText(context, "Choose one:"),
-                _buildBulletPoint(context, "Same-to-Same: Vehicle must be returned with the same fuel level as at pickup."),
-                _buildBulletPoint(context, "Fuel charges will apply if the level is lower upon return."),
+                _buildRedTitleText(context,TextString.returnSubtitle25 ),
+                _buildBulletPoint(context,TextString.returnSubtitle26 ),
+                _buildBulletPoint(context, TextString.returnSubtitle27),
               ],
             ),
           ),
-
-          // 7. Vehicle Condition
           _buildPolicyCard(
             context,
-            title: "7. Vehicle Condition",
+            title:TextString.returnSubtitle28 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "The vehicle must be returned in the same condition as received."),
-                _buildBulletPoint(context, "Any damages, excessive dirt, or missing items will result in additional charges."),
+                _buildBulletPoint(context,TextString.returnSubtitle29),
+                _buildBulletPoint(context, TextString.returnSubtitle30),
               ],
             ),
           ),
@@ -130,141 +123,123 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
           // 8. Extensions
           _buildPolicyCard(
             context,
-            title: "8. Extensions",
+            title:TextString.returnSubtitle31 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Rental extensions are subject to availability."),
-                _buildBulletPoint(context, "You must request an extension before your rental period ends."),
+                _buildBulletPoint(context,TextString.returnSubtitle32 ),
+                _buildBulletPoint(context, TextString.returnSubtitle33),
               ],
             ),
           ),
-
-          // 9. Driver Requirements
           _buildPolicyCard(
             context,
-            title: "9. Driver Requirements",
+            title: TextString.returnSubtitle34 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Minimum age: 21 years (adjust if needed)."),
-                _buildBulletPoint(context, "You must hold a valid driving license required to request an extension before your rental period ends."),
-                _buildBulletPoint(context, "Valid ID (CNIC/Passport for international renters)."),
+                _buildBulletPoint(context, TextString.returnSubtitle35),
+                _buildBulletPoint(context, TextString.returnSubtitle36 ),
+                _buildBulletPoint(context, TextString.returnSubtitle37 ),
               ],
             ),
           ),
-
-          // 10. Security Deposit
           _buildPolicyCard(
             context,
-            title: "10. Security Deposit",
+            title:TextString.returnSubtitle38 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "A refundable security deposit is required at pickup; must be returned on the agreed date and time."),
-                _buildBulletPoint(context, "Refunded after inspection (usually within 3–7 days)."),
+                _buildBulletPoint(context,TextString.returnSubtitle39 ),
+                _buildBulletPoint(context,TextString.returnSubtitle40 ),
                 const SizedBox(height: 10),
-                _buildRedTitleText(context, "Deductions may apply for:"),
-                _buildNumberedPoint(context, "1", "Damages"),
-                _buildNumberedPoint(context, "2", "Late returns"),
-                _buildNumberedPoint(context, "3", "Traffic fines"),
+                _buildRedTitleText(context,TextString.returnSubtitle41 ),
+                _buildNumberedPoint(context, "1",TextString.returnSubtitle42),
+                _buildNumberedPoint(context, "2",TextString.returnSubtitle43 ),
+                _buildNumberedPoint(context, "3",TextString.returnSubtitle44 ),
               ],
             ),
           ),
-
-          // 11. Pricing & Payment Terms
           _buildPolicyCard(
             context,
-            title: "11. Pricing & Payment Terms",
+            title:TextString.returnSubtitle45 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Payment required in advance or at pickup."),
-                _buildBulletPoint(context, "Accepted methods: Cash / Card / Online."),
-                _buildBulletPoint(context, "Prices may vary based on duration and vehicle type."),
+                _buildBulletPoint(context,TextString.returnSubtitle46 ),
+                _buildBulletPoint(context,TextString.returnSubtitle47 ),
+                _buildBulletPoint(context, TextString.returnSubtitle48),
               ],
             ),
           ),
-
-          // 12. Mileage / Usage Policy
           _buildPolicyCard(
             context,
-            title: "12. Mileage / Usage Policy",
+            title:TextString.returnSubtitle49 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Daily mileage limit (e.g., 100–200 km/day) OR unlimited."),
-                _buildBulletPoint(context, "Extra km will be charged accordingly."),
+                _buildBulletPoint(context,TextString.returnSubtitle50),
+                _buildBulletPoint(context, TextString.returnSubtitle51),
               ],
             ),
           ),
-
-          // 13. Insurance Coverage
           _buildPolicyCard(
             context,
-            title: "13. Insurance Coverage",
+            title:TextString.returnSubtitle52 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Basic insurance is included."),
+                _buildBulletPoint(context,TextString.returnSubtitle53 ),
                 const SizedBox(height: 10),
-                _buildRedTitleText(context, "Does not cover:"),
-                _buildNumberedPoint(context, "1", "Negligence"),
-                _buildNumberedPoint(context, "2", "Reckless driving"),
-                _buildNumberedPoint(context, "3", "Unauthorized use"),
+                _buildRedTitleText(context,TextString.returnSubtitle54 ),
+                _buildNumberedPoint(context, "1",TextString.returnSubtitle55 ),
+                _buildNumberedPoint(context, "2",TextString.returnSubtitle55 ),
+                _buildNumberedPoint(context, "3",TextString.returnSubtitle56 ),
               ],
             ),
           ),
-
-          // 14. Vehicle Usage Rules
           _buildPolicyCard(
             context,
-            title: "14. Vehicle Usage Rules",
+            title:TextString.returnSubtitle57 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "No illegal activities."),
-                _buildBulletPoint(context, "No sub-renting."),
-                _buildBulletPoint(context, "Out-of-city travel may require approval."),
+                _buildBulletPoint(context,TextString.returnSubtitle58),
+                _buildBulletPoint(context,TextString.returnSubtitle59 ),
+                _buildBulletPoint(context,TextString.returnSubtitle60 ),
               ],
             ),
           ),
-
-          // 15. Traffic Fines & Violations
           _buildPolicyCard(
             context,
-            title: "15. Traffic Fines & Violations",
+            title:TextString.returnSubtitle61 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Renter is responsible for all fines."),
-                _buildBulletPoint(context, "Charges may be deducted later if reported after rental."),
+                _buildBulletPoint(context,TextString.returnSubtitle62 ),
+                _buildBulletPoint(context,TextString.returnSubtitle63 ),
               ],
             ),
           ),
-
-          // 16. Breakdown & Emergency Support
           _buildPolicyCard(
             context,
-            title: "16. Breakdown & Emergency Support",
+            title:TextString.returnSubtitle64,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Contact support in case of breakdown."),
-                _buildBulletPoint(context, "Assistance will be provided based on situation."),
+                _buildBulletPoint(context, TextString.returnSubtitle65),
+                _buildBulletPoint(context,TextString.returnSubtitle66 ),
               ],
             ),
           ),
-
-          // 17. Cleaning Policy
           _buildPolicyCard(
             context,
-            title: "17. Cleaning Policy",
+            title: TextString.returnSubtitle67,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildBulletPoint(context, "Return vehicle in clean condition."),
-                _buildBulletPoint(context, "Extra cleaning charges may apply if excessively dirty."),
+                _buildBulletPoint(context,TextString.returnSubtitle68 ),
+                _buildBulletPoint(context,TextString.returnSubtitle69 ),
               ],
             ),
           ),
@@ -272,18 +247,18 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
           // 18. Emergency & Support
           _buildPolicyCard(
             context,
-            title: "18. Emergency & Support",
+            title:TextString.returnSubtitle71 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("If you experience delays or issues, contact our support team immediately:", style: _bodyStyle(context)),
+                Text(TextString.returnSubtitle72, style: _bodyStyle(context)),
                 const SizedBox(height: 10),
                 Row(
                   children: [
                     const Icon(Icons.phone, color: AppColors.primaryColor, size: 18),
                     const SizedBox(width: 8),
-                    _buildRedTitleText(context, "Phone: "),
-                    Text(" +16423452134", style: _bodyStyle(context)),
+                    _buildRedTitleText(context, TextString.phone),
+                    Text(TextString.returnSubtitle73, style: _bodyStyle(context)),
                   ],
                 ),
                 const SizedBox(height: 6),
@@ -291,8 +266,8 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
                   children: [
                     const Icon(Icons.email, color: AppColors.primaryColor, size: 18),
                     const SizedBox(width: 8),
-                    _buildRedTitleText(context, "Email: "),
-                    Text(" (softsnip@gmail.com)", style: _bodyStyle(context)),
+                    _buildRedTitleText(context, TextString.Email),
+                    Text(TextString.CompanyEmail, style: _bodyStyle(context)),
                   ],
                 ),
               ],
@@ -302,14 +277,14 @@ class ReturnPolicyBodyWidget extends StatelessWidget {
           // 19. Company Rights
           _buildPolicyCard(
             context,
-            title: "19. Company Rights",
+            title:TextString.returnSubtitle74 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("We reserve the right to:", style: _bodyStyle(context)),
+                Text(TextString.returnSubtitle75, style: _bodyStyle(context)),
                 const SizedBox(height: 8),
-                _buildBulletPoint(context, "Cancel bookings due to unforeseen circumstances."),
-                _buildBulletPoint(context, "Modify this policy at any time without prior notice."),
+                _buildBulletPoint(context,TextString.returnSubtitle76 ),
+                _buildBulletPoint(context,TextString.returnSubtitle77),
               ],
             ),
           ),

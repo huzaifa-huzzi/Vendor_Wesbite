@@ -49,7 +49,7 @@ class CustomBannerTermWidget extends StatelessWidget {
                         onTap: () => AppNavigation.router.go('/'),
                         mouseCursor: SystemMouseCursors.click,
                         child: Text(
-                            "Home",
+                            TextString.homeTitle1,
                             style: TTextTheme.bodyRegular16white(context)
                         ),
                       ),

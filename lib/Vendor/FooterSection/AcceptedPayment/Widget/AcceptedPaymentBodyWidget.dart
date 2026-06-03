@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class AcceptedPaymentBodyWidget extends StatelessWidget {
@@ -21,18 +22,18 @@ class AcceptedPaymentBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Accepted Payment Methods",
+        TextString.AcceptedPaymentSubtitle1,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            "Choose a convenient and secure way to complete your payment.",
+            TextString.AcceptedPaymentSubtitle2,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
-          _buildMainSectionHeader(context, "Payment by Bank Account", "Below are the instruction how to pay"),
+          _buildMainSectionHeader(context,TextString.AcceptedPaymentSubtitle3,TextString.AcceptedPaymentSubtitle4 ),
           const SizedBox(height: 15),
 
           Wrap(
@@ -42,65 +43,63 @@ class AcceptedPaymentBodyWidget extends StatelessWidget {
               _buildInstructionCard(
                 context,
                 width: cardWidth,
-                title: "Payment Instruction for bank",
-                subtitle: "Below are payment instruction details",
+                title:TextString.AcceptedPaymentSubtitle5 ,
+                subtitle:TextString.AcceptedPaymentSubtitle6 ,
                 points: [
-                  "1. Open your banking app and select PayID Transfer.",
-                  "2. Enter the PayID email provided by the rental company.",
-                  "3. Confirm the account name.",
-                  "4. Enter the payment amount.",
-                  "5. Send the payment.",
+                TextString.AcceptedPaymentSubtitle7,
+                TextString.AcceptedPaymentSubtitle8 ,
+                TextString.AcceptedPaymentSubtitle9 ,
+                TextString.AcceptedPaymentSubtitle10 ,
+                  TextString.AcceptedPaymentSubtitle11 ,
                 ],
               ),
-              // Bank Account Receipt Card
               _buildInstructionCard(
                 context,
                 width: cardWidth,
-                title: "How to Upload your Payment receipt",
-                subtitle: "Below are details for how to upload payment receipt",
+                title: TextString.AcceptedPaymentSubtitle12 ,
+                subtitle: TextString.AcceptedPaymentSubtitle13 ,
                 points: [
-                  "1. Make the payment using the bank details above.",
-                  "2. Upload the payment receipt or transaction screenshot.",
-                  "3. Ensure the transaction ID and amount are clearly visible.",
-                  "4. Your payment will be verified by the admin.",
+                TextString.AcceptedPaymentSubtitle14 ,
+                TextString.AcceptedPaymentSubtitle15,
+                TextString.AcceptedPaymentSubtitle16 ,
+                  TextString.AcceptedPaymentSubtitle17,
                 ],
               ),
             ],
           ),
 
           const SizedBox(height: 40),
-          _buildMainSectionHeader(context, "Payment by Pay Id", "Below are the instruction how to pay"),
+          _buildMainSectionHeader(context,TextString.AcceptedPaymentSubtitle18 ,TextString.AcceptedPaymentSubtitle19 ),
           const SizedBox(height: 15),
 
           Wrap(
             spacing: 20,
             runSpacing: 20,
             children: [
-              // Pay ID Instruction Card
               _buildInstructionCard(
                 context,
                 width: cardWidth,
-                title: "Payment Instruction for Pay Id",
-                subtitle: "Below are payment instruction details",
+                title:TextString.AcceptedPaymentSubtitle20 ,
+                subtitle:TextString.AcceptedPaymentSubtitle21 ,
                 points: [
-                  "1. Open your banking app and select PayID Transfer.",
-                  "2. Enter the PayID email provided by the rental company.",
-                  "3. Confirm the account name.",
-                  "4. Enter the payment amount.",
-                  "5. Send the payment.",
+                TextString.AcceptedPaymentSubtitle22,
+                TextString.AcceptedPaymentSubtitle23,
+                TextString.AcceptedPaymentSubtitle24,
+                TextString.AcceptedPaymentSubtitle25,
+                  TextString.AcceptedPaymentSubtitle26 ,
                 ],
               ),
               // Pay ID Receipt Card
               _buildInstructionCard(
                 context,
                 width: cardWidth,
-                title: "How to Upload your Payment receipt",
-                subtitle: "Below are details for how to upload payment receipt",
+                title: TextString.AcceptedPaymentSubtitle27 ,
+                subtitle: TextString.AcceptedPaymentSubtitle28 ,
                 points: [
-                  "1. Make the payment using the bank details above.",
-                  "2. Upload the payment receipt or transaction screenshot.",
-                  "3. Ensure the transaction ID and amount are clearly visible.",
-                  "4. Your payment will be verified by the admin.",
+                TextString.AcceptedPaymentSubtitle29,
+                TextString.AcceptedPaymentSubtitle30,
+                TextString.AcceptedPaymentSubtitle31 ,
+                  TextString.AcceptedPaymentSubtitle32,
                 ],
               ),
             ],
@@ -108,19 +107,17 @@ class AcceptedPaymentBodyWidget extends StatelessWidget {
 
           const SizedBox(height: 60),
           Text(
-            "Payment Notes & Guidelines",
+              TextString.AcceptedPaymentSubtitle33,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            "Important information to ensure a smooth and secure payment process.",
+              TextString.AcceptedPaymentSubtitle34,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 30),
-
-          // Main Notes Container Card
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(24),
@@ -132,18 +129,18 @@ class AcceptedPaymentBodyWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Follow these steps to complete your payment securely and ensure quick verification.",
+                TextString.AcceptedPaymentSubtitle35,
                   style: TTextTheme.h5Style(context),
                 ),
                 const SizedBox(height: 15),
-                _buildBulletPoint(context, "Complete your payment within the given time to avoid automatic cancellation of your booking."),
-                _buildBulletPoint(context, "Always use your Booking ID or Payment Reference when making a payment so we can easily track and verify your transaction."),
-                _buildBulletPoint(context, "Ensure that you transfer the exact amount mentioned in your booking details to prevent delays or issues in confirmation."),
-                _buildBulletPoint(context, "After completing the payment, keep a screenshot or receipt as proof for your records and possible verification."),
-                _buildBulletPoint(context, "If required, upload your payment proof or provide the transaction ID through the system for faster processing."),
-                _buildBulletPoint(context, "Double-check all payment details before confirming the transaction to avoid sending funds to an incorrect account."),
-                _buildBulletPoint(context, "Do not share your payment confirmation or sensitive information with unauthorized individuals to maintain security."),
-                _buildBulletPoint(context, "In case of any delay, error, or confusion during payment, contact our support team immediately for assistance."),
+                _buildBulletPoint(context,TextString.bulletPoint1),
+                _buildBulletPoint(context,TextString.bulletPoint2 ),
+                _buildBulletPoint(context,TextString.bulletPoint3 ),
+                _buildBulletPoint(context,TextString.bulletPoint4 ),
+                _buildBulletPoint(context,TextString.bulletPoint5 ),
+                _buildBulletPoint(context,TextString.bulletPoint6),
+                _buildBulletPoint(context,TextString.bulletPoint7),
+                _buildBulletPoint(context,TextString.bulletPoint8),
               ],
             ),
           ),
