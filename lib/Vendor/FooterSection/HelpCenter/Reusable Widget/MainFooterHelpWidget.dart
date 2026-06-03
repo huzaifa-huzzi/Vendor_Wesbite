@@ -7,8 +7,8 @@ import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Routes/AppRoutes.dart';
 
-class MainFooterWidetServices extends StatelessWidget {
-  const MainFooterWidetServices({super.key});
+class MainFooterHelpWidget extends StatelessWidget {
+  const MainFooterHelpWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

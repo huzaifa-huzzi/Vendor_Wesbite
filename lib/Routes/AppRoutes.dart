@@ -6,6 +6,9 @@ import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
 import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/FooterSection/AcceptedPayment/AcceptedPayment.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenter.dart';
+import 'package:vendor_website/Vendor/FooterSection/License/License.dart';
+import 'package:vendor_website/Vendor/FooterSection/PrivacyPolicy/PrivacyPolicy.dart';
 import 'package:vendor_website/Vendor/FooterSection/ReturnPolicy/ReturnPolicy.dart';
 import 'package:vendor_website/Vendor/FooterSection/TermAndCondition/TermandCondition.dart';
 import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
@@ -95,6 +98,18 @@ class AppNavigation {
           GoRoute(
             path: '/term&condition',
             builder: (context, state) => TermAndCondition(),
+          ),
+          GoRoute(
+            path: '/helpCenter',
+            builder: (context, state) => HelpCenter(),
+          ),
+          GoRoute(
+            path: '/privacyPolicy',
+            builder: (context, state) => PrivacyPolicy(),
+          ),
+          GoRoute(
+            path: '/license',
+            builder: (context, state) => License(),
           ),
         ],
       ),

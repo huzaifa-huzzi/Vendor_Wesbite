@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Routes/AppRoutes.dart';
-import 'package:vendor_website/Vendor/AboutUs/AboutUs.dart';
-import 'package:vendor_website/Vendor/CarScreen/CarScreen.dart';
-import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
-import 'package:vendor_website/Vendor/Faqs/Faqs.dart' show FaqsScreen;
-import 'package:vendor_website/Vendor/HomeScreen/HomeScreen.dart';
-import 'package:vendor_website/Vendor/Services/Services.dart' show ServicesScreen;
 
 class MainFooterAcceptedPaymentWidget extends StatelessWidget {
   const MainFooterAcceptedPaymentWidget({super.key});
@@ -73,7 +66,7 @@ class MainFooterAcceptedPaymentWidget extends StatelessWidget {
                 _FooterLink(title: TextString.faqTitle, onTap: () => context.go('/FAQs')),
               ]),
               _buildFooterColumn(context, TextString.footerTitle2, [
-                _FooterLink(title: TextString.HelpTitle, onTap: () => context.go('/help')),
+                _FooterLink(title: TextString.HelpTitle, onTap: () => context.go('/helpCenter')),
                 _FooterLink(title: TextString.cancellationTitle, onTap: () => context.go('/returnPolicy')),
               ]),
               _buildFooterColumn(context, TextString.footerTitle3, [
@@ -81,8 +74,8 @@ class MainFooterAcceptedPaymentWidget extends StatelessWidget {
               ]),
               _buildFooterColumn(context, TextString.footerTitle4, [
                 _FooterLink(title: TextString.termAndCondtionTitle, onTap: () => context.go('/term&condition')),
-                _FooterLink(title: TextString.privacyTitle, onTap: () => context.go('/privacy')),
-                _FooterLink(title: TextString.LicenseTitle, onTap: () => context.go('/licenses')),
+                _FooterLink(title: TextString.privacyTitle, onTap: () => context.go('/privacyPolicy')),
+                _FooterLink(title: TextString.LicenseTitle, onTap: () => context.go('/license')),
                 _FooterLink(title: TextString.contactTitle1, onTap: () => context.go('/contactUs')),
               ]),
             ],

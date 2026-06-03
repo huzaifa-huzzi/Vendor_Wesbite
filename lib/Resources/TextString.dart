@@ -421,4 +421,12 @@ class TextString{
   static const String  LicenseTitle= "Licenses";
   static const String  contactTitle1= "Contact";
 
+   // Help Center
+  static const String  helpCenterTitle= "Help Center";
+
+   // Privacy Policy
+  static const String  privacyPolicyTitle= "Privacy Policy";
+
+   // License
+  static const String  licenseTitle= "License";
 }
