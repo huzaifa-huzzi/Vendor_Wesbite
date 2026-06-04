@@ -58,6 +58,7 @@ flutter:
     - assets/icons/
     - assets/Images/
     - assets/Images/HomeScreen/
+    - assets/Images/HelpCenter/
     - assets/Images/About/
     - assets/Images/Contact/
     - assets/Images/CarScreen/

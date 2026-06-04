@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
+
 
 class HelpGuidesGrid extends StatelessWidget {
   const HelpGuidesGrid({super.key});
@@ -14,33 +16,53 @@ class HelpGuidesGrid extends StatelessWidget {
     final List<Map<String, dynamic>> helpGuidesData = [
       {
         "number": "01",
-        "title":TextString.helpCenterSubtitle1 ,
-        "desc":TextString.helpCenterSubtitle2 ,
+        "title": TextString.helpCenterSubtitle1,
+        "desc": TextString.helpCenterSubtitle2,
+        "onTap": () {
+           context.go('/rentingGuide');
+
+        },
       },
       {
         "number": "02",
-        "title":TextString.helpCenterSubtitle3 ,
-        "desc":TextString.helpCenterSubtitle4,
+        "title": TextString.helpCenterSubtitle3,
+        "desc": TextString.helpCenterSubtitle4,
+        "onTap": () {
+          // context.go('/required-documents');
+          print("Required Documents Clicked!");
+        },
       },
       {
         "number": "03",
-        "title":TextString.helpCenterSubtitle5,
-        "desc":TextString.helpCenterSubtitle6,
+        "title": TextString.helpCenterSubtitle5,
+        "desc": TextString.helpCenterSubtitle6,
+        "onTap": () {
+          // context.go('/pricing-billing');
+        },
       },
       {
         "number": "04",
-        "title":TextString.helpCenterSubtitle7 ,
-        "desc":TextString.helpCenterSubtitle8 ,
+        "title": TextString.helpCenterSubtitle7,
+        "desc": TextString.helpCenterSubtitle8,
+        "onTap": () {
+          // context.go('/troubleshooting');
+        },
       },
       {
         "number": "05",
-        "title":TextString.helpCenterSubtitle9 ,
-        "desc":TextString.helpCenterSubtitle10 ,
+        "title": TextString.helpCenterSubtitle9,
+        "desc": TextString.helpCenterSubtitle10,
+        "onTap": () {
+          // context.go('/pickup-return');
+        },
       },
       {
         "number": "06",
-        "title":TextString.helpCenterSubtitle11 ,
-        "desc":TextString.helpCenterSubtitle12,
+        "title": TextString.helpCenterSubtitle11,
+        "desc": TextString.helpCenterSubtitle12,
+        "onTap": () {
+          // context.go('/insurance-coverage');
+        },
       },
     ];
 
@@ -54,17 +76,21 @@ class HelpGuidesGrid extends StatelessWidget {
       child: Column(
         children: [
           Text(
-          TextString.helpCenterSubtitle13,
+            TextString.helpCenterSubtitle13,
             textAlign: TextAlign.center,
             style: TTextTheme.h1StyleBlack(context),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 15),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 700),
             child: Text(
-                TextString.helpCenterSubtitle14,
+              TextString.helpCenterSubtitle14,
               textAlign: TextAlign.center,
               style: TTextTheme.medium16black(context),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           const SizedBox(height: 50),
@@ -79,9 +105,7 @@ class HelpGuidesGrid extends StatelessWidget {
                 title: data["title"],
                 desc: data["desc"],
                 isTiny: isTiny,
-                onTap: () {
-
-                },
+                onTap: data["onTap"],
               );
             }).toList(),
           ),
@@ -90,7 +114,7 @@ class HelpGuidesGrid extends StatelessWidget {
     );
   }
 
-  /// ---------- Responsive Help Card Widget Without Images -------- ///
+  /// ---------- Responsive Help Card Widget (Exact Original Design) -------- ///
   Widget _buildHelpCard(
       BuildContext context, {
         required String number,
@@ -117,16 +141,16 @@ class HelpGuidesGrid extends StatelessWidget {
         constraints: const BoxConstraints(minWidth: 300),
         padding: EdgeInsets.all(isTiny ? 20 : 30),
         decoration: BoxDecoration(
-            color: AppColors.whiteColor,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: AppColors.tertiaryTextColor.withOpacity(0.15)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.02),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              )
-            ]
+          color: AppColors.whiteColor,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppColors.tertiaryTextColor.withOpacity(0.15)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.02),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            )
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,12 +164,13 @@ class HelpGuidesGrid extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-
             Text(
               title,
               style: TTextTheme.h5Style(context).copyWith(
                 fontWeight: FontWeight.bold,
               ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 10),
             Text(
@@ -153,6 +178,8 @@ class HelpGuidesGrid extends StatelessWidget {
               style: TTextTheme.bodyRegular16(context).copyWith(
                 color: AppColors.tertiaryTextColor,
               ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 20),
             Row(

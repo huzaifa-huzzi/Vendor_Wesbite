@@ -115,4 +115,10 @@ class ImageString{
   static const String contactInfoside = 'assets/Images/Contact/ContactInfoSide.png';
   static const String UnderMaintenanceImage = 'assets/Images/Services/404Error2.png';
   static const String keyBenefitPic = 'assets/Images/Services/KeyBenefitPic.png';
+
+   /// HelpCenter
+  static const String HelpCenter1 = 'assets/Images/HelpCenter/HelpCenter1.png';
+  static const String HelpCenter2 = 'assets/Images/HelpCenter/HelpCenter2.png';
+  static const String HelpCenter3 = 'assets/Images/HelpCenter/HelpCenter3.png';
+  static const String HelpCenter4 = 'assets/Images/HelpCenter/HelpCenter4.png';
 }

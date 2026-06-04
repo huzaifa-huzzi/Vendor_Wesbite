@@ -285,7 +285,7 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildContactRowItem(BuildContext context, {required IconData icon, Brewery, required String label, required String value}) {
+  Widget _buildContactRowItem(BuildContext context, {required IconData icon, required String label, required String value}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(

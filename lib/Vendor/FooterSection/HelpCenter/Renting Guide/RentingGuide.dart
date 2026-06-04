@@ -3,18 +3,14 @@ import 'package:get/get.dart';
 import 'package:vendor_website/AppBars/AppDrawer.dart';
 import 'package:vendor_website/AppBars/WebAppBar.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Renting%20Guide/Widget/DetailRentingGuide.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Renting%20Guide/Widget/GettingStartedWidget.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/ContactHelpCard.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/MainFooterHelpWidget.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/NewsLetterHelpWidget.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Widget/ComprehensiveHelpWidget.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/ContactHelpCard.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Widget/CustomHelpBanner.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Widget/HelpGuideGrid.dart';
 
-
-
-
-class HelpCenterWidget extends StatelessWidget {
-  const HelpCenterWidget({super.key});
+class RentingGuide extends StatelessWidget {
+  const RentingGuide({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +23,11 @@ class HelpCenterWidget extends StatelessWidget {
         child: Column(
           children: [
             WebAppBar(scaffoldKey: scaffoldKey),
-            CustomHelpCenterBanner(),
+            DetailRentingGuide(),
             SizedBox(height: 40,),
-            HelpGuidesGrid(),
-            SizedBox(height: 70,),
+            GettingStartedWidget(),
+            SizedBox(height: 80,),
             ContactHelpCard(),
-            SizedBox(height: 60,),
-            ComprehensiveHelpWidget(),
             SizedBox(height: 100,),
             NewsLetterHelpWidget(),
             MainFooterHelpWidget(),
