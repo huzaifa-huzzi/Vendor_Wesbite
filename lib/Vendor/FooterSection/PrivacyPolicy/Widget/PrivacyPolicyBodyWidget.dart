@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class PrivacyPolicyBodyWidget extends StatelessWidget {
@@ -14,112 +15,121 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
 
     final List<Map<String, dynamic>> privacyPolicies = [
       {
-        "title": "1. Information We Collect",
-        "intro": "We may collect the following information when you interact with our website:",
+        "title":TextString. privacyPolicySubtitle1 ,
+        "intro":TextString. privacyPolicySubtitle2 ,
         "points": [
-          "Name",
-          "Phone Number",
-          "Email Address",
-          "Any information you provide through contact forms or inquiries"
+    TextString. privacyPolicySubtitle3 ,
+    TextString. privacyPolicySubtitle4 ,
+    TextString. privacyPolicySubtitle5  ,
+
         ]
       },
       {
-        "title": "2. How We Use Your Information",
-        "intro": "Your information is used to:",
+        "title":TextString. privacyPolicySubtitle6 ,
+        "intro":TextString. privacyPolicySubtitle7 ,
         "points": [
-          "Respond to your inquiries and requests",
-          "Provide details about our car rental services",
-          "Communicate regarding bookings made through phone or other channels",
-          "Improve our website and customer experience"
+      TextString. privacyPolicySubtitle8,
+      TextString. privacyPolicySubtitle9  ,
+      TextString. privacyPolicySubtitle10  ,
+      TextString. privacyPolicySubtitle11  ,
         ]
       },
       {
-        "title": "3. Website Usage (No Online Booking)",
+        "title":TextString. privacyPolicySubtitle12,
         "intro": null,
         "points": [
-          "This website is for display and informational purposes only.",
-          "We do not process bookings or payments directly through the website.",
-          "Any information shared is used only for communication and service support."
+      TextString. privacyPolicySubtitle13,
+          TextString. privacyPolicySubtitle14,
+          TextString. privacyPolicySubtitle15
+
         ]
       },
       {
-        "title": "4. Information Sharing",
+        "title":TextString. privacyPolicySubtitle16,
         "intro": null,
         "isSpecial": true,
         "points": [
-          "We do not sell, trade, or rent your personal information to third parties."
+          TextString. privacyPolicySubtitle17,
         ],
-        "specialText": "Information may only be shared:",
+        "specialText":TextString. privacyPolicySubtitle18 ,
         "specialPoints": [
-          "1: When required by law",
-          "2: To protect our legal rights"
+          TextString. privacyPolicySubtitle19
+          ,
+          TextString. privacyPolicySubtitle20
         ]
       },
       {
-        "title": "5. Data Security",
+        "title":  TextString. privacyPolicySubtitle21,
         "intro": null,
         "points": [
-          "We implement appropriate measures to protect your personal data.",
-          "Access to your information is restricted to authorized personnel only.",
-          "However, no online system is completely secure, and we cannot guarantee absolute security."
+      TextString. privacyPolicySubtitle22 ,
+          TextString. privacyPolicySubtitle23 ,
+      TextString. privacyPolicySubtitle24
+
         ]
       },
       {
-        "title": "6. Data Retention",
+        "title": TextString. privacyPolicySubtitle25 ,
         "intro": null,
         "points": [
-          "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy.",
-          "Data may be retained for legal, administrative, or security reasons."
+          TextString. privacyPolicySubtitle26,
+          TextString. privacyPolicySubtitle27
+
         ]
       },
       {
-        "title": "7. Cookies & Website Usage",
+        "title":  TextString. privacyPolicySubtitle28 ,
         "intro": null,
         "points": [
-          "Our website may use basic cookies to enhance user experience.",
-          "Cookies help us understand how users interact with our website.",
-          "You can disable cookies through your browser settings if you prefer."
+      TextString. privacyPolicySubtitle29 ,
+          TextString. privacyPolicySubtitle29
+         ,
+          TextString. privacyPolicySubtitle30
         ]
       },
       {
-        "title": "8. Third-Party Services",
+        "title":  TextString. privacyPolicySubtitle31 ,
         "intro": null,
         "points": [
-          "We may use third-party platforms (such as WhatsApp or email services) to communicate with users.",
-          "These platforms have their own privacy policies, and we are not responsible for their practices."
+          TextString. privacyPolicySubtitle32 ,
+          TextString. privacyPolicySubtitle33
+
         ]
       },
       {
-        "title": "9. Children's Privacy",
+        "title": TextString. privacyPolicySubtitle35 ,
         "intro": null,
         "points": [
-          "Our services are not intended for individuals under the age of 18.",
-          "We do not knowingly collect personal information from children."
+          TextString. privacyPolicySubtitle36,
+          TextString. privacyPolicySubtitle37
+
         ]
       },
       {
-        "title": "10. Your Rights",
-        "intro": "You have the right to:",
+        "title":TextString. privacyPolicySubtitle38 ,
+        "intro":TextString. privacyPolicySubtitle39 ,
         "points": [
-          "Access your personal information",
-          "Request correction of incorrect data",
-          "Request deletion of your data",
-          "Withdraw consent for communication"
+      TextString. privacyPolicySubtitle40 ,
+      TextString. privacyPolicySubtitle41 ,
+          TextString. privacyPolicySubtitle42 ,
+          TextString. privacyPolicySubtitle33
+
         ]
       },
       {
-        "title": "11. Consent",
+        "title": TextString. privacyPolicySubtitle44 ,
         "intro": null,
         "points": [
-          "By using our website, you agree to this Privacy Policy and its terms."
+          TextString. privacyPolicySubtitle45
         ]
       },
       {
-        "title": "12. Updates to This Policy",
+        "title":TextString. privacyPolicySubtitle46,
         "intro": null,
         "points": [
-          "We may update this Privacy Policy from time to time.",
-          "Any changes will be posted on this page with an updated date."
+          TextString. privacyPolicySubtitle47
+          ,
+          TextString. privacyPolicySubtitle48
         ]
       },
     ];
@@ -133,7 +143,7 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "All Privacy Polices",
+      TextString. privacyPolicySubtitle49,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
@@ -141,8 +151,8 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
             child: Text(
-              "Your privacy is important to us. This policy explains how we collect, use, and protect your information.",
-              style: TTextTheme.bodyRegular16black(context).copyWith(fontSize: 14, color: Colors.grey[600]),
+                TextString. privacyPolicySubtitle50,
+              style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
           ),
@@ -215,12 +225,12 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "13. Contact Information",
+              TextString. privacyPolicySubtitle51 ,
                   style: TTextTheme.h5Style(context),
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  "For any questions or booking inquiries:",
+                  TextString. privacyPolicySubtitle52 ,
                   style: TTextTheme.tableRegular18(context).copyWith(fontSize: 14, color: Colors.black87),
                 ),
                 const SizedBox(height: 12),
@@ -228,15 +238,15 @@ class PrivacyPolicyBodyWidget extends StatelessWidget {
                 _buildContactRowItem(
                     context,
                     icon: Icons.phone,
-                    label: "Phone: ",
-                    value: "[+6423452134]"
+                    label:TextString. privacyPolicySubtitle53 ,
+                    value: TextString. privacyPolicySubtitle54
                 ),
 
                 _buildContactRowItem(
                     context,
                     icon: Icons.email,
-                    label: "Email: ",
-                    value: "[softsnip@gmail.com]"
+                    label:TextString. privacyPolicySubtitle55 ,
+                    value: TextString. privacyPolicySubtitle56
                 ),
               ],
             ),

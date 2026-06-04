@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class HelpGuidesGrid extends StatelessWidget {
@@ -13,33 +14,33 @@ class HelpGuidesGrid extends StatelessWidget {
     final List<Map<String, dynamic>> helpGuidesData = [
       {
         "number": "01",
-        "title": "Renting Guide",
-        "desc": "Everything you need to bring to the office - ID/License, payment methods, and international permits",
+        "title":TextString.helpCenterSubtitle1 ,
+        "desc":TextString.helpCenterSubtitle2 ,
       },
       {
         "number": "02",
-        "title": "Required Document",
-        "desc": "Everything you need to bring to the office - ID/License, payment methods, and international permits",
+        "title":TextString.helpCenterSubtitle3 ,
+        "desc":TextString.helpCenterSubtitle4,
       },
       {
         "number": "03",
-        "title": "Pricing & Billing",
-        "desc": "Understand your rental costs upfront with transparent pricing and smooth, secure payment processing.",
+        "title":TextString.helpCenterSubtitle5,
+        "desc":TextString.helpCenterSubtitle6,
       },
       {
         "number": "04",
-        "title": "Troubleshooting",
-        "desc": "Quickly resolve issues with step-by-step guidance and helpful solutions to keep your rental experience smooth.",
+        "title":TextString.helpCenterSubtitle7 ,
+        "desc":TextString.helpCenterSubtitle8 ,
       },
       {
         "number": "05",
-        "title": "Pickup and Return",
-        "desc": "Efficient vehicle handover with flexible pickup and return options for both customers and providers, designed for maximum convenience.",
+        "title":TextString.helpCenterSubtitle9 ,
+        "desc":TextString.helpCenterSubtitle10 ,
       },
       {
         "number": "06",
-        "title": "Insurance and Coverage",
-        "desc": "Stay protected with comprehensive insurance coverage, ensuring peace of mind throughout your rental journey.",
+        "title":TextString.helpCenterSubtitle11 ,
+        "desc":TextString.helpCenterSubtitle12,
       },
     ];
 
@@ -53,7 +54,7 @@ class HelpGuidesGrid extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "How Can We Help You",
+          TextString.helpCenterSubtitle13,
             textAlign: TextAlign.center,
             style: TTextTheme.h1StyleBlack(context),
           ),
@@ -61,7 +62,7 @@ class HelpGuidesGrid extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 700),
             child: Text(
-              "Search our guides or browse categories below to find step by step guide and answers",
+                TextString.helpCenterSubtitle14,
               textAlign: TextAlign.center,
               style: TTextTheme.medium16black(context),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 
 class BusinessLicenseBodyWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class BusinessLicenseBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Business License & Registration",
+            TextString.licenseSubtitle1,
             style: TTextTheme.h1StyleBlack(context),
             textAlign: TextAlign.center,
           ),
@@ -27,8 +28,8 @@ class BusinessLicenseBodyWidget extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
             child: Text(
-              "We are a verified and legally authorized car rental service committed to providing safe, reliable, and compliant transportation solutions.",
-              style: TTextTheme.bodyRegular16black(context).copyWith(fontSize: 14, color: Colors.grey[600]),
+              TextString.licenseSubtitle2,
+              style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
           ),
@@ -50,7 +51,7 @@ class BusinessLicenseBodyWidget extends StatelessWidget {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        "Verified & Licensed Business",
+                        TextString.licenseSubtitle3,
                         style: TTextTheme.h5Style(context).copyWith(fontWeight: FontWeight.bold),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -59,77 +60,73 @@ class BusinessLicenseBodyWidget extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 15),
-                _buildColoredMetaLine(context, "Status: ", "Active", labelColor: AppColors.textColor, valueColor: AppColors.completedColor, isBoldValue: true),
-                _buildColoredMetaLine(context, "Last Verified: ", "[22/04/26]", labelColor: AppColors.textColor, valueColor: AppColors.primaryColor),
-                _buildColoredMetaLine(context, "License Type: ", "Car Rental / Transport Service", labelColor:AppColors.textColor, valueColor: AppColors.primaryColor),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle4 ,TextString.licenseSubtitle5 , labelColor: AppColors.textColor, valueColor: AppColors.completedColor, isBoldValue: true),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle6 ,TextString.licenseSubtitle7 , labelColor: AppColors.textColor, valueColor: AppColors.primaryColor),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle8 ,TextString.licenseSubtitle9 , labelColor:AppColors.textColor, valueColor: AppColors.primaryColor),
               ],
             ),
           ),
           _buildTextContentCard(
             context,
-            title: "1. Company Registration",
+            title:TextString.licenseSubtitle10 ,
             paragraphs: [
-              "Our company is officially registered under applicable local laws and regulations.",
-              "We operate in full compliance with legal and business requirements to ensure a secure and trustworthy service for our customers."
+              TextString.licenseSubtitle11,
+              TextString.licenseSubtitle12
+
             ],
           ),
           _buildCustomCardLayout(
             context,
-            title: "2. License Details",
+            title:TextString.licenseSubtitle13 ,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildColoredMetaLine(context, "Business Name: ", "[Soft Snip]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
-                _buildColoredMetaLine(context, "Registration Number: ", "[RG#123456]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
-                _buildColoredMetaLine(context, "Issuing Authority: ", "[Soft Snip]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle14 , "[Soft Snip]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle15 , "[RG#123456]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
+                _buildColoredMetaLine(context,TextString.licenseSubtitle16 , "[Soft Snip]", labelColor: Colors.black87, valueColor: AppColors.primaryColor),
               ],
             ),
           ),
           _buildTextContentCard(
             context,
-            title: "3. Compliance & Authorization",
+            title:TextString.licenseSubtitle17 ,
             paragraphs: [
-              "We are authorized to provide vehicle rental services in accordance with local transport regulations.",
-              "All operations are conducted following industry standards to maintain safety, legality, and service quality."
+              TextString.licenseSubtitle18,
+              TextString.licenseSubtitle19
+
             ],
           ),
-
-          // 4. Vehicle Compliance Card
           _buildBulletListCard(
             context,
-            title: "4. Vehicle Compliance",
+            title: TextString.licenseSubtitle20 ,
             points: [
-              "All vehicles are legally registered and roadworthy",
-              "Regular inspections and maintenance are conducted",
-              "Safety standards are followed for all vehicles"
+            TextString.licenseSubtitle21 ,
+              TextString.licenseSubtitle22 ,
+              TextString.licenseSubtitle23
             ],
           ),
-
-          // 5. Driver Verification Card
           _buildBulletListCard(
             context,
-            title: "5. Driver Verification (If Applicable)",
+            title:TextString.licenseSubtitle24 ,
             points: [
-              "Drivers are properly licensed and verified",
-              "Required documents are checked and maintained",
-              "Safety and professionalism are prioritized"
+            TextString.licenseSubtitle25 ,
+              TextString.licenseSubtitle26 ,
+              TextString.licenseSubtitle27
+
             ],
           ),
-
-          // 6. Transparency & Trust Card
           _buildTextContentCard(
             context,
-            title: "6. Transparency & Trust",
+            title:TextString.licenseSubtitle28 ,
             paragraphs: [
-              "We believe in maintaining transparency with our customers.",
-              "Our licensing and registration details are available for verification to ensure confidence and reliability in our services."
+              TextString.licenseSubtitle29,
+              TextString.licenseSubtitle30
+
             ],
           ),
-
-          // 7. License Document Action Links Card
           _buildCustomCardLayout(
             context,
-            title: "7. License Document",
+            title:   TextString.licenseSubtitle31 ,
             child: Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Wrap(
@@ -167,17 +164,17 @@ class BusinessLicenseBodyWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "8. Contact Information",
+                  TextString.privacyPolicySubtitle51,
                   style: TTextTheme.h5Style(context),
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  "For any questions or booking inquiries:",
+                  TextString.privacyPolicySubtitle52,
                   style: TTextTheme.tableRegular18(context).copyWith(fontSize: 14, color: Colors.black87),
                 ),
                 const SizedBox(height: 12),
-                _buildContactRowItem(context, icon: Icons.phone, label: "Phone: ", value: "[+6423452134]"),
-                _buildContactRowItem(context, icon: Icons.email, label: "Email: ", value: "[softsnip@gmail.com]"),
+                _buildContactRowItem(context, icon: Icons.phone, label: TextString.privacyPolicySubtitle53, value: TextString.privacyPolicySubtitle54),
+                _buildContactRowItem(context, icon: Icons.email, label:TextString.privacyPolicySubtitle55, value: TextString.privacyPolicySubtitle56),
               ],
             ),
           ),
