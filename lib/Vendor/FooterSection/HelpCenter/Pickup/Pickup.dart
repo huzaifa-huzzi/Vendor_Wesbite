@@ -8,8 +8,6 @@ import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Pickup/Widget/Get
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/ContactHelpCard.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/MainFooterHelpWidget.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/NewsLetterHelpWidget.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/TroubleShooting/Widget/DetailTroubleShootingGuide.dart';
-import 'package:vendor_website/Vendor/FooterSection/HelpCenter/TroubleShooting/Widget/GettingStartedTroubleShooting.dart';
 
 class Pickup extends StatelessWidget {
   const Pickup({super.key});
