@@ -26,6 +26,13 @@ enum TroubleShootingFlowView {
   lateReturn
 }
 
+enum LogisticsFlowView {
+  logisticsDashboard,
+  pickupProcess,
+  returnChecklist,
+  keyDropOff
+}
+
 class HelpCenterController extends GetxController {
 
 
@@ -224,4 +231,60 @@ class HelpCenterController extends GetxController {
   }
 
   bool get isTroubleSubViewDetail => currentTroubleView.value != TroubleShootingFlowView.supportDashboard;
+
+   /// Pickup & Return
+  var currentLogisticsView = LogisticsFlowView.logisticsDashboard.obs;
+
+  void switchLogisticsView(LogisticsFlowView newView) {
+    currentLogisticsView.value = newView;
+  }
+
+  void resetLogisticsToDashboard() {
+    currentLogisticsView.value = LogisticsFlowView.logisticsDashboard;
+  }
+
+  String get dynamicLogisticsTitle {
+    switch (currentLogisticsView.value) {
+      case LogisticsFlowView.pickupProcess:
+        return "At the counter";
+      case LogisticsFlowView.returnChecklist:
+        return "Before Returning";
+      case LogisticsFlowView.keyDropOff:
+        return "Key Drop Procedure";
+      case LogisticsFlowView.logisticsDashboard:
+      default:
+        return "Logistics";
+    }
+  }
+
+  String get dynamicLogisticsTitle2 {
+    switch (currentLogisticsView.value) {
+      case LogisticsFlowView.pickupProcess:
+        return "Vehicle Pick up process";
+      case LogisticsFlowView.returnChecklist:
+        return "Vehicle Return Checklist";
+      case LogisticsFlowView.keyDropOff:
+        return "After Hour Key Drop off";
+      case LogisticsFlowView.logisticsDashboard:
+      default:
+        return "Pickup and Return";
+    }
+  }
+
+  String get dynamicLogisticsBackgroundImage {
+    switch (currentLogisticsView.value) {
+      case LogisticsFlowView.pickupProcess:
+        return ImageString.pickup2;
+      case LogisticsFlowView.returnChecklist:
+        return ImageString.pickup3;
+      case LogisticsFlowView.keyDropOff:
+        return ImageString.pickup4;
+      case LogisticsFlowView.logisticsDashboard:
+      default:
+        return ImageString.pricing1;
+    }
+  }
+
+  bool get isLogisticsSubViewDetail => currentLogisticsView.value != LogisticsFlowView.logisticsDashboard;
+
 }

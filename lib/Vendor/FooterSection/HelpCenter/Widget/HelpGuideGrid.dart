@@ -52,7 +52,7 @@ class HelpGuidesGrid extends StatelessWidget {
         "title": TextString.helpCenterSubtitle9,
         "desc": TextString.helpCenterSubtitle10,
         "onTap": () {
-          // context.go('/pickup-return');
+           context.go('/Pickup');
         },
       },
       {

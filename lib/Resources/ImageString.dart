@@ -133,5 +133,9 @@ class ImageString{
   static const String trouble2 = 'assets/Images/HelpCenter/trouble2.png';
   static const String trouble3 = 'assets/Images/HelpCenter/trouble3.png';
   static const String trouble4 = 'assets/Images/HelpCenter/trouble4.png';
+  static const String pickup1 = 'assets/Images/HelpCenter/Pickup1.png';
+  static const String pickup2 = 'assets/Images/HelpCenter/Pickup2.png';
+  static const String pickup3 = 'assets/Images/HelpCenter/Pickup3.png';
+  static const String pickup4 = 'assets/Images/HelpCenter/Pickup4.png';
 
 }
