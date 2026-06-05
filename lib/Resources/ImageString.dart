@@ -121,4 +121,17 @@ class ImageString{
   static const String HelpCenter2 = 'assets/Images/HelpCenter/HelpCenter2.png';
   static const String HelpCenter3 = 'assets/Images/HelpCenter/HelpCenter3.png';
   static const String HelpCenter4 = 'assets/Images/HelpCenter/HelpCenter4.png';
+  static const String requiredDocument1 = 'assets/Images/HelpCenter/requiredDocument1.png';
+  static const String requiredDocument2 = 'assets/Images/HelpCenter/requiredDocument2.png';
+  static const String requiredDocument3 = 'assets/Images/HelpCenter/requiredDocuemnt3.png';
+  static const String requiredDocument4 = 'assets/Images/HelpCenter/requiredDocuemnt4.png';
+  static const String pricing1 = 'assets/Images/HelpCenter/Pricing1.png';
+  static const String pricing2 = 'assets/Images/HelpCenter/Pricing2.png';
+  static const String pricing3 = 'assets/Images/HelpCenter/Pricing3.png';
+  static const String pricing4 = 'assets/Images/HelpCenter/Pricing4.png';
+  static const String trouble1 = 'assets/Images/HelpCenter/trouble1.png';
+  static const String trouble2 = 'assets/Images/HelpCenter/trouble2.png';
+  static const String trouble3 = 'assets/Images/HelpCenter/trouble3.png';
+  static const String trouble4 = 'assets/Images/HelpCenter/trouble4.png';
+
 }

@@ -97,16 +97,25 @@ class GettingStartedWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Icon(Icons.error_outline, color: AppColors.primaryColor, size: 20),
                     const SizedBox(width: 8),
-                    Text("Tips for Smooth Booking", style: TTextTheme.h5Style(context)),
+                    Expanded(
+                      child: Text(
+                        "Tips for Smooth Booking",
+                        style: TTextTheme.h5Style(context),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Text(
                   "Pro tips to get the best rates and a hassle-free experience",
                   style: TTextTheme.tableRegular18(context),
+                  softWrap: true,
                 ),
                 const SizedBox(height: 20),
                 PrimaryBtnOfHelpCenter(
@@ -198,32 +207,46 @@ class GettingStartedWidget extends StatelessWidget {
           const SizedBox(height: 40),
           Container(
             padding: const EdgeInsets.all(5),
+            width: MediaQuery.of(context).size.width < 400 ? double.infinity : null,
             decoration: BoxDecoration(
               color: AppColors.signaturePadColor,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: AppColors.quadrantalTextColor.withOpacity(0.15)),
             ),
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MediaQuery.of(context).size.width < 400 ? MainAxisSize.max : MainAxisSize.min,
               children: ["Local", "International"].map((tabName) {
-                return Obx(() {
-                  bool isSelected = controller.activeDocumentTab.value == tabName;
-                  return GestureDetector(
-                    onTap: () => controller.switchDocumentTab(tabName),
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: isSelected ? AppColors.primaryColor : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8),
+                return Expanded(
+                  flex: MediaQuery.of(context).size.width < 400 ? 1 : 0,
+                  child: Obx(() {
+                    bool isSelected = controller.activeDocumentTab.value == tabName;
+                    return GestureDetector(
+                      onTap: () => controller.switchDocumentTab(tabName),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 10),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width < 400 ? 5 : 20,
+                            vertical: 10
+                        ),
+                        decoration: BoxDecoration(
+                          color: isSelected ? AppColors.primaryColor : Colors.transparent,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "$tabName People",
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: isSelected
+                                ? TTextTheme.medium14White(context)
+                                : TTextTheme.tableRegular14(context),
+                          ),
+                        ),
                       ),
-                      child: Text(
-                        "$tabName People",
-                        style: isSelected ? TTextTheme.medium14White(context) :TTextTheme.tableRegular14(context)
-                      ),
-                    ),
-                  );
-                });
+                    );
+                  }),
+                );
               }).toList(),
             ),
           ),

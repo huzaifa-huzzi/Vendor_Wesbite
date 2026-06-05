@@ -28,8 +28,7 @@ class HelpGuidesGrid extends StatelessWidget {
         "title": TextString.helpCenterSubtitle3,
         "desc": TextString.helpCenterSubtitle4,
         "onTap": () {
-          // context.go('/required-documents');
-          print("Required Documents Clicked!");
+           context.go('/requiredDocument');
         },
       },
       {
@@ -37,7 +36,7 @@ class HelpGuidesGrid extends StatelessWidget {
         "title": TextString.helpCenterSubtitle5,
         "desc": TextString.helpCenterSubtitle6,
         "onTap": () {
-          // context.go('/pricing-billing');
+          context.go('/Pricing');
         },
       },
       {
@@ -45,7 +44,7 @@ class HelpGuidesGrid extends StatelessWidget {
         "title": TextString.helpCenterSubtitle7,
         "desc": TextString.helpCenterSubtitle8,
         "onTap": () {
-          // context.go('/troubleshooting');
+           context.go('/troubleShooting');
         },
       },
       {

@@ -7,7 +7,10 @@ import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/FooterSection/AcceptedPayment/AcceptedPayment.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenter.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Pricing/Pricing.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Renting%20Guide/RentingGuide.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/RequiredDocuments/RequiredDocuments.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/TroubleShooting/TroubleShooting.dart';
 import 'package:vendor_website/Vendor/FooterSection/License/License.dart';
 import 'package:vendor_website/Vendor/FooterSection/PrivacyPolicy/PrivacyPolicy.dart';
 import 'package:vendor_website/Vendor/FooterSection/ReturnPolicy/ReturnPolicy.dart';
@@ -108,6 +111,18 @@ class AppNavigation {
           GoRoute(
             path: '/rentingGuide',
             builder: (context, state) => RentingGuide(),
+          ),
+          GoRoute(
+            path: '/requiredDocument',
+            builder: (context, state) => RequiredDocument(),
+          ),
+          GoRoute(
+            path: '/Pricing',
+            builder: (context, state) => Pricing(),
+          ),
+          GoRoute(
+            path: '/troubleShooting',
+            builder: (context, state) => TroubleShooting(),
           ),
           GoRoute(
             path: '/privacyPolicy',
