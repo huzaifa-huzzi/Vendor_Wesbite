@@ -7,6 +7,7 @@ import 'package:vendor_website/Vendor/ContactUs/ContactUsScreen.dart';
 import 'package:vendor_website/Vendor/Faqs/Faqs.dart';
 import 'package:vendor_website/Vendor/FooterSection/AcceptedPayment/AcceptedPayment.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenter.dart';
+import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Insurance/Insurance.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Pickup/Pickup.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Pricing/Pricing.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Renting%20Guide/RentingGuide.dart';
@@ -128,6 +129,10 @@ class AppNavigation {
           GoRoute(
             path: '/Pickup',
             builder: (context, state) => Pickup(),
+          ),
+          GoRoute(
+            path: '/Insurance',
+            builder: (context, state) => Insurance(),
           ),
           GoRoute(
             path: '/privacyPolicy',

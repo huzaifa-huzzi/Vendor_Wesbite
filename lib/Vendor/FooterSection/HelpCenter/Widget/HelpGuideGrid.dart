@@ -60,7 +60,7 @@ class HelpGuidesGrid extends StatelessWidget {
         "title": TextString.helpCenterSubtitle11,
         "desc": TextString.helpCenterSubtitle12,
         "onTap": () {
-          // context.go('/insurance-coverage');
+          context.go('/Insurance');
         },
       },
     ];

@@ -137,5 +137,9 @@ class ImageString{
   static const String pickup2 = 'assets/Images/HelpCenter/Pickup2.png';
   static const String pickup3 = 'assets/Images/HelpCenter/Pickup3.png';
   static const String pickup4 = 'assets/Images/HelpCenter/Pickup4.png';
+  static const String Insurance1 = 'assets/Images/HelpCenter/Insurance1.png';
+  static const String Insurance2 = 'assets/Images/HelpCenter/Insurance2.png';
+  static const String Insurance3 = 'assets/Images/HelpCenter/Insurance3.png';
+  static const String Insurance4 = 'assets/Images/HelpCenter/Insurance4.png';
 
 }

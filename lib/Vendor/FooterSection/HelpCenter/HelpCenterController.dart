@@ -33,6 +33,13 @@ enum LogisticsFlowView {
   keyDropOff
 }
 
+enum InsuranceFlowView {
+  insuranceDashboard,
+  coverageOptions,
+  reportDamage,
+  personalInsurance
+}
+
 class HelpCenterController extends GetxController {
 
 
@@ -286,5 +293,60 @@ class HelpCenterController extends GetxController {
   }
 
   bool get isLogisticsSubViewDetail => currentLogisticsView.value != LogisticsFlowView.logisticsDashboard;
+
+   /// Insurance
+  var currentInsuranceView = InsuranceFlowView.insuranceDashboard.obs;
+
+  void switchInsuranceView(InsuranceFlowView newView) {
+    currentInsuranceView.value = newView;
+  }
+
+  void resetInsuranceToDashboard() {
+    currentInsuranceView.value = InsuranceFlowView.insuranceDashboard;
+  }
+
+  String get dynamicInsuranceTitle {
+    switch (currentInsuranceView.value) {
+      case InsuranceFlowView.coverageOptions:
+        return "Coverage Tiers";
+      case InsuranceFlowView.reportDamage:
+        return "New Damage During Rental";
+      case InsuranceFlowView.personalInsurance:
+        return "Personal Auto Insurance";
+      case InsuranceFlowView.insuranceDashboard:
+      default:
+        return "Insurance";
+    }
+  }
+
+  String get dynamicInsuranceTitle2 {
+    switch (currentInsuranceView.value) {
+      case InsuranceFlowView.coverageOptions:
+        return "Insurance Coverage Option";
+      case InsuranceFlowView.reportDamage:
+        return "How to Report Damage";
+      case InsuranceFlowView.personalInsurance:
+        return "Using Your Personal Insurance";
+      case InsuranceFlowView.insuranceDashboard:
+      default:
+        return "Insurance and Coverage";
+    }
+  }
+
+  String get dynamicInsuranceBackgroundImage {
+    switch (currentInsuranceView.value) {
+      case InsuranceFlowView.coverageOptions:
+        return ImageString.Insurance2;
+      case InsuranceFlowView.reportDamage:
+        return ImageString.Insurance3;
+      case InsuranceFlowView.personalInsurance:
+        return ImageString.Insurance4;
+      case InsuranceFlowView.insuranceDashboard:
+      default:
+        return ImageString.Insurance1;
+    }
+  }
+
+  bool get isInsuranceSubViewDetail => currentInsuranceView.value != InsuranceFlowView.insuranceDashboard;
 
 }
