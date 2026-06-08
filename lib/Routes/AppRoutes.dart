@@ -24,18 +24,26 @@ import 'package:vendor_website/Vendor/Services/BrakeService/BrakeService.dart';
 import 'package:vendor_website/Vendor/Services/Engineservices/EngineServices.dart';
 import 'package:vendor_website/Vendor/Services/GeneralMaintenance/GeneralMaintenance.dart';
 import 'package:vendor_website/Vendor/Services/Services.dart';
-
 import 'package:vendor_website/Vendor/Services/TyreService/TyreService.dart';
+import 'package:get/get.dart';
+import 'package:vendor_website/AppBars/AppBarController.dart';
+
 
 class AppNavigation {
   static final router = GoRouter(
     initialLocation: '/',
 
-    errorBuilder: (context, state) =>  ErrorPage(),
+    errorBuilder: (context, state) => const ErrorPage(),
 
     routes: [
       ShellRoute(
         builder: (context, state, child) {
+          try {
+            final controller = Get.find<AppBarController>();
+            controller.updateActiveNavByPath(state.uri.path);
+          } catch (e) {
+             Exception("Path is not coming!");
+          }
           return child;
         },
         routes: [
@@ -45,102 +53,105 @@ class AppNavigation {
           ),
           GoRoute(
             path: '/cars',
-            builder: (context, state) => CarScreen(),
+            builder: (context, state) => const CarScreen(),
           ),
           GoRoute(
             path: '/CarDetail',
-            builder: (context, state) => CarDetailScreen(),
+            builder: (context, state) => const CarDetailScreen(),
           ),
           GoRoute(
             path: '/services',
-            builder: (context, state) => ServicesScreen(),
+            builder: (context, state) => const ServicesScreen(),
           ),
 
+          // Sub Services Routes
           GoRoute(
             path: '/generalMaintenance',
-            builder: (context, state) => GeneralMaintenance(),
+            builder: (context, state) => const GeneralMaintenance(),
           ),
           GoRoute(
             path: '/engineServices',
-            builder: (context, state) => EngineServices(),
+            builder: (context, state) => const EngineServices(),
           ),
           GoRoute(
             path: '/brakeService',
-            builder: (context, state) => BrakeService(),
+            builder: (context, state) => const BrakeService(),
           ),
           GoRoute(
             path: '/tyreService',
-            builder: (context, state) => TyreServices(),
+            builder: (context, state) => const TyreServices(),
           ),
           GoRoute(
             path: '/acServices',
-            builder: (context, state) => AcServices(),
+            builder: (context, state) => const AcServices(),
           ),
           GoRoute(
             path: '/batteryServices',
-            builder: (context, state) => BatteryServices(),
+            builder: (context, state) => const BatteryServices(),
           ),
           GoRoute(
             path: '/About',
-            builder: (context, state) => AboutUsScreen(),
+            builder: (context, state) => const AboutUsScreen(),
           ),
           GoRoute(
             path: '/FAQs',
-            builder: (context, state) => FaqsScreen(),
+            builder: (context, state) => const FaqsScreen(),
           ),
           GoRoute(
             path: '/contactUs',
-            builder: (context, state) => ContactUsScreen(),
+            builder: (context, state) => const ContactUsScreen(),
           ),
-           /// Footer PAges
+
+          /// Footer Pages
           GoRoute(
             path: '/returnPolicy',
-            builder: (context, state) => ReturnPolicy(),
+            builder: (context, state) => const ReturnPolicy(),
           ),
           GoRoute(
             path: '/acceptedPayment',
-            builder: (context, state) => AcceptedPayment(),
+            builder: (context, state) => const AcceptedPayment(),
           ),
           GoRoute(
             path: '/term&condition',
-            builder: (context, state) => TermAndCondition(),
+            builder: (context, state) => const TermAndCondition(),
           ),
-           /// Help Center
+
+          /// Help Center
           GoRoute(
             path: '/helpCenter',
-            builder: (context, state) => HelpCenter(),
+            builder: (context, state) => const HelpCenter(),
           ),
           GoRoute(
             path: '/rentingGuide',
-            builder: (context, state) => RentingGuide(),
+            builder: (context, state) => const RentingGuide(),
           ),
           GoRoute(
             path: '/requiredDocument',
-            builder: (context, state) => RequiredDocument(),
+            builder: (context, state) => const RequiredDocument(),
           ),
           GoRoute(
             path: '/Pricing',
-            builder: (context, state) => Pricing(),
+            builder: (context, state) => const Pricing(),
           ),
           GoRoute(
             path: '/troubleShooting',
-            builder: (context, state) => TroubleShooting(),
+            builder: (context, state) => const TroubleShooting(),
           ),
           GoRoute(
             path: '/Pickup',
-            builder: (context, state) => Pickup(),
+            builder: (context, state) => const Pickup(),
           ),
           GoRoute(
             path: '/Insurance',
-            builder: (context, state) => Insurance(),
+            builder: (context, state) => const Insurance(),
           ),
           GoRoute(
             path: '/privacyPolicy',
-            builder: (context, state) => PrivacyPolicy(),
+            builder: (context, state) => const PrivacyPolicy(),
           ),
           GoRoute(
             path: '/license',
-            builder: (context, state) => License(),
+            builder: (context, state) => const License(),
           ),
         ],
       ),

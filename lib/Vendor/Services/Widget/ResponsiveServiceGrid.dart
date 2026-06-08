@@ -5,6 +5,7 @@ import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/IconString.dart';
 import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
+import 'package:vendor_website/Vendor/Services/Reusable%20Widget/PrimaryBtnOServices.dart';
 
 class ResponsiveServicesGrid extends StatelessWidget {
   const ResponsiveServicesGrid({super.key});
@@ -170,15 +171,11 @@ class ResponsiveServicesGrid extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "View Services",
-                    style: TTextTheme.bodySemiBold16(context),
-                  ),
-                  const SizedBox(width: 8),
-                  Icon(
-                    Icons.arrow_forward,
-                    size: isTiny ? 14 : 16,
-                    color: AppColors.primaryColor,
+                  PrimaryBtnOfServices(
+                    text: "View Service",
+                    width: 140,
+                    borderRadius: BorderRadius.circular(8),
+                    onTap: onTap,
                   ),
                 ],
               ),

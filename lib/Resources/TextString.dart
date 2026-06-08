@@ -644,4 +644,9 @@ class TextString{
   static const String  licenseSubtitle29=  "We believe in maintaining transparency with our customers.";
   static const String  licenseSubtitle30 =   "Our licensing and registration details are available for verification to ensure confidence and reliability in our services.";
   static const String  licenseSubtitle31= "7. License Document";
+
+   /// Error Page
+  static const String  errorTitle= "404 error";
+  static const String  errorSubtitle= "Under maintenance";
+  static const String  errorSubtitle2= "Sorry, the page you are looking for doesn’t exist or has been moved.";
 }
