@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -43,12 +44,12 @@ class GettingStartedPricing extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Pricing", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.pricingSubtitle1, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 700),
             child: Text(
-              "Understand daily rates, mileage charges, fuel policies, toll billing, and how to read your invoice.",
+              TextString.pricingSubtitle2 ,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
@@ -61,15 +62,15 @@ class GettingStartedPricing extends StatelessWidget {
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "How Our Pricing Works",
-                subtitle: "Daily rates, weekly discounts, and what's included",
+                title:TextString.pricingSubtitle3 ,
+                subtitle:TextString.pricingSubtitle4 ,
                 onBtnTap: () => controller.switchPricingView(PricingFlowView.howPricingWorks),
               ),
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "Fuel Policy Explained",
-                subtitle: "Full-to-Full policy and refueling surcharge details",
+                title:TextString.pricingSubtitle5 ,
+                subtitle:TextString.pricingSubtitle6 ,
                 onBtnTap: () => controller.switchPricingView(PricingFlowView.fuelPolicy),
               ),
             ],
@@ -78,8 +79,8 @@ class GettingStartedPricing extends StatelessWidget {
           _buildGuideCard(
             context,
             width: double.infinity,
-            title: "How toll Charges Work",
-            subtitle: "Credit cards, debit cards, and deposit requirements",
+            title:TextString.pricingSubtitle7 ,
+            subtitle:TextString.pricingSubtitle8,
             onBtnTap: () => controller.switchPricingView(PricingFlowView.tollCharges),
           ),
         ],
@@ -92,19 +93,20 @@ class GettingStartedPricing extends StatelessWidget {
   Widget _buildHowPricingWorksScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> rules = [
-      "Daily rates include 200 km of free mileage. Additional km are charged at flat per-km rate.",
-      "Weekly rental (7+ days) receive a 20 to 25 % discount automatically.",
-      "All prices include basic liability insurance. Comprehensive coverage is available as add-on."
+    TextString.pricingSubtitle9 ,
+      TextString.pricingSubtitle10 ,
+      TextString.pricingSubtitle11
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Rate Structure", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.pricingSubtitle12, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           Text(
-            "Our pricing is depend on vehicle class, rental duration, and selected insurance coverage",
+            TextString.pricingSubtitle13,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
@@ -121,19 +123,20 @@ class GettingStartedPricing extends StatelessWidget {
   Widget _buildFuelPolicyScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> guidelines = [
-      "Vehicles are provided with a full tank and should be returned with the same fuel level.",
-      "If returned with less fuel, the difference will be charged at current rates plus a refueling fee.",
-      "No refunds are given for unused fuel if the tank is returned fuller than required."
+    TextString.pricingSubtitle14,
+    TextString.pricingSubtitle15 ,
+      TextString.pricingSubtitle16,
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Full to Full Policy", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.pricingSubtitle17, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           Text(
-            "Full-to-Full policy and refueling surcharge details",
+              TextString.pricingSubtitle18 ,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
@@ -150,18 +153,19 @@ class GettingStartedPricing extends StatelessWidget {
   Widget _buildTollChargesScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> tolls = [
-      "Toll Charges appear on your final invoice with in 7 days of vehicle return",
-      "A small administrative fees per toll transaction may apply"
+      TextString.pricingSubtitle19 ,
+      TextString.pricingSubtitle20
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Toll Transponders", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.pricingSubtitle21, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           Text(
-            "Most of our vehicles are equipped with electronic toll transponders. Tolls are automatically charged to your rental account.",
+            TextString.pricingSubtitle22 ,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -49,12 +50,12 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Logistics", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.pickupSubtitle1, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 750),
             child: Text(
-              "Office locations, hours, inspection process, after-hours drop-off, and key return procedures.",
+              TextString.pickupSubtitle2,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
@@ -68,15 +69,15 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "Vehicle Pick up process",
-                subtitle: "Step by step instruction if your vehicle breakdown", // content matched to asset image_a62e9c.png
+                title:TextString.pickupSubtitle3 ,
+                subtitle:TextString.pickupSubtitle4 ,
                 onBtnTap: () => controller.switchLogisticsView(LogisticsFlowView.pickupProcess),
               ),
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "Vehicle Return Checklist",
-                subtitle: "Steps to ensure a smooth return and avoid extra charges.",
+                title:TextString.pickupSubtitle5 ,
+                subtitle:TextString.pickupSubtitle6 ,
                 onBtnTap: () => controller.switchLogisticsView(LogisticsFlowView.returnChecklist),
               ),
             ],
@@ -86,8 +87,8 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
           _buildGuideCard(
             context,
             width: double.infinity,
-            title: "After Hour Key Drop off",
-            subtitle: "How to return your vehicle outside of office hour",
+            title:TextString.pickupSubtitle7 ,
+            subtitle:TextString.pickupSubtitle8 ,
             onBtnTap: () => controller.switchLogisticsView(LogisticsFlowView.keyDropOff),
           ),
         ],
@@ -105,28 +106,28 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("At the counter", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.pickupSubtitle9, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Step by step instruction if your vehicle breakdown", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.pickupSubtitle10, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildStepCard("Step 1", "Present your booking confirmation, ID, and driver's license.", context),
-          _buildStepCard("Step 2", "Review and sign the rental agreement.", context),
-          _buildStepCard("Step 3", "Select or confirm your insurance coverage.", context),
+          _buildStepCard("Step 1",TextString.pickupSubtitle11 , context),
+          _buildStepCard("Step 2",TextString.pickupSubtitle12, context),
+          _buildStepCard("Step 3",TextString.pickupSubtitle13 , context),
 
           const SizedBox(height: 45),
 
-          Text("Vehicle Inspection", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.pickupSubtitle14, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Step by step instruction if your vehicle breakdown", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.pickupSubtitle15, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildStepCard("Step 1", "Walk around the vehicle with our staff and note any pre-existing damage on the checklist", context),
-          _buildStepCard("Step 2", "Verify fuel level, mileage reading, and included accessories.", context),
+          _buildStepCard("Step 1",TextString.pickupSubtitle16, context),
+          _buildStepCard("Step 2",TextString.pickupSubtitle17 , context),
 
           const SizedBox(height: 15),
           _buildInfoFooterCard(
             context,
-            title: "Tip",
-            desc: "Take your own photos or video of the vehicle before leaving — it takes 2 minutes and can save you disputes later.",
+            title:TextString.pickupSubtitle18 ,
+            desc:TextString.pickupSubtitle19 ,
           ),
         ],
       ),
@@ -141,27 +142,27 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Before Returning", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.pickupSubtitle20, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Steps to ensure a smooth return and avoid extra charges.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.pickupSubtitle21, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildStepCard("Step 1", "Refuel the vehicle to the same level as pick-up (full tank).", context),
-          _buildStepCard("Step 2", "Remove all personal belongings from the vehicle.", context),
-          _buildStepCard("Step 3", "Check for any new damage and photograph it.", context),
+          _buildStepCard("Step 1",TextString.pickupSubtitle22 , context),
+          _buildStepCard("Step 2",TextString.pickupSubtitle23 , context),
+          _buildStepCard("Step 3",TextString.pickupSubtitle24 , context),
 
           const SizedBox(height: 45),
-          Text("At the office", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.pickupSubtitle25, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Steps to ensure a smooth return and avoid extra charges.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.pickupSubtitle26, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildStepCard("Step 1", "Park in the designated return area.", context),
-          _buildStepCard("Step 2", "Return the keys to the counter and wait for the final inspection.", context),
+          _buildStepCard("Step 1",TextString.pickupSubtitle27 , context),
+          _buildStepCard("Step 2",TextString.pickupSubtitle28 , context),
 
           const SizedBox(height: 15),
           _buildInfoFooterCard(
             context,
-            title: "Tip",
-            desc: "Final invoices are typically emailed within 24 hours of return.",
+            title:TextString.pickupSubtitle29 ,
+            desc:TextString.pickupSubtitle30,
           ),
         ],
       ),
@@ -178,25 +179,25 @@ class _GettingStartedPickupState extends State<GettingStartedPickup> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Key Drop Procedure", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.pickupSubtitle31, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Text(
-              "If you need to return the vehicle when the office is closed, use our key drop box located at the office entrance.",
+              TextString.pickupSubtitle32,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(height: 40),
-          _buildStepCard("Step 1", "Park the vehicle in the designated return area and lock it.", context),
-          _buildStepCard("Step 2", "Place the key in the provided envelope along with your rental agreement number.", context),
-          _buildStepCard("Step 3", "Drop the envelope in the secure key box.", context),
+          _buildStepCard("Step 1",TextString.pickupSubtitle33 , context),
+          _buildStepCard("Step 2",TextString.pickupSubtitle34 , context),
+          _buildStepCard("Step 3",TextString.pickupSubtitle35, context),
           const SizedBox(height: 15),
           _buildInfoFooterCard(
             context,
-            title: "Tip",
-            desc: "Take a photo of the parked vehicle and the key drop confirmation. The final inspection will be completed the next business day.",
+            title:TextString.pickupSubtitle36 ,
+            desc:TextString.pickupSubtitle37 ,
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -47,7 +48,7 @@ class GettingStartedWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Getting Started",
+           TextString.rentingSubtitle1,
             style: TTextTheme.h1StyleBlack(context).copyWith(
               fontSize: isTiny ? 24 : (isMobileOrTablet ? 30 : 36),
             ),
@@ -57,7 +58,7 @@ class GettingStartedWidget extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 700),
             child: Text(
-              "Step by step guides for first rental - documents required, age limits and booking tips",
+              TextString.rentingSubtitle2,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
@@ -71,15 +72,15 @@ class GettingStartedWidget extends StatelessWidget {
               _buildGuideCard(
                 context,
                 width: cardWidth,
-                title: "Your First Rental Complete Guide",
-                subtitle: "Everything you need to know before renting for the first time",
+                title:TextString.rentingSubtitle3 ,
+                subtitle:TextString.rentingSubtitle4 ,
                 onBtnTap: () => controller.switchView(GettingStartedView.firstRentalGuide),
               ),
               _buildGuideCard(
                 context,
                 width: cardWidth,
-                title: "What Documents do you need?",
-                subtitle: "A checklist of all required documents for renting a vehicle",
+                title:TextString.rentingSubtitle5 ,
+                subtitle:TextString.rentingSubtitle6 ,
                 onBtnTap: () => controller.switchView(GettingStartedView.requiredDocuments),
               ),
             ],
@@ -103,7 +104,7 @@ class GettingStartedWidget extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        "Tips for Smooth Booking",
+                        TextString.rentingSubtitle7,
                         style: TTextTheme.h5Style(context),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -113,7 +114,7 @@ class GettingStartedWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  "Pro tips to get the best rates and a hassle-free experience",
+                  TextString.rentingSubtitle8 ,
                   style: TTextTheme.tableRegular18(context),
                   softWrap: true,
                 ),
@@ -138,9 +139,9 @@ class GettingStartedWidget extends StatelessWidget {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
 
     final List<Map<String, dynamic>> workflowData = [
-      {"section": "Before you Arrive", "desc": "Renting a car first time can feel overwhelming but we made the process as simple as possible", "steps": ["Ensure you have a valid driver's license (held for at least 1 year) and a government-issued ID or passport.", "Have a credit or debit card in the primary driver's name ready for the security deposit.", "Check our office hours and visit during operating times. No appointment needed - walk ins are welcome."]},
-      {"section": "At the office", "desc": "Complete verification, select your vehicle, and finalize the rental process with our team.", "steps": ["Present your documents at the counter. Our team will verify your identity and driving eligibility.", "Choose your vehicle class and review the rental agreement, including insurance options.", "Complete the vehicle inspection with our staff, noting any pre-existing marks on the checklist."]},
-      {"section": "On the Road", "desc": "Stay covered with your selected insurance and keep essential documents accessible throughout your journey.", "steps": ["Once you're on the road, stay covered under your selected insurance plan and keep rental agreement and emergency contact details accessible at all times."]}
+      {"section": "Before you Arrive", "desc":TextString.rentingSubtitle9 , "steps": ["Ensure you have a valid driver's license (held for at least 1 year) and a government-issued ID or passport.", "Have a credit or debit card in the primary driver's name ready for the security deposit.", "Check our office hours and visit during operating times. No appointment needed - walk ins are welcome."]},
+      {"section": "At the office", "desc":TextString.rentingSubtitle10 , "steps": ["Present your documents at the counter. Our team will verify your identity and driving eligibility.", "Choose your vehicle class and review the rental agreement, including insurance options.", "Complete the vehicle inspection with our staff, noting any pre-existing marks on the checklist."]},
+      {"section": "On the Road", "desc":TextString.rentingSubtitle11 , "steps": ["Once you're on the road, stay covered under your selected insurance plan and keep rental agreement and emergency contact details accessible at all times."]}
     ];
 
     return Padding(
@@ -175,14 +176,16 @@ class GettingStartedWidget extends StatelessWidget {
 
     final Map<String, List<String>> documentsData = {
       "Local": [
-        "Submit valid driving license (minimum 1 holding year)",
-        "Submit government issue ID",
-        "Submit credit or debit card in driver's name."
+    TextString.rentingSubtitle12,
+        TextString.rentingSubtitle13 ,
+        TextString.rentingSubtitle14
+
       ],
       "International": [
-        "Submit International Documents",
-        "Submit government issue ID",
-        "Submit credit or debit card in driver's name."
+    TextString.rentingSubtitle15,
+        TextString.rentingSubtitle16 ,
+        TextString.rentingSubtitle17
+
       ]
     };
 
@@ -194,10 +197,10 @@ class GettingStartedWidget extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                Text("Primary Documents", style: TTextTheme.h1StyleBlack(context)),
+                Text(TextString.rentingSubtitle18, style: TTextTheme.h1StyleBlack(context)),
                 const SizedBox(height: 10),
                 Text(
-                    "Provide valid identification and required documents to complete verification and proceed with your rental.",
+                    TextString.rentingSubtitle19,
                     style: TTextTheme.bodyRegular16black(context),
                     textAlign: TextAlign.center
                 ),
@@ -269,18 +272,19 @@ class GettingStartedWidget extends StatelessWidget {
   Widget _buildBookingTipsScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> tips = [
-      "Book at least 48 hours in advance for best daily rates",
-      "Weekly rental offers up to 25% saving compared to daily bookings",
-      "Check for seasonal promotions on our website or ask at the counter"
+    TextString.rentingSubtitle20,
+      TextString.rentingSubtitle21,
+      TextString.rentingSubtitle22
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Getting Best Rates", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.rentingSubtitle23, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Find competitive pricing with transparent rates and no hidden charges.", style: TTextTheme.bodyRegular16black(context), textAlign: TextAlign.center),
+          Text(TextString.rentingSubtitle24, style: TTextTheme.bodyRegular16black(context), textAlign: TextAlign.center),
           const SizedBox(height: 40),
           ...List.generate(tips.length, (index) {
             return _buildStepCard("Tip no ${index + 1}", tips[index],context);
@@ -289,7 +293,7 @@ class GettingStartedWidget extends StatelessWidget {
       ),
     );
   }
-  // REUSABLE HELPER UI BLOCKS WIDGETS
+  /// ------------ Extra Widgets ------------ ///
 
   Widget _buildStepCard(String leadingTitle, String description,BuildContext context) {
     return Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 
@@ -69,7 +70,7 @@ class DetailRentingGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Help Center",
+                    label: TextString.HelpTitle,
                     isCurrent: false,
                     onTap: () {
                       controller.resetToDashboard();
@@ -78,7 +79,7 @@ class DetailRentingGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Renting Guide",
+                    label:TextString.rentingTitle ,
                     isCurrent: !controller.isSubViewDetail,
                     onTap: controller.isSubViewDetail
                         ? () => controller.resetToDashboard()
@@ -88,7 +89,7 @@ class DetailRentingGuide extends StatelessWidget {
                     _buildSeparator(context),
                     _buildBreadcrumbItem(
                       context,
-                      label: "Details",
+                      label: TextString.pickupSubtitle,
                       isCurrent: true,
                       onTap: null,
                     ),

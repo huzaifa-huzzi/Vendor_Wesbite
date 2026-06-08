@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 
@@ -59,7 +60,7 @@ class DetailInsuranceGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Help Center",
+                    label: TextString.helpCenterTitle,
                     onTap: () {
                       controller.resetToDashboard();
                       controller.resetInsuranceToDashboard();
@@ -68,7 +69,7 @@ class DetailInsuranceGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Insurance and Coverage",
+                    label: TextString.InsuranceGuide,
                     onTap: controller.isInsuranceSubViewDetail
                         ? () => controller.resetInsuranceToDashboard()
                         : null,

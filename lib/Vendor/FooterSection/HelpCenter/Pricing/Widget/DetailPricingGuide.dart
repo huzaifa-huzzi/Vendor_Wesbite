@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 
@@ -67,7 +68,7 @@ class DetailPricingGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Help Center",
+                    label: TextString.HelpTitle,
                     onTap: () {
                       controller.resetToDashboard();
                       controller.resetPricingToDashboard();
@@ -76,7 +77,7 @@ class DetailPricingGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Pricing & Billing",
+                    label: TextString.pricingtitle,
                     onTap: controller.isPricingSubViewDetail
                         ? () => controller.resetPricingToDashboard()
                         : null,
@@ -85,7 +86,7 @@ class DetailPricingGuide extends StatelessWidget {
                     _buildSeparator(context),
                     _buildBreadcrumbItem(
                       context,
-                      label: "Details",
+                      label: TextString.pickupSubtitle,
                       onTap: null,
                     ),
                   ],

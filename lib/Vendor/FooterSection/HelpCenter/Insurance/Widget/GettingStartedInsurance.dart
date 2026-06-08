@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -43,12 +44,12 @@ class GettingStartedInsurance extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Insurance", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.InsuranceGuide, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
             child: Text(
-              "Coverage options, excess limits, damage reporting, and what your personal policy might cover.",
+              TextString.InsuranceGuide1,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
@@ -62,15 +63,15 @@ class GettingStartedInsurance extends StatelessWidget {
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "Insurance Coverage Option",
-                subtitle: "Compare our basic, standard, and premium coverage plans.",
+                title:TextString.InsuranceGuide2 ,
+                subtitle:TextString.InsuranceGuide3 ,
                 onBtnTap: () => controller.switchInsuranceView(InsuranceFlowView.coverageOptions),
               ),
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "How to Report Damage",
-                subtitle: "Steps to report pre-existing or new damage to your rental vehicle.",
+                title:TextString.InsuranceGuide4 ,
+                subtitle:TextString.InsuranceGuide5 ,
                 onBtnTap: () => controller.switchInsuranceView(InsuranceFlowView.reportDamage),
               ),
             ],
@@ -80,8 +81,8 @@ class GettingStartedInsurance extends StatelessWidget {
           _buildGuideCard(
             context,
             width: double.infinity,
-            title: "Using Your Personal Insurance",
-            subtitle: "How your existing car insurance or credit card coverage may apply.",
+            title:TextString.InsuranceGuide6 ,
+            subtitle:TextString.InsuranceGuide7 ,
             onBtnTap: () => controller.switchInsuranceView(InsuranceFlowView.personalInsurance),
           ),
         ],
@@ -98,20 +99,20 @@ class GettingStartedInsurance extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Coverage Tiers", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.InsuranceGuide8, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Compare our basic, standard, and premium coverage plans.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.InsuranceGuide9, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
 
-          _buildStepCard("Step 1", "Basic (included): Third-party liability. You are responsible for damage to the rental vehicle up to the full value", context),
-          _buildStepCard("Step 2", "Standard (add-on): Collision Damage Waiver (CDW) with a deductible. Covers damage to the rental vehicle with a fixed excess amount.", context),
-          _buildStepCard("Step 3", "Premium (add-on): Full coverage with zero excess. Includes glass, tires, and roadside assistance.", context),
+          _buildStepCard("Step 1",TextString.InsuranceGuide10 , context),
+          _buildStepCard("Step 2",TextString.InsuranceGuide11, context),
+          _buildStepCard("Step 3",TextString.InsuranceGuide12 , context),
 
           const SizedBox(height: 15),
           _buildInfoFooterCard(
             context,
-            title: "Tip",
-            desc: "Premium coverage is recommended for new drivers or unfamiliar roads.",
+            title:TextString.InsuranceGuide13 ,
+            desc:TextString.InsuranceGuide14 ,
           ),
         ],
       ),
@@ -128,14 +129,14 @@ class GettingStartedInsurance extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("New Damage During Rental", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.InsuranceGuide15, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("Steps to report pre-existing or new damage to your rental vehicle.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.InsuranceGuide16, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
 
-          _buildStepCard("Step 1", "Photograph the damage from multiple angle", context),
-          _buildStepCard("Step 2", "Call our team to report the incident", context),
-          _buildStepCard("Step 3", "Complete the damage form(available at any office or online", context),
+          _buildStepCard("Step 1",TextString.InsuranceGuide17 , context),
+          _buildStepCard("Step 2",TextString.InsuranceGuide18 , context),
+          _buildStepCard("Step 3",TextString.InsuranceGuide19 , context),
         ],
       ),
     );
@@ -151,19 +152,19 @@ class GettingStartedInsurance extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 
-          Text("Personal Auto Insurance", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.InsuranceGuide20, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("How your existing car insurance or credit card coverage may apply.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.InsuranceGuide21, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildNumberedCard("01", "Some personal auto insurance policies extend coverage to rental vehicles. Check with your insurer before declining our CDW.", context),
+          _buildNumberedCard("01",TextString.InsuranceGuide22, context),
 
           const SizedBox(height: 45),
 
-          Text("Credit Card Coverage", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.InsuranceGuide23, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
-          Text("How your existing car insurance or credit card coverage may apply.", style: TTextTheme.bodyRegular16black(context)),
+          Text(TextString.InsuranceGuide24, style: TTextTheme.bodyRegular16black(context)),
           const SizedBox(height: 35),
-          _buildNumberedCard("01", "Many premium credit cards offer rental car insurance when you pay for the rental with that card. Verify the terms, coverage limits, and exclusions directly with your card issuer.", context),
+          _buildNumberedCard("01",TextString.InsuranceGuide25 , context),
         ],
       ),
     );
