@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -43,12 +44,12 @@ class GettingStartedTroubleShooting extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Support", style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
+          Text(TextString.troubleShootingSubtitle1, style: TTextTheme.h1StyleBlack(context), textAlign: TextAlign.center),
           const SizedBox(height: 10),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 750),
             child: Text(
-              "What do you do in case of breakdown, accident, late return, or any issue during your rental",
+              TextString.troubleShootingSubtitle2,
               style: TTextTheme.bodyRegular16black(context),
               textAlign: TextAlign.center,
             ),
@@ -62,15 +63,15 @@ class GettingStartedTroubleShooting extends StatelessWidget {
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "What to do in break down",
-                subtitle: "Step by step instruction if your vehicle breakdown",
+                title:TextString.troubleShootingSubtitle3 ,
+                subtitle:TextString.troubleShootingSubtitle4 ,
                 onBtnTap: () => controller.switchTroubleView(TroubleShootingFlowView.breakdown),
               ),
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "What to do after accident",
-                subtitle: "Critical steps to follow if you are involved in an accident",
+                title:TextString.troubleShootingSubtitle5 ,
+                subtitle:TextString.troubleShootingSubtitle6 ,
                 onBtnTap: () => controller.switchTroubleView(TroubleShootingFlowView.accident),
               ),
             ],
@@ -80,8 +81,8 @@ class GettingStartedTroubleShooting extends StatelessWidget {
           _buildGuideCard(
             context,
             width: double.infinity,
-            title: "Late return policy",
-            subtitle: "What happened if your vehicle past the agreed time",
+            title:TextString.troubleShootingSubtitle7 ,
+            subtitle:TextString.troubleShootingSubtitle8 ,
             onBtnTap: () => controller.switchTroubleView(TroubleShootingFlowView.lateReturn),
           ),
         ],
@@ -93,20 +94,21 @@ class GettingStartedTroubleShooting extends StatelessWidget {
   Widget _buildBreakdownScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> steps = [
-      "Pull over safely to the side of the road. Turn on your hazard light",
-      "If safe, place the warning triangle 50 meter behind your vehicle",
-      "Call our 24/7 roadside assistance hotline. +65234556666",
-      "Provide your rental agreement number, vehicle plate and exact location"
+    TextString.troubleShootingSubtitle9,
+    TextString.troubleShootingSubtitle10 ,
+      TextString.troubleShootingSubtitle11 ,
+      TextString.troubleShootingSubtitle12
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Immediate Steps", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.troubleShootingSubtitle13, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
           Text(
-            "Our pricing is depend on vehicle class, rental duration, and selected insurance coverage",
+            TextString.troubleShootingSubtitle14,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
@@ -117,8 +119,8 @@ class GettingStartedTroubleShooting extends StatelessWidget {
           const SizedBox(height: 10),
           _buildInfoFooterCard(
             context,
-            title: "What happened next",
-            desc: "Our team will dispatch roadside assistance. Depending on the issue, we'll either repair the vehicle on-site or arrange a replacement vehicle at the nearest office",
+            title:TextString.troubleShootingSubtitle15 ,
+            desc:TextString.troubleShootingSubtitle16 ,
           ),
         ],
       ),
@@ -128,21 +130,22 @@ class GettingStartedTroubleShooting extends StatelessWidget {
   Widget _buildAccidentScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> steps = [
-      "Ensure everyone's safety. Call emergency services (112 / 911) if there are injuries.",
-      "Do not admit fault or sign any documents at the scene.",
-      "Exchange information with the other party (name, phone, insurance, plate number).",
-      "Take photos of all vehicles involved, damage, and the surrounding area.",
-      "Call our support line within 24 hours to report the incident and begin the claims process."
+    TextString.troubleShootingSubtitle17,
+    TextString.troubleShootingSubtitle18 ,
+    TextString.troubleShootingSubtitle19,
+      TextString.troubleShootingSubtitle20,
+      TextString.troubleShootingSubtitle21
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("At the scene", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.troubleShootingSubtitle22, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
           Text(
-            "Critical steps to follow if you are involved in an accident",
+            TextString.troubleShootingSubtitle23,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
@@ -153,8 +156,8 @@ class GettingStartedTroubleShooting extends StatelessWidget {
           const SizedBox(height: 10),
           _buildInfoFooterCard(
             context,
-            title: "Tips",
-            desc: "File a police report if required by local law — we'll need the report number for insurance processing.",
+            title:TextString.troubleShootingSubtitle24 ,
+            desc:TextString.troubleShootingSubtitle25 ,
           ),
         ],
       ),
@@ -165,18 +168,19 @@ class GettingStartedTroubleShooting extends StatelessWidget {
   Widget _buildLateReturnScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> steps = [
-      "Returns 30 minutes to 3 hours late are charged a half-day rate.",
-      "Returns more than 3 hours late are charged a full additional day."
+    TextString.troubleShootingSubtitle26,
+      TextString.troubleShootingSubtitle27
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Grace Period", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.troubleShootingSubtitle28, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 10),
           Text(
-            "We offer a 29-minute grace period after your scheduled return time. Returns within this window incur no extra charges",
+              TextString.troubleShootingSubtitle29,
             style: TTextTheme.bodyRegular16black(context),
             textAlign: TextAlign.center,
           ),
@@ -187,14 +191,15 @@ class GettingStartedTroubleShooting extends StatelessWidget {
           const SizedBox(height: 10),
           _buildInfoFooterCard(
             context,
-            title: "Tips",
-            desc: "If you know you'll be late, call us in advance — we can often extend your rental at the standard daily rate.",
+            title:TextString.troubleShootingSubtitle30 ,
+            desc:TextString.troubleShootingSubtitle31,
           ),
         ],
       ),
     );
   }
        /// ---------- Extra Widget --------- ///
+  // Step Card
   Widget _buildStepCard(String leadingTitle, String description, BuildContext context) {
     return Container(
       width: double.infinity,
@@ -229,6 +234,7 @@ class GettingStartedTroubleShooting extends StatelessWidget {
     );
   }
 
+   // Footer Card
   Widget _buildInfoFooterCard(BuildContext context, {required String title, required String desc}) {
     return Container(
       width: double.infinity,
@@ -254,6 +260,7 @@ class GettingStartedTroubleShooting extends StatelessWidget {
     );
   }
 
+   // Guide Card
   Widget _buildGuideCard(BuildContext context, {required double width, required String title, required String subtitle, required VoidCallback onBtnTap}) {
     return Container(
       width: width,

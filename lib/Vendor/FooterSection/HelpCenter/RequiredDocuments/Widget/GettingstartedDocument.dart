@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
 import 'package:vendor_website/Resources/AppSizes.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/Reusable%20Widget/PrimaryButtonOfHelpCenter.dart';
@@ -39,7 +40,7 @@ class GettingStartedDocument extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Documents", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.requiredDocumentSubtitle1, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 40),
           Wrap(
             spacing: 25,
@@ -48,15 +49,15 @@ class GettingStartedDocument extends StatelessWidget {
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "ID Verification Requirements",
-                subtitle: "Accepted forms of identification for vehicle rental",
+                title:TextString.requiredDocumentSubtitle2 ,
+                subtitle:TextString.requiredDocumentSubtitle3 ,
                 onBtnTap: () => controller.switchDocumentView(DocumentFlowView.idVerification),
               ),
               _buildGuideCard(
                 context,
                 width: halfCardWidth,
-                title: "International Driving Permits",
-                subtitle: "When and how to use international driving permit",
+                title:TextString.requiredDocumentSubtitle4 ,
+                subtitle:TextString.requiredDocumentSubtitle5 ,
                 onBtnTap: () => controller.switchDocumentView(DocumentFlowView.internationalPermit),
               ),
             ],
@@ -65,8 +66,8 @@ class GettingStartedDocument extends StatelessWidget {
           _buildGuideCard(
             context,
             width: double.infinity,
-            title: "Accepted payment method",
-            subtitle: "Credit cards, debit cards, and deposit requirements",
+            title:TextString.requiredDocumentSubtitle6 ,
+            subtitle:TextString.requiredDocumentSubtitle7 ,
             onBtnTap: () => controller.switchDocumentView(DocumentFlowView.paymentMethods),
           ),
         ],
@@ -77,13 +78,13 @@ class GettingStartedDocument extends StatelessWidget {
   ///  ID VERIFICATION SCREEN
   Widget _buildIdVerificationScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
-    final List<String> ids = ["National Id card (government issued , and Photo)", "Valid Passport for international renters", "Resident permit( if applicable)"];
+    final List<String> ids = [TextString.requiredDocumentSubtitle8,TextString.requiredDocumentSubtitle9 , TextString.requiredDocumentSubtitle10];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Accepted IDS", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.requiredDocumentSubtitle11, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 40),
           ...List.generate(ids.length, (index) => _buildStepCard((index + 1).toString().padLeft(2, '0'), ids[index], context)),
         ],
@@ -94,13 +95,13 @@ class GettingStartedDocument extends StatelessWidget {
   ///  INTERNATIONAL PERMIT SCREEN
   Widget _buildInternationalPermitScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
-    final List<String> steps = ["Obtain your IDP from your home country's automobile associations before traveling.", "Bring both your IDP and original license - the IDP alone is not valid"];
+    final List<String> steps = [TextString.requiredDocumentSubtitle12,TextString.requiredDocumentSubtitle13 ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Do you need and IDP?", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.requiredDocumentSubtitle14, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 40),
           ...List.generate(steps.length, (index) => _buildStepCard("Step ${index + 1}", steps[index], context)),
         ],
@@ -112,16 +113,17 @@ class GettingStartedDocument extends StatelessWidget {
   Widget _buildPaymentMethodsScreen(BuildContext context, HelpCenterController controller) {
     final double horizontalPadding = AppSizes.horizontalPadding(context);
     final List<String> options = [
-      "Pay quickly using Pay ID. Enter your Pay ID, confirm the payment through your bank, and your booking will be confirmed right away.",
-      "Pay quickly using Biller Pay. Enter your Biller Pay, confirm the payment through your bank, and your booking will be confirmed right away.",
-      "Pay by bank transfer using the details below. Add your booking ID as a reference so we can confirm your payment quickly."
+    TextString.requiredDocumentSubtitle15 ,
+      TextString.requiredDocumentSubtitle16 ,
+      TextString.requiredDocumentSubtitle17
+
     ];
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 30),
       child: Column(
         children: [
-          Text("Payment method", style: TTextTheme.h1StyleBlack(context)),
+          Text(TextString.requiredDocumentSubtitle18, style: TTextTheme.h1StyleBlack(context)),
           const SizedBox(height: 40),
           ...List.generate(options.length, (index) => _buildStepCard("Option ${index + 1}", options[index], context)),
         ],

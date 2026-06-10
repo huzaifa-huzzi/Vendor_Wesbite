@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vendor_website/Resources/AppColors.dart';
+import 'package:vendor_website/Resources/TextString.dart';
 import 'package:vendor_website/Resources/TextTheme.dart';
 import 'package:vendor_website/Vendor/FooterSection/HelpCenter/HelpCenterController.dart';
 
@@ -67,7 +68,7 @@ class DetailDocumentGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Help Center",
+                    label: TextString.helpCenterTitle,
                     onTap: () {
                       controller.resetToDashboard();
                       controller.resetDocumentToDashboard();
@@ -76,7 +77,7 @@ class DetailDocumentGuide extends StatelessWidget {
                   _buildSeparator(context),
                   _buildBreadcrumbItem(
                     context,
-                    label: "Required Documents",
+                    label: TextString.requiredDocumentTitle,
                     onTap: controller.isDocumentSubViewDetail
                         ? () => controller.resetDocumentToDashboard()
                         : null,
@@ -85,7 +86,7 @@ class DetailDocumentGuide extends StatelessWidget {
                     _buildSeparator(context),
                     _buildBreadcrumbItem(
                       context,
-                      label: "Details",
+                      label: TextString.pickupSubtitle,
                       onTap: null,
                     ),
                   ],
